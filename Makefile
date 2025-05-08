@@ -7,7 +7,7 @@ LD_FLAGS    := -m32 -T linker.ld -ffreestanding -O2 -nostdlib -lgcc
 BIN         := bin
 SRC         := src
 OBJ         := obj
-EXECUTABLE  := myos.bin
+EXECUTABLE  := miniOS.bin
 BOOT_SRC    := boot.asm
 BOOT_OBJ    := $(OBJ)/boot.o
 
@@ -20,6 +20,15 @@ OFILES      := $(patsubst src/%.c, obj/%.o, $(CFILES)) $(BOOT_OBJ) $(INTERRUPT_O
 
 # Default target
 all: $(BIN)/$(EXECUTABLE)
+
+# Target to install dependencies
+installDeps:
+	@echo "--------------------------------"
+	@echo "Installing dependencies..."
+	sudo apt-get update
+	sudo apt-get install -y qemu-system nasm build-essential libtool gcc-multilib libc6-dev-i386
+	@echo "Installation finished."
+	@echo "--------------------------------"
 
 # Run the program
 run: clean all
