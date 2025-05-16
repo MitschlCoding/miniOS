@@ -1,5 +1,6 @@
 #include "idt.h"
 #include "outb.h"
+#include "printOS.h"
 #include <stdint.h>
 
 // the idt with 256 entries
@@ -112,4 +113,39 @@ void idtInit() {
 
   // set idt descriptor to be used by cpu
   __asm__ volatile("lidt (%0)" : : "r"(&idtDescriptor) : "memory");
+}
+
+// Prints the currently loaded IDT information read from the CPU
+void printIdtInfo() {
+  // Struct to load current IDT info into
+  IdtDescriptor currentIdt;
+
+  // Read the current IDT descriptor using sidt instruction
+  __asm__ volatile("sidt %0" : "=m"(currentIdt));
+
+  char loadedLimitStr[11]; // Buffer for hex string (uint16_t needs less, but
+                           // reuse size)
+  char loadedBaseStr[11];  // Buffer for hex string (uint32_t)
+  int line = 0;
+
+  terminalWriteLine("--- Current IDT Information (from CPU) ---", line++);
+
+  // Convert the loaded limit value to hex string
+  // Note: IDT limit is only 16 bits
+  intToHex((uint32_t)currentIdt.limit,
+           loadedLimitStr); // Cast for intToHex if needed
+
+  // Print loaded limit value
+  terminalWriteLine("Loaded Limit:", line++);
+  terminalWriteLine(loadedLimitStr, line++);
+
+  // Convert the loaded base address to hex string
+  intToHex(currentIdt.base, loadedBaseStr);
+
+  // Print loaded base address
+  terminalWriteLine("Loaded Base:", line++);
+  terminalWriteLine(loadedBaseStr, line++);
+
+  terminalWriteLine("--- End IDT Info ---", line++);
+  terminalWriteLine("Press enter to continue...", line + 1);
 }

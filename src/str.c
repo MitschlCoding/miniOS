@@ -48,3 +48,6 @@ char *trim(char *str) {
 
   return str;
 }
+
+// splits a c string based on a delimiter
+char **split(char *str, char delimiter) {}

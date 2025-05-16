@@ -1,13 +1,13 @@
 #include "gdt.h"
 #include "idt.h"
 #include "keyboard.h"
+#include "multiboot.h"
 #include "printOS.h" // Your header for terminal I/O and error reporting
-#include "shutdown.h"
 #include "terminal.h"
 #include <stddef.h>
 #include <stdint.h>
 
-void kernel_main(void) {
+void kernel_main(multiboot_info_t *mbi) {
 
   // Setup the Global Descriptor Table
   gdtInit();
@@ -21,9 +21,37 @@ void kernel_main(void) {
   // Initialize terminal or console interface
   screenInit();
 
-  // Print the GdtInformation to confirm everything is runngin
-  printGdtInfo();
+  // TODO: Use mbi to check for available memory regions after our kernel for
+  // our heap
 
+  // print out information about Multiboot
+  printMultibootInfo(mbi); // Pass the pointer received from _start
+
+  // wait for enter to be pressed
+  while (1) {
+    if (!keyBufferIsEmpty()) {
+      KeyCode key = keyBufferGet();
+      if (key == KEY_ENTER) {
+        break;
+      }
+    }
+  }
+  screenClear(); // Clear screen after Multiboot info
+  // Print the GdtInformation to confirm everything is runngin
+
+  printGdtInfo();
+  // wait for enter to be pressed
+  while (1) {
+    if (!keyBufferIsEmpty()) {
+      KeyCode key = keyBufferGet();
+      if (key == KEY_ENTER) {
+        break;
+      }
+    }
+  }
+  screenClear();
+
+  printIdtInfo();
   // wait for enter to be pressed
   while (1) {
     if (!keyBufferIsEmpty()) {

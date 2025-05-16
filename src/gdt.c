@@ -1,5 +1,6 @@
 #include "gdt.h"
 #include "printOS.h"
+#include <sys/types.h>
 
 // Our GDT in memory – three 8-byte entries (null, code, data)
 #define GDT_SIZE (3 * 8)
@@ -89,27 +90,33 @@ void printGdtInfo() {
   intToHex(gdtDesc.limit, expectedLimitStr);
   intToHex(currentGdt.limit, loadedLimitStr);
 
+  uint8_t line = 0;
+
+  terminalWriteLine("--- GDT Information ---", line++);
+
   // Print expected and loaded limit values
-  terminalWriteLine("Expected Limit:", 0);
-  terminalWriteLine(expectedLimitStr, 1);
-  terminalWriteLine("Loaded Limit:", 2);
-  terminalWriteLine(loadedLimitStr, 3);
+  terminalWriteLine("Expected Limit:", line++);
+  terminalWriteLine(expectedLimitStr, line++);
+  terminalWriteLine("Loaded Limit:", line++);
+  terminalWriteLine(loadedLimitStr, line++);
 
   // Convert the expected and loaded base addresses to hex strings
   intToHex((uint32_t)gdt, expectedBaseStr);
   intToHex(currentGdt.base, loadedBaseStr);
 
   // Print expected and loaded base addresses
-  terminalWriteLine("Expected Base:", 4);
-  terminalWriteLine(expectedBaseStr, 5);
-  terminalWriteLine("Loaded Base:", 6);
-  terminalWriteLine(loadedBaseStr, 7);
+  terminalWriteLine("Expected Base:", line++);
+  terminalWriteLine(expectedBaseStr, line++);
+  terminalWriteLine("Loaded Base:", line++);
+  terminalWriteLine(loadedBaseStr, line++);
 
   // Compare the expected and loaded values
   if (gdtDesc.limit == currentGdt.limit && currentGdt.base == (uint32_t)gdt) {
-    terminalWriteLine("GDT loaded correctly!", 8);
+    terminalWriteLine("GDT loaded correctly!", line++);
   } else {
-    terminalWriteLine("GDT load verification failed!", 8);
+    terminalWriteLine("GDT load verification failed!", line++);
   }
-  terminalWriteLine("Press enter to continue...", 10);
+  terminalWriteLine("--- End GDT Info ---", line++);
+  line++;
+  terminalWriteLine("Press enter to continue...", line++);
 }

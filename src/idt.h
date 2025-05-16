@@ -21,4 +21,7 @@ typedef struct IdtDescriptorStruct {
 // initializes a interrupt descriptor table
 void idtInit();
 
+// print info about idt
+void printIdtInfo();
+
 #endif
