@@ -12,13 +12,10 @@
 #define VGA_MEMORY 0xB8000
 
 // writes a line to a given line_number
-void terminalWriteLine(const char *data, size_t line_num);
+void screenWriteLine(const char *data, size_t line_num);
 
 // sets up the VGA Memory
 void screenInit();
-
-// converts a int to a hex char*, that can be printed with terminalWriteLine
-void intToHex(uint32_t num, char *buffer);
 
 // clears the terminal
 void screenClear();

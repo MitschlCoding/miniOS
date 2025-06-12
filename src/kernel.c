@@ -1,3 +1,4 @@
+#include "commandHandler.h"
 #include "gdt.h"
 #include "idt.h"
 #include "keyboard.h"
@@ -21,11 +22,23 @@ void kernel_main(multiboot_info_t *mbi) {
   // Initialize terminal or console interface
   screenInit();
 
-  // TODO: Use mbi to check for available memory regions after our kernel for
-  // our heap
-
   // print out information about Multiboot
   printMultibootInfo(mbi); // Pass the pointer received from _start
+
+  // wait for enter to be pressed
+  while (1) {
+    if (!keyBufferIsEmpty()) {
+      KeyCode key = keyBufferGet();
+      if (key == KEY_ENTER) {
+        break;
+      }
+    }
+  }
+  screenClear(); // Clear screen after Multiboot info
+  // Print the GdtInformation to confirm everything is runngin
+
+  // print out information about Multiboot
+  checkMemoryMapForStack(mbi); // Pass the pointer received from _start
 
   // wait for enter to be pressed
   while (1) {
@@ -64,6 +77,7 @@ void kernel_main(multiboot_info_t *mbi) {
   screenClear();
 
   terminalInit();
+  initCommands();
 
   // infinite loop for os to run
   while (1) {

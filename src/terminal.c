@@ -1,7 +1,9 @@
 #include "terminal.h"
+#include "commandHandler.h"
 #include "printOS.h"
 #include "shutdown.h"
 #include "str.h"
+#include <stddef.h>
 
 // The cmd line that will be shown at the bottom of the terminal, so that the
 // user can enter a command
@@ -55,10 +57,15 @@ void terminalAddStr(char *str) {
 // prints whatever is written in the terminalLineRing to the screen
 void showTerminal() {
   for (size_t i = 0; i < VGA_HEIGHT - 2; i++) {
-    terminalWriteLine(
+    screenWriteLine(
         terminalLineRing[(terminalLineIndex - i) % TERMINAL_LINES_COUNT],
         VGA_HEIGHT - 3 - i);
   }
+}
+
+void terminalWriteLine(char *str) {
+  terminalAddStr(str);
+  showTerminal();
 }
 
 // prints the command line at the bottom of the terminal
@@ -68,7 +75,7 @@ void cmdLineInit() {
     cmdLine[i] = ' ';
   }
   cmdLine[MAX_LINE_WIDTH] = '\0';
-  terminalWriteLine(cmdLine, VGA_HEIGHT - 1);
+  screenWriteLine(cmdLine, VGA_HEIGHT - 1);
 }
 
 // initializes the terminal
@@ -80,31 +87,13 @@ void terminalInit() {
 // Handler for user commands. This function is called whenever the user presses
 // enter
 void runCommand() {
+  char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS];
   char *command = cmdLine + 1;
   char *trimmedCommand = trim(command);
-  if (strcmpOS(trimmedCommand, "shutdown") == 0) {
-    systemShutdown();
-  } else if (strcmpOS(trimmedCommand, "help") == 0) {
-    terminalAddStr(
-        "Right now i just want to test how to write multiple stuff and so on!\n"
-        "This is a very long String that wont help you at all, but at least i\n"
-        "will know how it splits stuff and does stuff");
-    showTerminal();
-  } else {
-    int16_t lenCmd = strlenOS(trimmedCommand);
-    char *unkownCommandText = "Unkown Command: ";
-    int8_t lenText = strlenOS(unkownCommandText);
-    char str[lenCmd + lenText + 1];
-    for (size_t i = 0; i < lenText; i++) {
-      str[i] = unkownCommandText[i];
-    }
-    for (size_t i = lenText; i < lenText + lenCmd; i++) {
-      str[i] = trimmedCommand[i - lenText];
-    }
-    str[lenText + lenCmd] = '\0';
-    terminalAddStr(str);
-    showTerminal();
-  }
+
+  // print into parts and send to commandHandler
+  size_t numSubstrings = split(trimmedCommand, ' ', splitCommandBuffer);
+  commandHandler(splitCommandBuffer, numSubstrings);
 }
 
 // This function is called whenever a key is pressed. It handles the input from
@@ -133,5 +122,5 @@ void keyPressedForTerminal(KeyCode keycode) {
     currCmdIndex++;
   }
   // TODO: print the full line not the start!
-  terminalWriteLine(cmdLine, VGA_HEIGHT - 1);
+  screenWriteLine(cmdLine, VGA_HEIGHT - 1);
 }

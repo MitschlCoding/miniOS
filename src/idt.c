@@ -128,7 +128,7 @@ void printIdtInfo() {
   char loadedBaseStr[11];  // Buffer for hex string (uint32_t)
   int line = 0;
 
-  terminalWriteLine("--- Current IDT Information (from CPU) ---", line++);
+  screenWriteLine("--- Current IDT Information (from CPU) ---", line++);
 
   // Convert the loaded limit value to hex string
   // Note: IDT limit is only 16 bits
@@ -136,16 +136,16 @@ void printIdtInfo() {
            loadedLimitStr); // Cast for intToHex if needed
 
   // Print loaded limit value
-  terminalWriteLine("Loaded Limit:", line++);
-  terminalWriteLine(loadedLimitStr, line++);
+  screenWriteLine("Loaded Limit:", line++);
+  screenWriteLine(loadedLimitStr, line++);
 
   // Convert the loaded base address to hex string
   intToHex(currentIdt.base, loadedBaseStr);
 
   // Print loaded base address
-  terminalWriteLine("Loaded Base:", line++);
-  terminalWriteLine(loadedBaseStr, line++);
+  screenWriteLine("Loaded Base:", line++);
+  screenWriteLine(loadedBaseStr, line++);
 
-  terminalWriteLine("--- End IDT Info ---", line++);
-  terminalWriteLine("Press enter to continue...", line + 1);
+  screenWriteLine("--- End IDT Info ---", line++);
+  screenWriteLine("Press enter to continue...", line + 1);
 }

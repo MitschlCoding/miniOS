@@ -1,6 +1,7 @@
 #ifndef MULTIBOOT_H
 #define MULTIBOOT_H
 
+#include <stddef.h>
 #include <stdint.h>
 
 // Structure for the Multiboot information (passed in EBX)
@@ -33,6 +34,7 @@ typedef struct memory_map_entry {
 
 void uint64ToHex(uint64_t value, char *buffer);
 void printMultibootInfo(multiboot_info_t *mbi);
+size_t checkMemoryMapForStack(multiboot_info_t *mbi);
 
 // Define memory region types
 #define MEMORY_REGION_AVAILABLE 1

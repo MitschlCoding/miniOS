@@ -92,31 +92,31 @@ void printGdtInfo() {
 
   uint8_t line = 0;
 
-  terminalWriteLine("--- GDT Information ---", line++);
+  screenWriteLine("--- GDT Information ---", line++);
 
   // Print expected and loaded limit values
-  terminalWriteLine("Expected Limit:", line++);
-  terminalWriteLine(expectedLimitStr, line++);
-  terminalWriteLine("Loaded Limit:", line++);
-  terminalWriteLine(loadedLimitStr, line++);
+  screenWriteLine("Expected Limit:", line++);
+  screenWriteLine(expectedLimitStr, line++);
+  screenWriteLine("Loaded Limit:", line++);
+  screenWriteLine(loadedLimitStr, line++);
 
   // Convert the expected and loaded base addresses to hex strings
   intToHex((uint32_t)gdt, expectedBaseStr);
   intToHex(currentGdt.base, loadedBaseStr);
 
   // Print expected and loaded base addresses
-  terminalWriteLine("Expected Base:", line++);
-  terminalWriteLine(expectedBaseStr, line++);
-  terminalWriteLine("Loaded Base:", line++);
-  terminalWriteLine(loadedBaseStr, line++);
+  screenWriteLine("Expected Base:", line++);
+  screenWriteLine(expectedBaseStr, line++);
+  screenWriteLine("Loaded Base:", line++);
+  screenWriteLine(loadedBaseStr, line++);
 
   // Compare the expected and loaded values
   if (gdtDesc.limit == currentGdt.limit && currentGdt.base == (uint32_t)gdt) {
-    terminalWriteLine("GDT loaded correctly!", line++);
+    screenWriteLine("GDT loaded correctly!", line++);
   } else {
-    terminalWriteLine("GDT load verification failed!", line++);
+    screenWriteLine("GDT load verification failed!", line++);
   }
-  terminalWriteLine("--- End GDT Info ---", line++);
+  screenWriteLine("--- End GDT Info ---", line++);
   line++;
-  terminalWriteLine("Press enter to continue...", line++);
+  screenWriteLine("Press enter to continue...", line++);
 }

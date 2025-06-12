@@ -10,4 +10,6 @@ void keyPressedForTerminal(KeyCode keycode);
 // initializes the terminal
 void terminalInit();
 
+void terminalWriteLine(char *str);
+
 #endif
