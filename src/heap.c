@@ -21,7 +21,55 @@ void *mallocOS(size_t requested_size) {
     // Heap not initialized
     return NULL;
   }
-  // TODO: Write the code for allocating memory from the heap
+
+  // first fit allocation strategy
+  MemBlockHeader_t *last = NULL;
+  MemBlockHeader_t *current = heapTop;
+  while (current != NULL) {
+    if (current->isFree && current->dataSize >= requested_size) {
+      // Found a suitable block
+      size_t remainingSize = current->dataSize - requested_size;
+      // if there is not surficient space for a new block after the requested
+      // size
+      if (remainingSize < sizeof(MemBlockHeader_t) + MIN_DATA_SIZE) {
+        // allocate the entire block
+        current->isFree = false;
+        if (last != NULL) {
+          last->nextFree = current->nextFree; // Remove current from free list
+        } else {
+          heapTop = current->nextFree; // Update heapTop if current is the first
+        }
+        return (
+            void *)((char *)current +
+                    sizeof(
+                        MemBlockHeader_t)); // Return pointer to the data area
+      } else {
+        // create new free block after allocated memory
+        MemBlockHeader_t *new_free_block =
+            (void *)((uintptr_t)current + sizeof(MemBlockHeader_t) +
+                     requested_size);
+        new_free_block->nextFree = current->nextFree;
+        new_free_block->dataSize = remainingSize - sizeof(MemBlockHeader_t);
+        new_free_block->isFree = true;
+        new_free_block->magicNumber = MEM_BLOCK_MAGIC_NUMBER;
+
+        current->isFree = false;
+        current->dataSize = requested_size;
+        current->nextFree = NULL;
+
+        if (last != NULL) {
+          last->nextFree =
+              new_free_block; // Link the new block to the free list
+        } else {
+          heapTop = new_free_block; // Update heapTop if current is the first
+        }
+        return (void *)((char *)current + sizeof(MemBlockHeader_t));
+      }
+    }
+    last = current;
+    current = current->nextFree;
+  }
+
   return NULL;
 }
 

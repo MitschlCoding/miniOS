@@ -6,6 +6,7 @@
 #include <stdint.h>
 
 #define MEM_BLOCK_MAGIC_NUMBER 0xCAFEBABE
+#define MIN_DATA_SIZE 8 // Minimum size of data in a block
 
 typedef struct MemBlockHeader MemBlockHeader_t;
 struct MemBlockHeader {
