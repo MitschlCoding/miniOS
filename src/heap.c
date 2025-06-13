@@ -74,21 +74,66 @@ void *mallocOS(size_t requested_size) {
 }
 
 void freeOS(void *addr) {
-  if (addr == NULL) {
-    // Nothing to free
-    return;
+  if (addr == NULL || heapTop == NULL) {
+    return; // Nothing to free or heap not initialized
   }
 
-  // get the current block header
-  MemBlockHeader_t *block =
+  MemBlockHeader_t *block_to_free =
       (MemBlockHeader_t *)((char *)addr - sizeof(MemBlockHeader_t));
 
-  if (block->magicNumber != MEM_BLOCK_MAGIC_NUMBER) {
-    // Invalid block, cannot free
+  if (block_to_free->magicNumber != MEM_BLOCK_MAGIC_NUMBER ||
+      block_to_free->isFree) {
+    // Invalid block or double-free, do nothing.
     return;
   }
-  if (block->isFree) {
-    // Block is already free
-    return;
+
+  MemBlockHeader_t *current_free = heapTop;
+  MemBlockHeader_t *prev_free = NULL;
+
+  while (current_free != NULL && current_free < block_to_free) {
+    prev_free = current_free;
+    current_free = current_free->nextFree;
+  }
+
+  block_to_free->isFree = true;
+  block_to_free->nextFree = current_free; // Link to the next free block
+
+  // Link the previous free block to the block being freed
+  if (prev_free != NULL) {
+    prev_free->nextFree = block_to_free; // Insert in middle/end
+  } else {
+    heapTop = block_to_free; // This is now the new head of the free list
+  }
+
+  // COALESCE / MERGE with adjacent blocks
+
+  // Merge with the NEXT block
+  // Check if current_free is adjacent
+  if (current_free != NULL) {
+    uintptr_t end_of_freed_block = (uintptr_t)block_to_free +
+                                   sizeof(MemBlockHeader_t) +
+                                   block_to_free->dataSize;
+    if (end_of_freed_block == (uintptr_t)current_free) {
+      // They are adjacent. Merge current_free INTO block_to_free.
+      block_to_free->dataSize +=
+          sizeof(MemBlockHeader_t) + current_free->dataSize;
+      block_to_free->nextFree =
+          current_free->nextFree; // Bypass the now-merged block
+    }
+  }
+
+  // Merge with the PREVIOUS block
+  // Check if prev_free is adjacent
+  if (prev_free != NULL) {
+    uintptr_t end_of_prev_block =
+        (uintptr_t)prev_free + sizeof(MemBlockHeader_t) + prev_free->dataSize;
+    if (end_of_prev_block == (uintptr_t)block_to_free) {
+      // They are adjacent. Merge block_to_free INTO prev_free.
+      prev_free->dataSize += sizeof(MemBlockHeader_t) + block_to_free->dataSize;
+      prev_free->nextFree =
+          block_to_free->nextFree; // Bypass the now-merged block
+      // No need to change 'block_to_free' as it's now considered part of
+      // 'prev_free'
+    }
   }
 }
