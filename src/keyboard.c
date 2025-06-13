@@ -129,7 +129,6 @@ char getCharFromKey(KeyCode key) {
   case KEY_SHIFT_L:   // 0x2A
   case KEY_SHIFT_R:   // 0x36
   case KEY_ALT_L:     // 0x38
-    return NULL;      // Keine direkte Zeichenrepräsentation
 
   // --- Standardfall (Default) ---
   // Behandelt alle anderen (unbekannten) KeyCodes, die nicht explizit

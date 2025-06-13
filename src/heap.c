@@ -78,5 +78,17 @@ void freeOS(void *addr) {
     // Nothing to free
     return;
   }
-  // TODO: Write the code for freeing memory in the heap
+
+  // get the current block header
+  MemBlockHeader_t *block =
+      (MemBlockHeader_t *)((char *)addr - sizeof(MemBlockHeader_t));
+
+  if (block->magicNumber != MEM_BLOCK_MAGIC_NUMBER) {
+    // Invalid block, cannot free
+    return;
+  }
+  if (block->isFree) {
+    // Block is already free
+    return;
+  }
 }

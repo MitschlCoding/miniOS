@@ -1,5 +1,6 @@
 #include "gdt.h"
 #include "printOS.h"
+#include "str.h"
 #include <sys/types.h>
 
 // Our GDT in memory – three 8-byte entries (null, code, data)

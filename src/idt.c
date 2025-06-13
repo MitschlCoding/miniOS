@@ -1,6 +1,7 @@
 #include "idt.h"
 #include "outb.h"
 #include "printOS.h"
+#include "str.h"
 #include <stdint.h>
 
 // the idt with 256 entries
