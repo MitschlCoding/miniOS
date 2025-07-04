@@ -30,6 +30,14 @@ installDeps:
 	@echo "Installation finished."
 	@echo "--------------------------------"
 
+installBuildDeps:
+	@echo "--------------------------------"
+	@echo "Installing dependencies..."
+	sudo apt-get update
+	sudo apt-get install -y nasm build-essential libtool gcc-multilib libc6-dev-i386
+	@echo "Installation finished."
+	@echo "--------------------------------"
+
 # Run the program
 run: clean all
 	@echo "--------------------------------"
