@@ -3,11 +3,21 @@
 #include "str.h"
 #include <sys/types.h>
 
-// Our GDT in memory – three 8-byte entries (null, code, data)
+// Define the size of the GDT in bytes
 #define GDT_SIZE (3 * 8)
+/**
+ * @brief Represents the Global Descriptor Table (GDT) in memory.
+ *
+ * This array holds the GDT entries, including the null segment, code segment,
+ * and data segment.
+ */
 uint8_t gdt[GDT_SIZE];
 
-// The GDT descriptor instance
+/**
+ * @brief Represents the GDT descriptor.
+ *
+ * This structure holds the description for our gdt needed to load the gdt.
+ */
 GdtDescriptor gdtDesc;
 
 void gdtEntry(uint8_t *target, Gdt source) {

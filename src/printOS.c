@@ -5,7 +5,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
+// Disable the cursor by setting bit 5 of the Cursor Start Register (0x0A) to 1
+// This is done by writing to the CRTC (Cathode Ray Tube Controller) registers
+// which control the display settings of the VGA text mode.
 #define CRTC_INDEX_PORT 0x3D4
+// The Data Port is used to read/write data to the CRTC registers
 #define CRTC_DATA_PORT 0x3D5
 
 void vga_disable_cursor() {

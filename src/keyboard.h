@@ -1,10 +1,22 @@
 #ifndef KEYBOARD_H
 #define KEYBOARD_H
 
-// TODO documentation
+/**
+ * @file
+ * @brief Keyboard key codes and a simple key buffer API.
+ *
+ * @details
+ * This header defines a subset of PC/AT Set 1 scan-code values as ::KeyCode
+ * and declares a minimal FIFO buffer interface for key events, plus a helper
+ * to map a key to a printable character.
+ */
+
 #include <stdbool.h>
 #include <stdint.h>
 
+/**
+ * @brief Represents the key codes for keyboard input.
+ */
 typedef enum {
   KEY_NONE = 0x00,
   KEY_ESC = 0x01,
@@ -52,15 +64,43 @@ typedef enum {
   KEY_DOT = 0x34,
   KEY_SHIFT_R = 0x36,
   KEY_ALT_L = 0x38,
-  KEY_SPACE = 0x39
+  KEY_SPACE = 0x39,
+  KEY_F1 = 0x3B,
+  KEY_F2 = 0x3C,
 } KeyCode;
 
+/**
+ * @brief Initializes the key buffer.
+ * @details This function sets up the key buffer to store keyboard input.
+ * It should be called before using any key buffer functions.
+ */
 void keyBufferInit();
+
+/**
+ * @brief Puts a key code into the key buffer.
+ * @param keycode The key code to be added to the buffer.
+ * @details This function adds a key code to the key buffer.
+ */
 void keyBufferPut(KeyCode keycode);
+
+/**
+ * @brief Retrieves a key code from the key buffer.
+ * @return KeyCode The key code retrieved from the buffer.
+ */
 KeyCode keyBufferGet();
+
+/**
+ * @brief Checks if the key buffer is empty.
+ * @return true If the key buffer is empty.
+ * @return false If the key buffer is not empty.
+ */
 bool keyBufferIsEmpty();
 
-// returns a char for a given KeyCode
+/**
+ * @brief Get the Char From Key object
+ * @param key The key code to convert to a character.
+ * @return char The corresponding character, or 0 if the key code is invalid.
+ */
 char getCharFromKey(KeyCode key);
 
 #endif

@@ -1,3 +1,12 @@
+/**
+ * @file kernel.c
+ * @brief Main entry point for the kernel.
+ *
+ * This file contains the main function that initializes the kernel,
+ * sets up the Global Descriptor Table (GDT), Interrupt Descriptor Table (IDT),
+ * and handles basic terminal input/output.
+ */
+
 #include "commandHandler.h"
 #include "gdt.h"
 #include "idt.h"
@@ -8,6 +17,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
+/**
+ * @brief Kernel main entry point.
+ *
+ * @param mbi Pointer to the Multiboot information structure.
+ */
 void kernel_main(multiboot_info_t *mbi) {
 
   // Setup the Global Descriptor Table

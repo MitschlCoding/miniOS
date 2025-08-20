@@ -150,3 +150,32 @@ size_t split(const char *str, char delimiter,
 
   return current_row; // Set the number of substrings found
 }
+
+char* concat(const char *str1, const char *str2, char *buffer) {
+  if (str1 == NULL || str2 == NULL || buffer == NULL) {
+    return NULL; // Handle null pointers
+  }
+
+  size_t len1 = strlenOS(str1);
+  size_t len2 = strlenOS(str2);
+
+  // Check if the buffer is large enough
+  if (len1 + len2 + 1 > LEN_SUBSTRINGS) {
+    return NULL; // Not enough space in the buffer
+  }
+
+  // Copy first string to buffer
+  for (size_t i = 0; i < len1; i++) {
+    buffer[i] = str1[i];
+  }
+
+  // Copy second string to buffer
+  for (size_t i = 0; i < len2; i++) {
+    buffer[len1 + i] = str2[i];
+  }
+
+  // Null-terminate the concatenated string
+  buffer[len1 + len2] = '\0';
+
+  return buffer;
+}

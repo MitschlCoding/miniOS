@@ -1,31 +1,57 @@
 #ifndef GDT_H
 #define GDT_H
 
+/**
+ * @file gdt.h
+ * @brief Header file for the Global Descriptor Table (GDT) implementation.
+ */
+
 #include "printOS.h"
 #include <stddef.h>
 #include <stdint.h>
 
-// Define the structure for a GDT entry (8 bytes each)
+/**
+ * @brief Represents a Global Descriptor Table (GDT) entry.
+ * This structure holds the base and limit addresses for a segment. It is packed to ensure
+ * that the structure is tightly packed without padding, which is important for the GDT format.
+ */
 typedef struct {
-  uint32_t base;
-  uint32_t limit;
-  uint8_t access_byte;
-  uint8_t flags;
+  uint32_t base; /**< The base address of the segment. */
+  uint32_t limit; /**< The limit of the segment. */
+  uint8_t access_byte; /**< The access byte for the segment, which defines its properties (e.g., present, ring level, executable). */
+  uint8_t flags; /**< Flags for the segment, such as granularity and size. */
 } __attribute__((packed)) Gdt;
 
-// generate a gdtEntry from the struct above
+/**
+ * @brief Generates a GDT entry from the Gdt structure.
+ *
+ * @param target The target buffer to store the GDT entry.
+ * @param source The source Gdt structure.
+ */
 void gdtEntry(uint8_t *target, Gdt source);
 
-// gdt descriptor to pass to the cpu later
+/**
+ * @brief Represents a GDT descriptor.
+ * This structure holds the description for our gdt needed to load the gdt.
+ * It is packed to ensure that the structure is tightly packed without padding.
+ */
 typedef struct {
-  uint16_t limit;
-  uint32_t base;
+  uint16_t limit; /**< The size of the GDT in bytes. */
+  uint32_t base; /**< The base address of the GDT in memory. */
 } __attribute__((packed)) GdtDescriptor;
 
-// reads the gdt info from the cpu and prints it
+/**
+ * @brief Prints the GDT information.
+ *
+ * This function retrieves the GDT information from the CPU and prints it to the terminal.
+ */
 void printGdtInfo();
 
-// initializes the gdt
+/**
+ * @brief Initializes the Global Descriptor Table (GDT).
+ *
+ * This function sets up the GDT with the necessary entries and loads it into the CPU.
+ */
 void gdtInit();
 
 #endif
