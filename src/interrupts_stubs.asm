@@ -69,6 +69,7 @@ ISR_NO_ERR_STUB 28  ; 28: Reserved
 ISR_ERR_STUB    29  ; 29: Reserved (Hypervisor Injection / AMD SVM)
 ISR_ERR_STUB    30  ; 30: Reserved (VMM Communication / AMD SVM Security)
 ISR_NO_ERR_STUB 31  ; 31: Reserved (Security / AMD SEV)
+ISR_NO_ERR_STUB 32  ; 32: PIT Timer
 ISR_NO_ERR_STUB 33  ; Keyboard Interrupt (IRQ 1 -> INT 33)
 
 ; --- The common stub called by all ISRs ---

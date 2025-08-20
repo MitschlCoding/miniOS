@@ -36,4 +36,23 @@ void terminalInit();
  */
 void terminalWriteLine(char *str);
 
+/**
+ * @brief Shows the terminal interface.
+ *
+ * @details This function displays the terminal interface, typically called
+ * when switching from another mode (such as visual mode) back to terminal mode.
+ * It may clear the screen and redraw the terminal prompt or interface.
+ */
+void showTerminal(void);
+
+/**
+ * @brief Initializes and shows the terminal interface.
+ *
+ * @details This function combines terminal display initialization with showing
+ * the terminal interface. It calls both showTerminal() and cmdLineInit() to
+ * ensure the terminal is properly displayed with command line interface.
+ * Used when switching back to terminal mode from visual modes.
+ */
+void initShowTerminal(void);
+
 #endif
