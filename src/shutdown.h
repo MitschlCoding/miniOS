@@ -1,7 +1,20 @@
 #ifndef SHUTDOWN_H
 #define SHUTDOWN_H
 
-// shutdown function to be called when qemu should be shut down
+/**
+ * @file shutdown.h
+ * @brief Header file for the shutdown functionality of the miniOS kernel.
+ *
+ * This header defines the function to shut down the system, specifically
+ * for QEMU environments.
+ */
+
+/**
+ * @brief Shuts down the system.
+ *
+ * This function performs the necessary steps to shut down the system
+ * in a QEMU environment.
+ */
 void systemShutdown();
 
 #endif

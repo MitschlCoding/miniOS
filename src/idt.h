@@ -1,27 +1,52 @@
 #ifndef IDT
 #define IDT
+
+/**
+ * @file idt.h
+ * @brief Header file for the Interrupt Descriptor Table (IDT) implementation.
+ *
+ * This header defines the structures and functions for managing the IDT,
+ * which is used to handle interrupts in the miniOS kernel.
+ */
+
 #include <stddef.h>
 #include <stdint.h>
 
-// struct for the interrupt descriptor table
+/**
+ * @brief Represents an entry in the Interrupt Descriptor Table (IDT).
+ */
 typedef struct IdtEntryStruct {
-  uint16_t lowerBase;         // lower base of the handler to call
-  uint16_t kernelCodeSegment; // the segment code of our kernel
-  uint8_t zero;               // random is always 0 thing, dont know why
-  uint8_t typeAttribute;      // what type of interrupt this is, sets flags
-  uint16_t higherBase;        // lower base of the handler to call
+  uint16_t lowerBase;         /**< The lower 16 bits of the base address of the interrupt handler. */
+  uint16_t kernelCodeSegment; /**< The segment selector for the kernel code segment. */
+  uint8_t zero;               /**< A reserved byte, always set to 0. */
+  uint8_t typeAttribute;      /**< The type and attributes of the interrupt gate. */
+  uint16_t higherBase;        /**< The upper 16 bits of the base address of the interrupt handler. */
 } __attribute__((packed)) IdtEntry;
 
-// struct for the interrupt descriptor table descriptor
+/**
+ * @brief Represents the Interrupt Descriptor Table (IDT) descriptor.
+ * @details This structure is used to load the IDT into the CPU.
+ */
 typedef struct IdtDescriptorStruct {
-  uint16_t limit; // size of the table
-  uint32_t base;  // base address of the table
+  uint16_t limit; /**< The size of the IDT in bytes. */
+  uint32_t base;  /**< The base address of the IDT in memory. */
 } __attribute__((packed)) IdtDescriptor;
 
-// initializes a interrupt descriptor table
+/**
+ * @brief Initializes the Interrupt Descriptor Table (IDT).
+ *
+ * This function sets up the IDT with the appropriate interrupt handlers
+ * and loads it into the CPU.
+ */
 void idtInit();
 
-// print info about idt
+/**
+ * @brief Prints information about the IDT.
+ *
+ * This function iterates through the IDT entries and prints their
+ * details, such as the interrupt vector number and the address of
+ * the corresponding handler.
+ */
 void printIdtInfo();
 
 #endif

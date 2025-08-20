@@ -5,7 +5,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
+// Disable the cursor by setting bit 5 of the Cursor Start Register (0x0A) to 1
+// This is done by writing to the CRTC (Cathode Ray Tube Controller) registers
+// which control the display settings of the VGA text mode.
 #define CRTC_INDEX_PORT 0x3D4
+// The Data Port is used to read/write data to the CRTC registers
 #define CRTC_DATA_PORT 0x3D5
 
 void vga_disable_cursor() {
@@ -37,7 +41,7 @@ static inline uint16_t vgaEntry(unsigned char uc, uint8_t color) {
 }
 
 // the VGA Buffer we have to write to, in order to print text to the screen
-uint16_t *terminalBuffer = (uint16_t *)VGA_MEMORY;
+uint16_t *screenBuffer = (uint16_t *)VGA_MEMORY;
 
 // just clears the terminal when initialized
 void screenInit() {
@@ -46,15 +50,15 @@ void screenInit() {
 }
 
 // puts a char with a given color to a posion x,y with respects to boundaries
-void terminalPutchar(char c, uint8_t color, size_t x, size_t y) {
+void screenPutchar(char c, uint8_t color, size_t x, size_t y) {
   if (x >= VGA_WIDTH || y >= VGA_HEIGHT) {
     return;
   }
   const size_t index = y * VGA_WIDTH + x;
-  terminalBuffer[index] = vgaEntry(c, color);
+  screenBuffer[index] = vgaEntry(c, color);
 }
 
-void terminalWriteLine(const char *data, size_t line_num) {
+void screenWriteLine(const char *data, size_t line_num) {
   size_t len = strlenOS(data);
   // hacker colors and so on
   uint8_t color = vgaEntryColor(VGA_COLOR_WHITE, VGA_COLOR_BLACK);
@@ -64,24 +68,11 @@ void terminalWriteLine(const char *data, size_t line_num) {
       return;
     }
     // put the char on the line
-    terminalPutchar(data[i], color, i, line_num);
+    screenPutchar(data[i], color, i, line_num);
   }
   for (size_t i = len; i < VGA_WIDTH; i++) {
-    terminalPutchar(' ', color, i, line_num);
+    screenPutchar(' ', color, i, line_num);
   }
-}
-
-void intToHex(uint32_t num, char *buffer) {
-  buffer[0] = '0';
-  buffer[1] = 'x';
-  for (int i = 0; i < 8; i++) {
-    uint8_t nibble = (num >> ((7 - i) * 4)) & 0xF;
-    if (nibble < 10)
-      buffer[2 + i] = '0' + nibble;
-    else
-      buffer[2 + i] = 'A' + nibble - 10;
-  }
-  buffer[10] = '\0';
 }
 
 void screenClear() {
@@ -91,7 +82,7 @@ void screenClear() {
   for (size_t y = 0; y < VGA_HEIGHT; y++) {
     for (size_t x = 0; x < VGA_WIDTH; x++) {
       const size_t index = y * VGA_WIDTH + x;
-      terminalBuffer[index] = vgaEntry(' ', terminal_color);
+      screenBuffer[index] = vgaEntry(' ', terminal_color);
     }
   }
 };

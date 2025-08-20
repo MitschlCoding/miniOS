@@ -1,6 +1,11 @@
 #ifndef PRINTOS_H
 #define PRINTOS_H
 
+/**
+ * @file printOS.h
+ * @brief Header file for printing text to the screen.
+ */
+
 #include <stddef.h>
 #include <stdint.h>
 
@@ -11,19 +16,36 @@
 // the memory address of the VGA that we need to write to
 #define VGA_MEMORY 0xB8000
 
-// writes a line to a given line_number
-void terminalWriteLine(const char *data, size_t line_num);
+/**
+ * @brief Writes a line of text to the specified line number on the screen.
+ *
+ * @param data The null-terminated string to write.
+ * @param line_num The line number to write the string to (0-based).
+ */
+void screenWriteLine(const char *data, size_t line_num);
 
-// sets up the VGA Memory
+/**
+ * @brief Initializes the screen by setting up the VGA memory.
+ *
+ * This function clears the screen and prepares the VGA memory for
+ * writing text.
+ */
 void screenInit();
 
-// converts a int to a hex char*, that can be printed with terminalWriteLine
-void intToHex(uint32_t num, char *buffer);
-
-// clears the terminal
+/** 
+ * @brief Clears the screen by filling it with spaces.
+ *
+ * This function fills the entire screen with spaces, effectively clearing
+ * any previous content.
+ */
 void screenClear();
 
-// all available VGA colors
+/**
+ * @brief Enumeration of all available VGA colors.
+ *
+ * This enumeration defines the color values that can be used with the
+ * VGA text mode.
+ */
 typedef enum vgaColor {
   VGA_COLOR_BLACK = 0,
   VGA_COLOR_BLUE = 1,

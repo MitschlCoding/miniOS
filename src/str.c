@@ -8,6 +8,55 @@ size_t strlenOS(const char *str) {
   return len;
 }
 
+void intToHex(uint32_t num, char *buffer) {
+  buffer[0] = '0';
+  buffer[1] = 'x';
+  for (int i = 0; i < 8; i++) {
+    uint8_t nibble = (num >> ((7 - i) * 4)) & 0xF;
+    if (nibble < 10)
+      buffer[2 + i] = '0' + nibble;
+    else
+      buffer[2 + i] = 'A' + nibble - 10;
+  }
+  buffer[10] = '\0';
+}
+
+// convert uint64_t to a hex string
+void uint64ToHex(uint64_t value, char *buffer) {
+
+  uint32_t high = (uint32_t)(value >> 32);
+  uint32_t low = (uint32_t)(value & 0xFFFFFFFF);
+  char lowStr[11]; // Buffer for lower part
+
+  if (high > 0) {
+    // If high part exists, print it first
+    intToHex(high, buffer);
+    // Find the end of the high part string
+    char *endHigh = buffer;
+    while (*endHigh) {
+      endHigh++;
+    }
+    // Print the low part (padded)
+    intToHex(low, lowStr);
+    // Ensure low part is padded to 8 hex digits if high part exists
+    int lowLen = 0;
+    while (lowStr[lowLen])
+      lowLen++;
+    for (int i = 0; i < 8 - lowLen; i++) {
+      *endHigh++ = '0'; // Add padding
+    }
+    // Copy low string
+    char *lowPtr = lowStr;
+    while (*lowPtr) {
+      *endHigh++ = *lowPtr++;
+    }
+    *endHigh = '\0'; // Null terminate
+  } else {
+    // Only low part
+    intToHex(low, buffer);
+  }
+}
+
 int strcmpOS(char *a, char *b) {
   // while a has not ended and the current char of a is equal to the
   // coresponding in b, go forward
@@ -50,4 +99,83 @@ char *trim(char *str) {
 }
 
 // splits a c string based on a delimiter
-char **split(char *str, char delimiter) {}
+size_t split(const char *str, char delimiter,
+             char dest_buffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS]) {
+  if (str == NULL || dest_buffer == NULL) {
+    return 0;
+  }
+
+  // Initialize the destination buffer to empty strings
+  for (int i = 0; i < NUM_SUBSTRINGS; ++i) {
+    if (LEN_SUBSTRINGS > 0) {
+      dest_buffer[i][0] = '\0';
+    }
+  }
+
+  int current_row = 0;
+  const char *segment_start = str;
+  const char *p = str;
+
+  // Loop through the input string
+  do {
+    // A segment ends if a delimiter is found or the end of the string is
+    // reached
+    if (*p == delimiter || *p == '\0') {
+      if (current_row >= NUM_SUBSTRINGS) {
+        break; // Destination buffer is full
+      }
+
+      int current_col = 0;
+      const char *char_to_copy = segment_start;
+
+      // Copy characters from the segment to the current row in dest_buffer
+      while (char_to_copy < p && current_col < LEN_SUBSTRINGS - 1) {
+        dest_buffer[current_row][current_col++] = *char_to_copy++;
+      }
+      dest_buffer[current_row][current_col] =
+          '\0'; // Null-terminate the copied segment
+
+      current_row++;         // Move to the next row for the next segment
+      segment_start = p + 1; // Next segment starts after the delimiter
+
+      if (*p == '\0') {
+        break; // End of the input string reached
+      }
+    }
+    p++;
+  } while (current_row < NUM_SUBSTRINGS && *(p - 1) != '\0');
+
+  // Check *(p-1) because p has been incremented
+  // Loop as long as buffer has space and string not ended
+
+  return current_row; // Set the number of substrings found
+}
+
+char* concat(const char *str1, const char *str2, char *buffer) {
+  if (str1 == NULL || str2 == NULL || buffer == NULL) {
+    return NULL; // Handle null pointers
+  }
+
+  size_t len1 = strlenOS(str1);
+  size_t len2 = strlenOS(str2);
+
+  // Check if the buffer is large enough
+  if (len1 + len2 + 1 > LEN_SUBSTRINGS) {
+    return NULL; // Not enough space in the buffer
+  }
+
+  // Copy first string to buffer
+  for (size_t i = 0; i < len1; i++) {
+    buffer[i] = str1[i];
+  }
+
+  // Copy second string to buffer
+  for (size_t i = 0; i < len2; i++) {
+    buffer[len1 + i] = str2[i];
+  }
+
+  // Null-terminate the concatenated string
+  buffer[len1 + len2] = '\0';
+
+  return buffer;
+}

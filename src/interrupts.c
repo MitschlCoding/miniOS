@@ -27,23 +27,23 @@ void isrHandler(registers_t *regs) {
   // Handle interrupt based on number
   switch (regs->int_no) {
   case 0: // Divide By Zero
-    terminalWriteLine("!! DIVIDE BY ZERO !! System Halted.", 0);
+    screenWriteLine("!! DIVIDE BY ZERO !! System Halted.", 0);
     __asm__ volatile("cli; hlt");
     break;
 
   case 8: // Double Fault
-    terminalWriteLine("!!! DOUBLE FAULT !!! System Halted.", 0);
+    screenWriteLine("!!! DOUBLE FAULT !!! System Halted.", 0);
     __asm__ volatile("cli; hlt");
     break;
 
   case 13: // General Protection Fault
-    terminalWriteLine("!! GENERAL PROTECTION FAULT !! System Halted.", 0);
+    screenWriteLine("!! GENERAL PROTECTION FAULT !! System Halted.", 0);
     // TODO: Print more debug info (err_code, EIP, CS etc. from regs)
     __asm__ volatile("cli; hlt");
     break;
 
   case 14: // Page Fault
-    terminalWriteLine("!! PAGE FAULT (Not Handled) !! System Halted.", 0);
+    screenWriteLine("!! PAGE FAULT (Not Handled) !! System Halted.", 0);
     // TODO: Implement page fault handler
     __asm__ volatile("cli; hlt");
     break;

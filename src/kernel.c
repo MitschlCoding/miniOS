@@ -1,3 +1,13 @@
+/**
+ * @file kernel.c
+ * @brief Main entry point for the kernel.
+ *
+ * This file contains the main function that initializes the kernel,
+ * sets up the Global Descriptor Table (GDT), Interrupt Descriptor Table (IDT),
+ * and handles basic terminal input/output.
+ */
+
+#include "commandHandler.h"
 #include "gdt.h"
 #include "idt.h"
 #include "keyboard.h"
@@ -7,6 +17,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
+/**
+ * @brief Kernel main entry point.
+ *
+ * @param mbi Pointer to the Multiboot information structure.
+ */
 void kernel_main(multiboot_info_t *mbi) {
 
   // Setup the Global Descriptor Table
@@ -21,11 +36,23 @@ void kernel_main(multiboot_info_t *mbi) {
   // Initialize terminal or console interface
   screenInit();
 
-  // TODO: Use mbi to check for available memory regions after our kernel for
-  // our heap
-
   // print out information about Multiboot
   printMultibootInfo(mbi); // Pass the pointer received from _start
+
+  // wait for enter to be pressed
+  while (1) {
+    if (!keyBufferIsEmpty()) {
+      KeyCode key = keyBufferGet();
+      if (key == KEY_ENTER) {
+        break;
+      }
+    }
+  }
+  screenClear(); // Clear screen after Multiboot info
+  // Print the GdtInformation to confirm everything is runngin
+
+  // print out information about Multiboot
+  checkMemoryMapForStack(mbi); // Pass the pointer received from _start
 
   // wait for enter to be pressed
   while (1) {
@@ -64,6 +91,7 @@ void kernel_main(multiboot_info_t *mbi) {
   screenClear();
 
   terminalInit();
+  initCommands();
 
   // infinite loop for os to run
   while (1) {
