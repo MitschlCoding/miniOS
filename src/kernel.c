@@ -14,6 +14,10 @@
 #include "multiboot.h"
 #include "printOS.h" // Your header for terminal I/O and error reporting
 #include "terminal.h"
+#include "time.h"
+#include "str.h"
+#include "modeManager.h"
+#include "snake.h"
 #include <stddef.h>
 #include <stdint.h>
 
@@ -90,15 +94,22 @@ void kernel_main(multiboot_info_t *mbi) {
   }
   screenClear();
 
-  terminalInit();
   initCommands();
+  pit_init(1000); // Initialize PIT with 1000 Hz
+  modeManagerInit(); // Initialize mode manager
+  terminalInit();
 
   // infinite loop for os to run
   while (1) {
+    // Handle mode transitions
+    handleModeTransitions();
+    
     if (!keyBufferIsEmpty()) {
       KeyCode key = keyBufferGet();
-      // for now shutdown if esc is pressed
-      keyPressedForTerminal(key);
+      processModeInput(key);
     }
+    
+    // Update visual mode logic if in visual mode
+    updateVisualMode();
   }
 }

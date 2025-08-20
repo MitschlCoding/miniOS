@@ -2,6 +2,8 @@
 #include "shutdown.h"
 #include "str.h"
 #include "terminal.h"
+#include "modeManager.h"
+#include "snake.h"
 
 #define COMMAND_LIST_LENGTH 64
 
@@ -70,7 +72,7 @@ void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   } else {
     // if there is no command specified, print all commands
     char buffer[256];
-    terminalWriteLine("Help------------------");
+    terminalWriteLine("--------Help----------");
     for (int i = 0; i < COMMAND_LIST_LENGTH; i++) {
       if (commandList[i].name == NULL) {
         continue;
@@ -86,6 +88,26 @@ void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   }
 }
 
+/**
+ * @brief Handles the snake command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function is called when the "snake" command is entered.
+ * It starts the snake game by setting up the visual mode handlers and
+ * switching to visual mode.
+ */
+void snakeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  // Set up the snake game handlers
+  setVisualModeHandlers(snakeGameUpdate, snakeGameTick);
+  
+  // Initialize the snake game
+  snakeGameInit();
+  
+  // Switch to visual mode
+  setCurrentMode(VISUAL_MODE);
+}
+
 // docs see header file
 void initCommands() {
   commandList[0].name = "shutdown";
@@ -97,8 +119,12 @@ void initCommands() {
                         "displays the help information for that command.";
   commandList[1].handlerFuncPtr = &helpHandler;
 
-  commandList[2].name = NULL;
-  commandList[2].handlerFuncPtr = NULL;
+  commandList[2].name = "snake";
+  commandList[2].help = "Start the Snake game.\nUse WASD to control the snake, ESC to quit.";
+  commandList[2].handlerFuncPtr = &snakeHandler;
+
+  commandList[3].name = NULL;
+  commandList[3].handlerFuncPtr = NULL;
 }
 
 // docs see header file

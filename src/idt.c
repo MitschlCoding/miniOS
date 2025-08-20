@@ -43,13 +43,14 @@ extern void isr28();
 extern void isr29();
 extern void isr30();
 extern void isr31();
+extern void isr32();
 extern void isr33();
 
 // a list of all the cpu interrupts. interrupt numbers: 0-31
 void *isrStubTable[32] = {
     isr0,  isr1,  isr2,  isr3,  isr4,  isr5,  isr6,  isr7,  isr8,  isr9,  isr10,
     isr11, isr12, isr13, isr14, isr15, isr16, isr17, isr18, isr19, isr20, isr21,
-    isr22, isr23, isr24, isr25, isr26, isr27, isr28, isr29, isr30, isr31};
+    isr22, isr23, isr24, isr25, isr26, isr27, isr28, isr29, isr30, isr31, isr32};
 
 // a function to return the interrupt with number i
 uint32_t getStubAddr(int i) { return (uint32_t)isrStubTable[i]; }
@@ -75,8 +76,8 @@ void pic_init() {
   outb(0xA1, 0x01);
   ioWait();
 
-  // mask all interrupts except 33 for keyboard
-  outb(0x21, 0xFD);
+  // mask all interrupts except 33 for keyboard and 32 for PIT timer
+  outb(0x21, 0xFC);
   outb(0xA1, 0xFF);
   ioWait();
 }
@@ -97,6 +98,15 @@ void idtInit() {
     idtEntries[i].zero = 0;
     idtEntries[i].typeAttribute = 0x8E;
   }
+  // map our isr32 (PIT timer) to vector 32
+  uint32_t addr32 = (uint32_t)isr32;
+  uint16_t lowerBase32 = addr32 & 0xFFFF;
+  uint16_t higherBase32 = (addr32 >> 16) & 0xFFFF;
+  idtEntries[32].lowerBase = lowerBase32;
+  idtEntries[32].higherBase = higherBase32;
+  idtEntries[32].kernelCodeSegment = 0x08;
+  idtEntries[32].zero = 0;
+  idtEntries[32].typeAttribute = 0x8E;
   // map our isr33 keyboard interrupt to use the stub, that then calls our
   // isrHandler function
   uint32_t addr = (uint32_t)isr33;

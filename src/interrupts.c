@@ -48,6 +48,10 @@ void isrHandler(registers_t *regs) {
     __asm__ volatile("cli; hlt");
     break;
 
+  case 32: // PIT timer tick (IRQ0 after remap)
+      timer_irq();
+      break;
+
   case 33: // Keyboard Interrupt (IRQ 1, after remap interrupt number 33)
   {
     uint8_t scancode = inb(0x60); // Read scan code of pressed key

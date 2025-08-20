@@ -54,6 +54,16 @@ void terminalAddStr(char *str) {
   }
 }
 
+// prints the command line at the bottom of the terminal
+void cmdLineInit() {
+  cmdLine[0] = '>';
+  for (int i = 1; i < COMMAND_LINE_WIDTH; i++) {
+    cmdLine[i] = ' ';
+  }
+  cmdLine[MAX_LINE_WIDTH] = '\0';
+  screenWriteLine(cmdLine, VGA_HEIGHT - 1);
+}
+
 // prints whatever is written in the terminalLineRing to the screen
 void showTerminal() {
   for (size_t i = 0; i < VGA_HEIGHT - 2; i++) {
@@ -63,19 +73,15 @@ void showTerminal() {
   }
 }
 
+// initializes and shows the terminal interface
+void initShowTerminal() {
+  showTerminal();
+  cmdLineInit();
+}
+
 void terminalWriteLine(char *str) {
   terminalAddStr(str);
   showTerminal();
-}
-
-// prints the command line at the bottom of the terminal
-void cmdLineInit() {
-  cmdLine[0] = '>';
-  for (int i = 1; i < COMMAND_LINE_WIDTH; i++) {
-    cmdLine[i] = ' ';
-  }
-  cmdLine[MAX_LINE_WIDTH] = '\0';
-  screenWriteLine(cmdLine, VGA_HEIGHT - 1);
 }
 
 // initializes the terminal

@@ -25,6 +25,17 @@
 void screenWriteLine(const char *data, size_t line_num);
 
 /**
+ * @brief Sets a character at the specified position on the screen.
+ *
+ * @param c The character to set.
+ * @param color The color attribute for the character.
+ * @param x The x-coordinate (column) on the screen.
+ * @param y The y-coordinate (row) on the screen.
+ */
+void screenPutchar(char c, uint8_t color, size_t x, size_t y);
+
+
+/**
  * @brief Initializes the screen by setting up the VGA memory.
  *
  * This function clears the screen and prepares the VGA memory for
