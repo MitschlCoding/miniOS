@@ -46,7 +46,7 @@ docs:
 		echo "Creating Doxyfile..."; \
 		doxygen -g; \
 		sed -i 's/PROJECT_NAME           = "My Project"/PROJECT_NAME           = "miniOS"/' Doxyfile; \
-		sed -i 's/INPUT                  =/INPUT                  = src/' Doxyfile; \
+		sed -i 's/INPUT                  =/INPUT                  = src mainpage.md/' Doxyfile; \
 		sed -i 's/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = docs/' Doxyfile; \
 		sed -i 's/GENERATE_LATEX         = YES/GENERATE_LATEX         = NO/' Doxyfile; \
 		sed -i 's/RECURSIVE              = NO/RECURSIVE              = YES/' Doxyfile; \
