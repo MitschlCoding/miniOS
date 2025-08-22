@@ -1,5 +1,5 @@
 <map id="src/snake.c" name="src/snake.c">
-<area shape="rect" id="node1" title="Snake game implementation for miniOS." alt="" coords="146,5,241,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="146,5,241,31"/>
 <area shape="rect" id="node2" href="$snake_8h.html" title="Header file for the Snake game implementation." alt="" coords="5,79,77,104"/>
 <area shape="rect" id="node3" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="45,152,139,177"/>
 <area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="152,79,235,104"/>

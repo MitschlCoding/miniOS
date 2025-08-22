@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>miniOS: Snake Struct Reference</title>
+<title>miniOS: GdtDescriptor Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,82 +71,58 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structSnake-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Snake Struct Reference</div></div>
+<a href="structGdtDescriptor-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">GdtDescriptor Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Represents the snake and its state.  
- <a href="structSnake.html#details">More...</a></p>
-<div class="dynheader">
-Collaboration diagram for Snake:</div>
-<div class="dyncontent">
-<div class="center"><img src="structSnake__coll__graph.png" border="0" usemap="#aSnake_coll__map" alt="Collaboration graph"/></div>
-<map name="aSnake_coll__map" id="aSnake_coll__map">
-<area shape="rect" title="Represents the snake and its state." alt="" coords="12,93,73,119"/>
-<area shape="rect" href="structPosition.html" title="Represents a position on the game board." alt="" coords="5,5,80,31"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<p>Represents a GDT descriptor. This structure holds the description for our gdt needed to load the gdt. It is packed to ensure that the structure is tightly packed without padding.  
+ <a href="structGdtDescriptor.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="gdt_8h_source.html">gdt.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a35d4994e390c872feb778a0c98012d4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSnake.html#a35d4994e390c872feb778a0c98012d4e">body</a> [100]</td></tr>
-<tr class="separator:a35d4994e390c872feb778a0c98012d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba2f9d9cbf10b4be4887e5bc9612bfde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSnake.html#aba2f9d9cbf10b4be4887e5bc9612bfde">length</a></td></tr>
-<tr class="separator:aba2f9d9cbf10b4be4887e5bc9612bfde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1349ccf7f145382b601ac41927f84af4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSnake.html#a1349ccf7f145382b601ac41927f84af4">direction</a></td></tr>
-<tr class="separator:a1349ccf7f145382b601ac41927f84af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb69b4d4aeeeb8b3c71f9a52d83e6c86"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtDescriptor.html#afb69b4d4aeeeb8b3c71f9a52d83e6c86">limit</a></td></tr>
+<tr class="separator:afb69b4d4aeeeb8b3c71f9a52d83e6c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2124843a6500b09ba82af504506b480"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtDescriptor.html#aa2124843a6500b09ba82af504506b480">base</a></td></tr>
+<tr class="separator:aa2124843a6500b09ba82af504506b480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents the snake and its state. </p>
+<div class="textblock"><p>Represents a GDT descriptor. This structure holds the description for our gdt needed to load the gdt. It is packed to ensure that the structure is tightly packed without padding. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a35d4994e390c872feb778a0c98012d4e" name="a35d4994e390c872feb778a0c98012d4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35d4994e390c872feb778a0c98012d4e">&#9670;&#160;</a></span>body</h2>
+<a id="aa2124843a6500b09ba82af504506b480" name="aa2124843a6500b09ba82af504506b480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2124843a6500b09ba82af504506b480">&#9670;&#160;</a></span>base</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structPosition.html">Position</a> Snake::body[100]</td>
+          <td class="memname">uint32_t GdtDescriptor::base</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The body segments of the snake. </p>
+<p>The base address of the GDT in memory. </p>
 
 </div>
 </div>
-<a id="a1349ccf7f145382b601ac41927f84af4" name="a1349ccf7f145382b601ac41927f84af4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1349ccf7f145382b601ac41927f84af4">&#9670;&#160;</a></span>direction</h2>
+<a id="afb69b4d4aeeeb8b3c71f9a52d83e6c86" name="afb69b4d4aeeeb8b3c71f9a52d83e6c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb69b4d4aeeeb8b3c71f9a52d83e6c86">&#9670;&#160;</a></span>limit</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Snake::direction</td>
+          <td class="memname">uint16_t GdtDescriptor::limit</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The current direction of the snake (0=up, 1=right, 2=down, 3=left). </p>
-
-</div>
-</div>
-<a id="aba2f9d9cbf10b4be4887e5bc9612bfde" name="aba2f9d9cbf10b4be4887e5bc9612bfde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba2f9d9cbf10b4be4887e5bc9612bfde">&#9670;&#160;</a></span>length</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Snake::length</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The current length of the snake. </p>
+<p>The size of the GDT in bytes. </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/<a class="el" href="snake_8c.html">snake.c</a></li>
+<li>src/<a class="el" href="gdt_8h_source.html">gdt.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

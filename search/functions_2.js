@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['drawgame_0',['drawGame',['../snake_8c.html#a958f6a222c752d5187cefb857b571bb2',1,'snake.c']]]
+  ['freeos_0',['freeOS',['../heap_8c.html#a9ccdf61754740e19fa5141a7c8cc220c',1,'freeOS(void *addr):&#160;heap.c'],['../heap_8h.html#a9ccdf61754740e19fa5141a7c8cc220c',1,'freeOS(void *addr):&#160;heap.c']]]
 ];

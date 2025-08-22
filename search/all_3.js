@@ -1,26 +1,7 @@
 var searchData=
 [
-  ['ceil_5fmul_5fdiv_5fu64_0',['ceil_mul_div_u64',['../time_8c.html#abba75199003736e9572f467dcfe44044',1,'time.c']]],
-  ['check_5fflag_1',['CHECK_FLAG',['../multiboot_8c.html#af9e2d06236aa8e8b6d4ed55bd94c7dc3',1,'multiboot.c']]],
-  ['checkcollision_2',['checkCollision',['../snake_8c.html#ae22b5077a3733f8781911c7f63d74be4',1,'snake.c']]],
-  ['checkmemorymapforstack_3',['checkMemoryMapForStack',['../multiboot_8c.html#afb26d4346eccb4ad3d3f2c188adf2455',1,'checkMemoryMapForStack(multiboot_info_t *mbi):&#160;multiboot.c'],['../multiboot_8h.html#afb26d4346eccb4ad3d3f2c188adf2455',1,'checkMemoryMapForStack(multiboot_info_t *mbi):&#160;multiboot.c']]],
-  ['cmdline_4',['cmdline',['../structmultiboot__info.html#aac1e78293233aa63654d4c0161820201',1,'multiboot_info']]],
-  ['cmdline_5',['cmdLine',['../terminal_8c.html#a70776d120fc34b9174a485288091a1a8',1,'terminal.c']]],
-  ['cmdline_6',['cmdline',['../multiboot_8h.html#a0b8f85b5256a3670365258c1c29d4708',1,'multiboot.h']]],
-  ['cmdlineinit_7',['cmdLineInit',['../terminal_8c.html#a15500d2d4c54f079ee2635cb7832692e',1,'terminal.c']]],
-  ['command_8',['command',['../structcommand.html',1,'']]],
-  ['command_5fline_5fwidth_9',['COMMAND_LINE_WIDTH',['../terminal_8c.html#a4c7a0d159d3f0e3dabb619e5ef67cd65',1,'terminal.c']]],
-  ['command_5flist_5flength_10',['COMMAND_LIST_LENGTH',['../commandHandler_8c.html#a6a2169a9d4b6284409265226ce862df0',1,'commandHandler.c']]],
-  ['commandhandler_11',['commandHandler',['../commandHandler_8h.html#a2d2252704bfb82f2b8d5adccfcc01b0f',1,'commandHandler(char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS], size_t numSubstrings):&#160;commandHandler.c'],['../commandHandler_8c.html#a2d2252704bfb82f2b8d5adccfcc01b0f',1,'commandHandler(char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS], size_t numSubstrings):&#160;commandHandler.c']]],
-  ['commandhandler_2ec_12',['commandHandler.c',['../commandHandler_8c.html',1,'']]],
-  ['commandhandler_2eh_13',['commandHandler.h',['../commandHandler_8h.html',1,'']]],
-  ['commandlist_14',['commandList',['../commandHandler_8c.html#a3aeb1916bce652113b76a4addfc50f50',1,'commandHandler.c']]],
-  ['concat_15',['concat',['../str_8c.html#a55c26bdfaa65f1387a6b39c6c3e05599',1,'concat(const char *str1, const char *str2, char *buffer):&#160;str.c'],['../str_8h.html#a55c26bdfaa65f1387a6b39c6c3e05599',1,'concat(const char *str1, const char *str2, char *buffer):&#160;str.c']]],
-  ['crtc_5fdata_5fport_16',['CRTC_DATA_PORT',['../printOS_8c.html#ae76819aeb821042e66a9d9ae253290e9',1,'printOS.c']]],
-  ['crtc_5findex_5fport_17',['CRTC_INDEX_PORT',['../printOS_8c.html#aaa871b4b06f9d3516f7e1750a4684c3c',1,'printOS.c']]],
-  ['cs_18',['cs',['../structregisters__t.html#a2fd90ea98c1435017c17c924f580c089',1,'registers_t']]],
-  ['currcmdindex_19',['currCmdIndex',['../terminal_8c.html#ab59800cb08e5e2b4e85683ea09397fa6',1,'terminal.c']]],
-  ['currentinputhandler_20',['currentInputHandler',['../modeManager_8c.html#ad06eb656ffe792d03616c015e41b8da1',1,'modeManager.c']]],
-  ['currentmode_21',['currentMode',['../modeManager_8c.html#a4d98e9be03f83041b3123203b351af6c',1,'modeManager.c']]],
-  ['currentupdatehandler_22',['currentUpdateHandler',['../modeManager_8c.html#aac3837b6bb709fedcc2cad70385e6547',1,'modeManager.c']]]
+  ['datasize_0',['dataSize',['../structMemBlockHeader.html#a2d499dc22f075950fc4b5545e6958f5f',1,'MemBlockHeader']]],
+  ['direction_1',['direction',['../structSnake.html#a1349ccf7f145382b601ac41927f84af4',1,'Snake']]],
+  ['drawgame_2',['drawGame',['../snake_8c.html#a958f6a222c752d5187cefb857b571bb2',1,'snake.c']]],
+  ['ds_3',['ds',['../structregisters__t.html#a306bd2b372d49bfd4c7d238d70f008de',1,'registers_t']]]
 ];

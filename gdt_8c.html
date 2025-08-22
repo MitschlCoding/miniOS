@@ -106,8 +106,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7e886daaf45878e5c7b2f4c6263c9700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#a7e886daaf45878e5c7b2f4c6263c9700">gdtEntry</a> (uint8_t *target, Gdt source)</td></tr>
-<tr class="memdesc:a7e886daaf45878e5c7b2f4c6263c9700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a GDT entry from the Gdt structure.  <br /></td></tr>
+<tr class="memitem:a7e886daaf45878e5c7b2f4c6263c9700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#a7e886daaf45878e5c7b2f4c6263c9700">gdtEntry</a> (uint8_t *target, <a class="el" href="structGdt.html">Gdt</a> source)</td></tr>
+<tr class="memdesc:a7e886daaf45878e5c7b2f4c6263c9700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a GDT entry from the <a class="el" href="structGdt.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">Gdt</a> structure.  <br /></td></tr>
 <tr class="separator:a7e886daaf45878e5c7b2f4c6263c9700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a831e63066cc12ef04b27743ad96bf948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#a831e63066cc12ef04b27743ad96bf948">gdtInit</a> ()</td></tr>
 <tr class="memdesc:a831e63066cc12ef04b27743ad96bf948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Global Descriptor Table (GDT).  <br /></td></tr>
@@ -118,10 +118,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:acd099f7236f5f2aa41f08ff14db4fb3f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#acd099f7236f5f2aa41f08ff14db4fb3f">gdt</a> [<a class="el" href="gdt_8c.html#a6815d23aa1b3d9288eb0301178bc3063">GDT_SIZE</a>]</td></tr>
-<tr class="memdesc:acd099f7236f5f2aa41f08ff14db4fb3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the Global Descriptor Table (GDT) in memory.  <br /></td></tr>
-<tr class="separator:acd099f7236f5f2aa41f08ff14db4fb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50091800a10611f9cb82220351f3c01b"><td class="memItemLeft" align="right" valign="top">GdtDescriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#a50091800a10611f9cb82220351f3c01b">gdtDesc</a></td></tr>
+<tr class="memitem:a8dacec858cf7b008d64b98e44abc8ff3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#a8dacec858cf7b008d64b98e44abc8ff3">gdt</a> [(3 *8)]</td></tr>
+<tr class="memdesc:a8dacec858cf7b008d64b98e44abc8ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the Global Descriptor Table (GDT) in memory.  <br /></td></tr>
+<tr class="separator:a8dacec858cf7b008d64b98e44abc8ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50091800a10611f9cb82220351f3c01b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGdtDescriptor.html">GdtDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8c.html#a50091800a10611f9cb82220351f3c01b">gdtDesc</a></td></tr>
 <tr class="memdesc:a50091800a10611f9cb82220351f3c01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the GDT descriptor.  <br /></td></tr>
 <tr class="separator:a50091800a10611f9cb82220351f3c01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -156,7 +156,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Gdt&#160;</td>
+          <td class="paramtype"><a class="el" href="structGdt.html">Gdt</a>&#160;</td>
           <td class="paramname"><em>source</em>&#160;</td>
         </tr>
         <tr>
@@ -167,11 +167,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates a GDT entry from the Gdt structure. </p>
+<p>Generates a GDT entry from the <a class="el" href="structGdt.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">Gdt</a> structure. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target</td><td>The target buffer to store the GDT entry. </td></tr>
-    <tr><td class="paramname">source</td><td>The source Gdt structure. </td></tr>
+    <tr><td class="paramname">source</td><td>The source <a class="el" href="structGdt.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">Gdt</a> structure. </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,14 +219,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="acd099f7236f5f2aa41f08ff14db4fb3f" name="acd099f7236f5f2aa41f08ff14db4fb3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd099f7236f5f2aa41f08ff14db4fb3f">&#9670;&#160;</a></span>gdt</h2>
+<a id="a8dacec858cf7b008d64b98e44abc8ff3" name="a8dacec858cf7b008d64b98e44abc8ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dacec858cf7b008d64b98e44abc8ff3">&#9670;&#160;</a></span>gdt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t gdt[<a class="el" href="gdt_8c.html#a6815d23aa1b3d9288eb0301178bc3063">GDT_SIZE</a>]</td>
+          <td class="memname">uint8_t gdt[(3 *8)]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -243,7 +243,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GdtDescriptor gdtDesc</td>
+          <td class="memname"><a class="el" href="structGdtDescriptor.html">GdtDescriptor</a> gdtDesc</td>
         </tr>
       </table>
 </div><div class="memdoc">

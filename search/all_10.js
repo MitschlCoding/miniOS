@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['qemu_5fdebug_5fexit_5fport_0',['QEMU_DEBUG_EXIT_PORT',['../shutdown_8c.html#a8b74d990072a053f2129e8339eeb2f58',1,'shutdown.c']]]
+  ['register_2eh_0',['register.h',['../register_8h.html',1,'']]],
+  ['registers_5ft_1',['registers_t',['../structregisters__t.html',1,'']]],
+  ['runcommand_2',['runCommand',['../terminal_8c.html#af2ad04921a585dd627999e819d0d6293',1,'terminal.c']]]
 ];

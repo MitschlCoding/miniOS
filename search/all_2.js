@@ -1,9 +1,25 @@
 var searchData=
 [
-  ['base_0',['base',['../struct____attribute____.html#a036e7fcdf497f468d77338f1fac8e64a',1,'__attribute__::base()'],['../structIdtDescriptorStruct.html#a759fe80320e35c3fdb7e624781308d71',1,'IdtDescriptorStruct::base()'],['../idt_8h.html#a0523cedff47e2441fc198b7770ec5d3f',1,'base():&#160;idt.h']]],
-  ['base_5faddr_1',['base_addr',['../structmemory__map__entry.html#a6f56d018f859fb1a724c4748484a6e70',1,'memory_map_entry::base_addr()'],['../multiboot_8h.html#a01f23b98a91aec01909d35c79b36ace7',1,'base_addr():&#160;multiboot.h']]],
-  ['board_5fheight_2',['BOARD_HEIGHT',['../snake_8c.html#a94ed08e31d2f3a38d35f0cb89c762f04',1,'snake.c']]],
-  ['board_5fwidth_3',['BOARD_WIDTH',['../snake_8c.html#a1cd139e8d1f7ae83f54c8d477313d8ea',1,'snake.c']]],
-  ['body_4',['body',['../structSnake.html#ac09dde23145a10ba6bea98ef2d089103',1,'Snake']]],
-  ['boot_5fdevice_5',['boot_device',['../structmultiboot__info.html#a25cb7fc3488f632d68e2ecaf760a09f4',1,'multiboot_info::boot_device()'],['../multiboot_8h.html#a2aa050a4a5f45f2300cbbbee56cc8410',1,'boot_device():&#160;multiboot.h']]]
+  ['ceil_5fmul_5fdiv_5fu64_0',['ceil_mul_div_u64',['../time_8c.html#abba75199003736e9572f467dcfe44044',1,'time.c']]],
+  ['check_5fflag_1',['CHECK_FLAG',['../multiboot_8c.html#af9e2d06236aa8e8b6d4ed55bd94c7dc3',1,'multiboot.c']]],
+  ['checkcollision_2',['checkCollision',['../snake_8c.html#ae22b5077a3733f8781911c7f63d74be4',1,'snake.c']]],
+  ['checkmemorymapforstack_3',['checkMemoryMapForStack',['../multiboot_8c.html#afb26d4346eccb4ad3d3f2c188adf2455',1,'checkMemoryMapForStack(multiboot_info_t *mbi):&#160;multiboot.c'],['../multiboot_8h.html#afb26d4346eccb4ad3d3f2c188adf2455',1,'checkMemoryMapForStack(multiboot_info_t *mbi):&#160;multiboot.c']]],
+  ['cmdline_4',['cmdline',['../structmultiboot__info.html#aac1e78293233aa63654d4c0161820201',1,'multiboot_info']]],
+  ['cmdline_5',['cmdLine',['../terminal_8c.html#a98a0fe2424e89c640f1907eaa724d5c9',1,'terminal.c']]],
+  ['cmdlineinit_6',['cmdLineInit',['../terminal_8c.html#a15500d2d4c54f079ee2635cb7832692e',1,'terminal.c']]],
+  ['command_7',['command',['../structcommand.html',1,'']]],
+  ['command_5fline_5fwidth_8',['COMMAND_LINE_WIDTH',['../terminal_8c.html#a4c7a0d159d3f0e3dabb619e5ef67cd65',1,'terminal.c']]],
+  ['command_5flist_5flength_9',['COMMAND_LIST_LENGTH',['../commandHandler_8c.html#a6a2169a9d4b6284409265226ce862df0',1,'commandHandler.c']]],
+  ['commandhandler_10',['commandHandler',['../commandHandler_8h.html#ae451fca7829a1b832c7a1f2b96b0caff',1,'commandHandler(char splitCommandBuffer[64][64], size_t numSubstrings):&#160;commandHandler.c'],['../commandHandler_8c.html#ae451fca7829a1b832c7a1f2b96b0caff',1,'commandHandler(char splitCommandBuffer[64][64], size_t numSubstrings):&#160;commandHandler.c']]],
+  ['commandhandler_2ec_11',['commandHandler.c',['../commandHandler_8c.html',1,'']]],
+  ['commandhandler_2eh_12',['commandHandler.h',['../commandHandler_8h.html',1,'']]],
+  ['commandlist_13',['commandList',['../commandHandler_8c.html#a3aeb1916bce652113b76a4addfc50f50',1,'commandHandler.c']]],
+  ['concat_14',['concat',['../str_8c.html#a55c26bdfaa65f1387a6b39c6c3e05599',1,'concat(const char *str1, const char *str2, char *buffer):&#160;str.c'],['../str_8h.html#a55c26bdfaa65f1387a6b39c6c3e05599',1,'concat(const char *str1, const char *str2, char *buffer):&#160;str.c']]],
+  ['crtc_5fdata_5fport_15',['CRTC_DATA_PORT',['../printOS_8c.html#ae76819aeb821042e66a9d9ae253290e9',1,'printOS.c']]],
+  ['crtc_5findex_5fport_16',['CRTC_INDEX_PORT',['../printOS_8c.html#aaa871b4b06f9d3516f7e1750a4684c3c',1,'printOS.c']]],
+  ['cs_17',['cs',['../structregisters__t.html#a2fd90ea98c1435017c17c924f580c089',1,'registers_t']]],
+  ['currcmdindex_18',['currCmdIndex',['../terminal_8c.html#ab59800cb08e5e2b4e85683ea09397fa6',1,'terminal.c']]],
+  ['currentinputhandler_19',['currentInputHandler',['../modeManager_8c.html#ad06eb656ffe792d03616c015e41b8da1',1,'modeManager.c']]],
+  ['currentmode_20',['currentMode',['../modeManager_8c.html#a4d98e9be03f83041b3123203b351af6c',1,'modeManager.c']]],
+  ['currentupdatehandler_21',['currentUpdateHandler',['../modeManager_8c.html#aac3837b6bb709fedcc2cad70385e6547',1,'modeManager.c']]]
 ];

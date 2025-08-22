@@ -76,8 +76,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">multiboot.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -123,61 +123,29 @@ Macros</h2></td></tr>
 <tr class="memitem:afd87cd612b2dc6d90b58db5cc42f8e64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#afd87cd612b2dc6d90b58db5cc42f8e64">MEMORY_REGION_AVAILABLE</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:afd87cd612b2dc6d90b58db5cc42f8e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8cb99862e8314c32c007eee9d2481ae1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmultiboot__info.html">multiboot_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a></td></tr>
+<tr class="memdesc:a8cb99862e8314c32c007eee9d2481ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiboot information structure.  <br /></td></tr>
+<tr class="separator:a8cb99862e8314c32c007eee9d2481ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b107820a541d66305a2d70bf54f1c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmemory__map__entry.html">memory_map_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#ae3b107820a541d66305a2d70bf54f1c6">memory_map_entry_t</a></td></tr>
+<tr class="memdesc:ae3b107820a541d66305a2d70bf54f1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory map entry structure.  <br /></td></tr>
+<tr class="separator:ae3b107820a541d66305a2d70bf54f1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3a9d9c97667501a3baa5ee9e9485ca94"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmultiboot__info.html">multiboot_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a3a9d9c97667501a3baa5ee9e9485ca94">__attribute__</a> ((packed)) multiboot_info_t</td></tr>
-<tr class="memdesc:a3a9d9c97667501a3baa5ee9e9485ca94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiboot information structure.  <br /></td></tr>
-<tr class="separator:a3a9d9c97667501a3baa5ee9e9485ca94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ce2747c3f153597431e7fe6dd51d51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#ab2ce2747c3f153597431e7fe6dd51d51">intToHex</a> (uint32_t value, char *buffer)</td></tr>
 <tr class="memdesc:ab2ce2747c3f153597431e7fe6dd51d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an integer to a hexadecimal string.  <br /></td></tr>
 <tr class="separator:ab2ce2747c3f153597431e7fe6dd51d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0eee4c1848531979a9bf84e1c593dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#ab0eee4c1848531979a9bf84e1c593dc6">uint64ToHex</a> (uint64_t value, char *buffer)</td></tr>
 <tr class="memdesc:ab0eee4c1848531979a9bf84e1c593dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 64-bit integer to a hexadecimal string.  <br /></td></tr>
 <tr class="separator:ab0eee4c1848531979a9bf84e1c593dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b741358accb5da07a24d477bc4a2bc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a7b741358accb5da07a24d477bc4a2bc5">printMultibootInfo</a> (multiboot_info_t *mbi)</td></tr>
+<tr class="memitem:a7b741358accb5da07a24d477bc4a2bc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a7b741358accb5da07a24d477bc4a2bc5">printMultibootInfo</a> (<a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *mbi)</td></tr>
 <tr class="memdesc:a7b741358accb5da07a24d477bc4a2bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the Multiboot information to the terminal.  <br /></td></tr>
 <tr class="separator:a7b741358accb5da07a24d477bc4a2bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb26d4346eccb4ad3d3f2c188adf2455"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#afb26d4346eccb4ad3d3f2c188adf2455">checkMemoryMapForStack</a> (multiboot_info_t *mbi)</td></tr>
+<tr class="memitem:afb26d4346eccb4ad3d3f2c188adf2455"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#afb26d4346eccb4ad3d3f2c188adf2455">checkMemoryMapForStack</a> (<a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *mbi)</td></tr>
 <tr class="memdesc:afb26d4346eccb4ad3d3f2c188adf2455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the memory map for a suitable stack region.  <br /></td></tr>
 <tr class="separator:afb26d4346eccb4ad3d3f2c188adf2455"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a773b39d480759f67926cb18ae2219281"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a773b39d480759f67926cb18ae2219281">flags</a></td></tr>
-<tr class="separator:a773b39d480759f67926cb18ae2219281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a640c3031f2d7d1f90722397b4a327b1e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a640c3031f2d7d1f90722397b4a327b1e">mem_lower</a></td></tr>
-<tr class="separator:a640c3031f2d7d1f90722397b4a327b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6764217e2db28c80c0d028b0a32e541"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#af6764217e2db28c80c0d028b0a32e541">mem_upper</a></td></tr>
-<tr class="separator:af6764217e2db28c80c0d028b0a32e541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aa050a4a5f45f2300cbbbee56cc8410"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a2aa050a4a5f45f2300cbbbee56cc8410">boot_device</a></td></tr>
-<tr class="separator:a2aa050a4a5f45f2300cbbbee56cc8410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b8f85b5256a3670365258c1c29d4708"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a0b8f85b5256a3670365258c1c29d4708">cmdline</a></td></tr>
-<tr class="separator:a0b8f85b5256a3670365258c1c29d4708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0656d0cc189f8ae0aeb076623187050a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a0656d0cc189f8ae0aeb076623187050a">mods_count</a></td></tr>
-<tr class="separator:a0656d0cc189f8ae0aeb076623187050a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d574628701b5beb5d37e12a23395f5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a56d574628701b5beb5d37e12a23395f5">mods_addr</a></td></tr>
-<tr class="separator:a56d574628701b5beb5d37e12a23395f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceeaa766ebc1331a4975482b31e7c94f"><td class="memItemLeft" >struct {</td></tr>
-<tr class="memitem:a2acce7317ea74affa31cd5d43ecd44d1"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="multiboot_8h.html#a7beea8f6745c478347f244cadef771c2">num</a></td></tr>
-<tr class="separator:a2acce7317ea74affa31cd5d43ecd44d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a800f00ce5634d49df0682f07c0e68d68"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="multiboot_8h.html#ab2c6b258f02add8fdf4cfc7c371dd772">size</a></td></tr>
-<tr class="separator:a800f00ce5634d49df0682f07c0e68d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a337422e5049a372bd6d2a091802a7f44"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="multiboot_8h.html#ab439e3a90339e2e8ca8f82d4557a34e5">addr</a></td></tr>
-<tr class="separator:a337422e5049a372bd6d2a091802a7f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a304f4cd47852954b57d2622daf6d5f2d"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="multiboot_8h.html#a01bb40ddec7cedbda1f759e4340ebfd7">shndx</a></td></tr>
-<tr class="separator:a304f4cd47852954b57d2622daf6d5f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceeaa766ebc1331a4975482b31e7c94f"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#aceeaa766ebc1331a4975482b31e7c94f">elf_sec</a></td></tr>
-<tr class="separator:aceeaa766ebc1331a4975482b31e7c94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67ed7f108f56d5bb18232c8d7e553744"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a67ed7f108f56d5bb18232c8d7e553744">mmap_length</a></td></tr>
-<tr class="separator:a67ed7f108f56d5bb18232c8d7e553744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fee09df4facd1da2eb2e7bec5c43439"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a9fee09df4facd1da2eb2e7bec5c43439">mmap_addr</a></td></tr>
-<tr class="separator:a9fee09df4facd1da2eb2e7bec5c43439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01f23b98a91aec01909d35c79b36ace7"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a01f23b98a91aec01909d35c79b36ace7">base_addr</a></td></tr>
-<tr class="separator:a01f23b98a91aec01909d35c79b36ace7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a190b76b1f3d5bd26920300e5f073739b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a190b76b1f3d5bd26920300e5f073739b">length</a></td></tr>
-<tr class="separator:a190b76b1f3d5bd26920300e5f073739b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44b615021ed3ccb734fcaf583ef4a03"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#ad44b615021ed3ccb734fcaf583ef4a03">type</a></td></tr>
-<tr class="separator:ad44b615021ed3ccb734fcaf583ef4a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for Multiboot information structure and related functions. </p>
@@ -200,30 +168,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a3a9d9c97667501a3baa5ee9e9485ca94" name="a3a9d9c97667501a3baa5ee9e9485ca94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a9d9c97667501a3baa5ee9e9485ca94">&#9670;&#160;</a></span>__attribute__()</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae3b107820a541d66305a2d70bf54f1c6" name="ae3b107820a541d66305a2d70bf54f1c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b107820a541d66305a2d70bf54f1c6">&#9670;&#160;</a></span>memory_map_entry_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structmultiboot__info.html">multiboot_info</a> <a class="el" href="struct____attribute____.html">__attribute__</a> </td>
-          <td>(</td>
-          <td class="paramtype">(packed)&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="structmemory__map__entry.html">memory_map_entry</a> <a class="el" href="multiboot_8h.html#ae3b107820a541d66305a2d70bf54f1c6">memory_map_entry_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Memory map entry structure. </p>
+<p>This structure represents a single entry in the memory map, describing a region of memory and its attributes. </p>
+
+</div>
+</div>
+<a id="a8cb99862e8314c32c007eee9d2481ae1" name="a8cb99862e8314c32c007eee9d2481ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb99862e8314c32c007eee9d2481ae1">&#9670;&#160;</a></span>multiboot_info_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structmultiboot__info.html">multiboot_info</a> <a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Multiboot information structure. </p>
-<p>Memory map entry structure.</p>
-<p>This structure is used to pass information from the bootloader to the kernel.</p>
-<p>This structure represents a single entry in the memory map, describing a region of memory and its attributes. </p>
+<p>This structure is used to pass information from the bootloader to the kernel. </p>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="afb26d4346eccb4ad3d3f2c188adf2455" name="afb26d4346eccb4ad3d3f2c188adf2455"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb26d4346eccb4ad3d3f2c188adf2455">&#9670;&#160;</a></span>checkMemoryMapForStack()</h2>
 
@@ -233,7 +213,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">size_t checkMemoryMapForStack </td>
           <td>(</td>
-          <td class="paramtype">multiboot_info_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *&#160;</td>
           <td class="paramname"><em>mbi</em></td><td>)</td>
           <td></td>
         </tr>
@@ -298,7 +278,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void printMultibootInfo </td>
           <td>(</td>
-          <td class="paramtype">multiboot_info_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *&#160;</td>
           <td class="paramname"><em>mbi</em></td><td>)</td>
           <td></td>
         </tr>
@@ -350,262 +330,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab439e3a90339e2e8ca8f82d4557a34e5" name="ab439e3a90339e2e8ca8f82d4557a34e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab439e3a90339e2e8ca8f82d4557a34e5">&#9670;&#160;</a></span>addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Address of symbol table </p>
-
-</div>
-</div>
-<a id="a01f23b98a91aec01909d35c79b36ace7" name="a01f23b98a91aec01909d35c79b36ace7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01f23b98a91aec01909d35c79b36ace7">&#9670;&#160;</a></span>base_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t base_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Starting physical address </p>
-
-</div>
-</div>
-<a id="a2aa050a4a5f45f2300cbbbee56cc8410" name="a2aa050a4a5f45f2300cbbbee56cc8410"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aa050a4a5f45f2300cbbbee56cc8410">&#9670;&#160;</a></span>boot_device</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t boot_device</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>BIOS boot device </p>
-
-</div>
-</div>
-<a id="a0b8f85b5256a3670365258c1c29d4708" name="a0b8f85b5256a3670365258c1c29d4708"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b8f85b5256a3670365258c1c29d4708">&#9670;&#160;</a></span>cmdline</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t cmdline</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Physical address of command line string </p>
-
-</div>
-</div>
-<a id="aceeaa766ebc1331a4975482b31e7c94f" name="aceeaa766ebc1331a4975482b31e7c94f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceeaa766ebc1331a4975482b31e7c94f">&#9670;&#160;</a></span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct  { ... }  elf_sec</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a773b39d480759f67926cb18ae2219281" name="a773b39d480759f67926cb18ae2219281"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a773b39d480759f67926cb18ae2219281">&#9670;&#160;</a></span>flags</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t flags</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Flags indicating which fields below are valid </p>
-
-</div>
-</div>
-<a id="a190b76b1f3d5bd26920300e5f073739b" name="a190b76b1f3d5bd26920300e5f073739b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a190b76b1f3d5bd26920300e5f073739b">&#9670;&#160;</a></span>length</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t length</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Length of the memory region in bytes </p>
-
-</div>
-</div>
-<a id="a640c3031f2d7d1f90722397b4a327b1e" name="a640c3031f2d7d1f90722397b4a327b1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a640c3031f2d7d1f90722397b4a327b1e">&#9670;&#160;</a></span>mem_lower</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t mem_lower</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Amount of lower memory (in KB) </p>
-
-</div>
-</div>
-<a id="af6764217e2db28c80c0d028b0a32e541" name="af6764217e2db28c80c0d028b0a32e541"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6764217e2db28c80c0d028b0a32e541">&#9670;&#160;</a></span>mem_upper</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t mem_upper</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Amount of upper memory (in KB) </p>
-
-</div>
-</div>
-<a id="a9fee09df4facd1da2eb2e7bec5c43439" name="a9fee09df4facd1da2eb2e7bec5c43439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fee09df4facd1da2eb2e7bec5c43439">&#9670;&#160;</a></span>mmap_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t mmap_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Physical address of the memory map buffer </p>
-
-</div>
-</div>
-<a id="a67ed7f108f56d5bb18232c8d7e553744" name="a67ed7f108f56d5bb18232c8d7e553744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67ed7f108f56d5bb18232c8d7e553744">&#9670;&#160;</a></span>mmap_length</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t mmap_length</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Total size of the memory map buffer </p>
-
-</div>
-</div>
-<a id="a56d574628701b5beb5d37e12a23395f5" name="a56d574628701b5beb5d37e12a23395f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56d574628701b5beb5d37e12a23395f5">&#9670;&#160;</a></span>mods_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t mods_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Physical address of first module structure </p>
-
-</div>
-</div>
-<a id="a0656d0cc189f8ae0aeb076623187050a" name="a0656d0cc189f8ae0aeb076623187050a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0656d0cc189f8ae0aeb076623187050a">&#9670;&#160;</a></span>mods_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t mods_count</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Number of modules loaded </p>
-
-</div>
-</div>
-<a id="a7beea8f6745c478347f244cadef771c2" name="a7beea8f6745c478347f244cadef771c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7beea8f6745c478347f244cadef771c2">&#9670;&#160;</a></span>num</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t num</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Size of symbol table entries </p>
-
-</div>
-</div>
-<a id="a01bb40ddec7cedbda1f759e4340ebfd7" name="a01bb40ddec7cedbda1f759e4340ebfd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01bb40ddec7cedbda1f759e4340ebfd7">&#9670;&#160;</a></span>shndx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t shndx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Index of string table in section headers </p>
-
-</div>
-</div>
-<a id="ab2c6b258f02add8fdf4cfc7c371dd772" name="ab2c6b258f02add8fdf4cfc7c371dd772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2c6b258f02add8fdf4cfc7c371dd772">&#9670;&#160;</a></span>size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Number of symbol table entries</p>
-<p>Size of this structure </p>
-
-</div>
-</div>
-<a id="ad44b615021ed3ccb734fcaf583ef4a03" name="ad44b615021ed3ccb734fcaf583ef4a03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad44b615021ed3ccb734fcaf583ef4a03">&#9670;&#160;</a></span>type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Type of region (1 = Available RAM, others) </p>
 
 </div>
 </div>

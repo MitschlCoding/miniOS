@@ -1,22 +1,12 @@
 var searchData=
 [
-  ['screenclear_0',['screenClear',['../printOS_8h.html#a8c5e2cac0757f1a076321787c6b40a96',1,'screenClear():&#160;printOS.c'],['../printOS_8c.html#a8c5e2cac0757f1a076321787c6b40a96',1,'screenClear():&#160;printOS.c']]],
-  ['screeninit_1',['screenInit',['../printOS_8c.html#ad185f05b60d4c37caf680a0bc3965130',1,'screenInit():&#160;printOS.c'],['../printOS_8h.html#ad185f05b60d4c37caf680a0bc3965130',1,'screenInit():&#160;printOS.c']]],
-  ['screenputchar_2',['screenPutchar',['../printOS_8c.html#a35df54757beed3c910136b9df1e12cd1',1,'screenPutchar(char c, uint8_t color, size_t x, size_t y):&#160;printOS.c'],['../printOS_8h.html#a35df54757beed3c910136b9df1e12cd1',1,'screenPutchar(char c, uint8_t color, size_t x, size_t y):&#160;printOS.c']]],
-  ['screensetchar_3',['screenSetChar',['../snake_8c.html#a16804dc2ceb684c6961efb94d94e5b13',1,'snake.c']]],
-  ['screenwriteline_4',['screenWriteLine',['../printOS_8c.html#a65887e8def38d87edfd81324649cd43b',1,'screenWriteLine(const char *data, size_t line_num):&#160;printOS.c'],['../printOS_8h.html#a65887e8def38d87edfd81324649cd43b',1,'screenWriteLine(const char *data, size_t line_num):&#160;printOS.c']]],
-  ['setcurrentmode_5',['setCurrentMode',['../modeManager_8c.html#a2ed93a622e690234885d1307a22f9a7e',1,'setCurrentMode(OperatingMode mode):&#160;modeManager.c'],['../modeManager_8h.html#a2ed93a622e690234885d1307a22f9a7e',1,'setCurrentMode(OperatingMode mode):&#160;modeManager.c']]],
-  ['setvisualmodehandlers_6',['setVisualModeHandlers',['../modeManager_8c.html#aa1b9e428fb906a41ca301d48e5f027c9',1,'setVisualModeHandlers(VisualModeInputHandler inputHandler, VisualModeUpdateHandler updateHandler):&#160;modeManager.c'],['../modeManager_8h.html#aa1b9e428fb906a41ca301d48e5f027c9',1,'setVisualModeHandlers(VisualModeInputHandler inputHandler, VisualModeUpdateHandler updateHandler):&#160;modeManager.c']]],
-  ['showterminal_7',['showTerminal',['../terminal_8c.html#aba02b4df29fb169bbd9c4a5e2e12918c',1,'showTerminal():&#160;terminal.c'],['../terminal_8h.html#a51abbf6bc83e37db88347fe02be8aaf6',1,'showTerminal(void):&#160;terminal.c']]],
-  ['shutdownhandler_8',['shutdownHandler',['../commandHandler_8c.html#a3af3dcabe740df0aac322a485762823a',1,'commandHandler.c']]],
-  ['simpleinttostring_9',['simpleIntToString',['../snake_8c.html#aef93ff1812d5e2d36d8dfe26d83c56bf',1,'snake.c']]],
-  ['snakegameinit_10',['snakeGameInit',['../snake_8c.html#a897ab5161db5087cd4b0956a78c50390',1,'snakeGameInit(void):&#160;snake.c'],['../snake_8h.html#a897ab5161db5087cd4b0956a78c50390',1,'snakeGameInit(void):&#160;snake.c']]],
-  ['snakegametick_11',['snakeGameTick',['../snake_8c.html#a01e23e6e987e0cc475893e93c5098ef0',1,'snakeGameTick(void):&#160;snake.c'],['../snake_8h.html#a01e23e6e987e0cc475893e93c5098ef0',1,'snakeGameTick(void):&#160;snake.c']]],
-  ['snakegameupdate_12',['snakeGameUpdate',['../snake_8c.html#ad801979a2014af3a1dbf734e8f00f809',1,'snakeGameUpdate(KeyCode key):&#160;snake.c'],['../snake_8h.html#ad801979a2014af3a1dbf734e8f00f809',1,'snakeGameUpdate(KeyCode key):&#160;snake.c']]],
-  ['snakehandler_13',['snakeHandler',['../commandHandler_8c.html#acdddd92d544f83be81062addaf67d75b',1,'commandHandler.c']]],
-  ['split_14',['split',['../str_8c.html#a6950eaab8f32fcef89d9d923a3fab0ab',1,'split(const char *str, char delimiter, char dest_buffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS]):&#160;str.c'],['../str_8h.html#a6950eaab8f32fcef89d9d923a3fab0ab',1,'split(const char *str, char delimiter, char dest_buffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS]):&#160;str.c']]],
-  ['sti_15',['sti',['../time_8c.html#af87d69b8449fc86a02b250af121cd29d',1,'time.c']]],
-  ['strcmpos_16',['strcmpOS',['../str_8c.html#ab6e824ae3e9e72c08c7e135fa4c3eb3b',1,'strcmpOS(char *a, char *b):&#160;str.c'],['../str_8h.html#ab6e824ae3e9e72c08c7e135fa4c3eb3b',1,'strcmpOS(char *a, char *b):&#160;str.c']]],
-  ['strlenos_17',['strlenOS',['../str_8c.html#a0a1f2d05f5d4fdbcd89a351730b4e8e3',1,'strlenOS(const char *str):&#160;str.c'],['../str_8h.html#a0a1f2d05f5d4fdbcd89a351730b4e8e3',1,'strlenOS(const char *str):&#160;str.c']]],
-  ['systemshutdown_18',['systemShutdown',['../shutdown_8c.html#ad3bf7c35dc5dafc31d98f83652064476',1,'systemShutdown():&#160;shutdown.c'],['../shutdown_8h.html#ad3bf7c35dc5dafc31d98f83652064476',1,'systemShutdown():&#160;shutdown.c']]]
+  ['terminaladdstr_0',['terminalAddStr',['../terminal_8c.html#ae3ca4b2bb7e40779bba51b5893cfd614',1,'terminal.c']]],
+  ['terminalinit_1',['terminalInit',['../terminal_8c.html#a1ab69ca062cf1f1f12ca45d27efc8911',1,'terminalInit():&#160;terminal.c'],['../terminal_8h.html#a1ab69ca062cf1f1f12ca45d27efc8911',1,'terminalInit():&#160;terminal.c']]],
+  ['terminallinesinit_2',['terminalLinesInit',['../terminal_8c.html#a4bb7d905877c6f093144ee05e5875311',1,'terminal.c']]],
+  ['terminalwriteline_3',['terminalWriteLine',['../terminal_8c.html#ab7d63f933473a988f2bc9bc23ad6e353',1,'terminalWriteLine(char *str):&#160;terminal.c'],['../terminal_8h.html#ab7d63f933473a988f2bc9bc23ad6e353',1,'terminalWriteLine(char *str):&#160;terminal.c']]],
+  ['timer_5firq_4',['timer_irq',['../time_8c.html#a1789eeb68b9c2b2bfc6797912c9d4aa9',1,'timer_irq(void):&#160;time.c'],['../time_8h.html#a1789eeb68b9c2b2bfc6797912c9d4aa9',1,'timer_irq(void):&#160;time.c']]],
+  ['timer_5fms_5',['timer_ms',['../time_8c.html#a6767646850eb85a651c2a1077320e41d',1,'timer_ms(void):&#160;time.c'],['../time_8h.html#a6767646850eb85a651c2a1077320e41d',1,'timer_ms(void):&#160;time.c']]],
+  ['timer_5fsleep_5fms_6',['timer_sleep_ms',['../time_8c.html#aa498f8381e3cd103da882efb1f532411',1,'timer_sleep_ms(uint64_t ms):&#160;time.c'],['../time_8h.html#aa498f8381e3cd103da882efb1f532411',1,'timer_sleep_ms(uint64_t ms):&#160;time.c']]],
+  ['timer_5fticks_7',['timer_ticks',['../time_8c.html#a506582a6c569399e5d1d33f1f591f884',1,'timer_ticks(void):&#160;time.c'],['../time_8h.html#a506582a6c569399e5d1d33f1f591f884',1,'timer_ticks(void):&#160;time.c']]],
+  ['trim_8',['trim',['../str_8c.html#a92488df83476d9d8729fd04197bc35f1',1,'trim(char *str):&#160;str.c'],['../str_8h.html#a92488df83476d9d8729fd04197bc35f1',1,'trim(char *str):&#160;str.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../structPosition.html#a3c08e9213d4726b21caba3073192c4a3',1,'Position']]]
+  ['zero_0',['zero',['../structIdtEntryStruct.html#a7098ac0aec0e9916ac82fc9cfb3f14d3',1,'IdtEntryStruct']]]
 ];

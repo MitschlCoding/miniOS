@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['uint64tohex_0',['uint64ToHex',['../multiboot_8h.html#ab0eee4c1848531979a9bf84e1c593dc6',1,'uint64ToHex(uint64_t value, char *buffer):&#160;str.c'],['../str_8c.html#ab0eee4c1848531979a9bf84e1c593dc6',1,'uint64ToHex(uint64_t value, char *buffer):&#160;str.c'],['../str_8h.html#ab0eee4c1848531979a9bf84e1c593dc6',1,'uint64ToHex(uint64_t value, char *buffer):&#160;str.c']]],
-  ['updatevisualmode_1',['updateVisualMode',['../modeManager_8c.html#aba69fb28802f19fa251cdd859122ee8a',1,'updateVisualMode(void):&#160;modeManager.c'],['../modeManager_8h.html#aba69fb28802f19fa251cdd859122ee8a',1,'updateVisualMode(void):&#160;modeManager.c']]],
-  ['useresp_2',['useresp',['../structregisters__t.html#af8719df6cec71f1884a4cfd6e616e066',1,'registers_t']]]
+  ['vga_5fcolor_5fblack_0',['VGA_COLOR_BLACK',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a0c4db2001081cecf298a1d4b486b4774',1,'printOS.h']]],
+  ['vga_5fcolor_5fblue_1',['VGA_COLOR_BLUE',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a663b039a56cc4b0ae428764bd2912805',1,'printOS.h']]],
+  ['vga_5fcolor_5fbrown_2',['VGA_COLOR_BROWN',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718aa869dc9cc937e8d352256ee9690df7fe',1,'printOS.h']]],
+  ['vga_5fcolor_5fcyan_3',['VGA_COLOR_CYAN',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718af811c6bc13218b06e6201ad2ecbe18ab',1,'printOS.h']]],
+  ['vga_5fcolor_5fdark_5fgrey_4',['VGA_COLOR_DARK_GREY',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718afd7a6c9325375205fced9399bc887e68',1,'printOS.h']]],
+  ['vga_5fcolor_5fgreen_5',['VGA_COLOR_GREEN',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a12f823154fcee6a5c8c007d4bb5ab487',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fblue_6',['VGA_COLOR_LIGHT_BLUE',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718ad606acb105ca29c2a9f06e442ea0b282',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fbrown_7',['VGA_COLOR_LIGHT_BROWN',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a87c60d255573db6b4aaf1decb5d9b694',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fcyan_8',['VGA_COLOR_LIGHT_CYAN',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718ad32d8cd20a9c1ea28b62f4b7e24fa21d',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fgreen_9',['VGA_COLOR_LIGHT_GREEN',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a61eadb3e52ca16b9afcc038c7879625f',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fgrey_10',['VGA_COLOR_LIGHT_GREY',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a36e7ce11635728c6d1f64a8e08da191d',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fmagenta_11',['VGA_COLOR_LIGHT_MAGENTA',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a38ca76ebc37b2560aac48ad71537ef97',1,'printOS.h']]],
+  ['vga_5fcolor_5flight_5fred_12',['VGA_COLOR_LIGHT_RED',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718aecca7b3f9042b169a6242b3de521a97d',1,'printOS.h']]],
+  ['vga_5fcolor_5fmagenta_13',['VGA_COLOR_MAGENTA',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a6a50a13f4692c36dc03904c057f214ee',1,'printOS.h']]],
+  ['vga_5fcolor_5fred_14',['VGA_COLOR_RED',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718a7215ff578d3469daf8bb697a60ad1836',1,'printOS.h']]],
+  ['vga_5fcolor_5fwhite_15',['VGA_COLOR_WHITE',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718aae9cfca3c12a1185029c7feabd331f7a',1,'printOS.h']]],
+  ['vga_5fdisable_5fcursor_16',['vga_disable_cursor',['../printOS_8c.html#a13fe2cf943a5710be315afaf30db1124',1,'printOS.c']]],
+  ['vga_5fheight_17',['VGA_HEIGHT',['../printOS_8h.html#a1dc3cb2af110f40260e1b2256b6fa214',1,'printOS.h']]],
+  ['vga_5fmemory_18',['VGA_MEMORY',['../printOS_8h.html#a0c512627e30a795d9163128f6e3df1c3',1,'printOS.h']]],
+  ['vga_5fwidth_19',['VGA_WIDTH',['../printOS_8h.html#a7e5abf7be634adf4e3c22e589924ea34',1,'printOS.h']]],
+  ['vgacolor_20',['vgaColor',['../printOS_8h.html#a17aa8982b5f6d2466dfc822160720718',1,'vgaColor():&#160;printOS.h'],['../printOS_8h.html#abf8f700a1c2edf4b66539845fd8da5df',1,'vgaColor():&#160;printOS.h']]],
+  ['vgaentry_21',['vgaEntry',['../printOS_8c.html#a0cc2eaf135f0920329e09a79b5604614',1,'printOS.c']]],
+  ['vgaentrycolor_22',['vgaEntryColor',['../printOS_8c.html#a8f44297c2a125b2c7e9b19e3824d1f33',1,'printOS.c']]],
+  ['visual_5fmode_23',['VISUAL_MODE',['../modeManager_8h.html#ae306b3353ed3d62bb2e6de130b3c9eaaa08ad9f31c86dc4d6c90668cb2326463a',1,'modeManager.h']]],
+  ['visualmodeinputhandler_24',['VisualModeInputHandler',['../modeManager_8h.html#ac871d44b3114f5ba1bb62af3d43a1176',1,'modeManager.h']]],
+  ['visualmodeupdatehandler_25',['VisualModeUpdateHandler',['../modeManager_8h.html#a2bc86621a730091817e466f8857e8aa2',1,'modeManager.h']]]
 ];

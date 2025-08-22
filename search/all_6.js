@@ -1,6 +1,21 @@
 var searchData=
 [
-  ['flags_0',['flags',['../struct____attribute____.html#a2c5106312c60da8340d95ea8f201e8f2',1,'__attribute__::flags()'],['../structmultiboot__info.html#a33c78eb1aec2573f8293acf9a42fe2a8',1,'multiboot_info::flags()'],['../multiboot_8h.html#a773b39d480759f67926cb18ae2219281',1,'flags():&#160;multiboot.h']]],
-  ['food_1',['food',['../snake_8c.html#a87376b4f2bbb8cfa3f6ff66448e6a550',1,'snake.c']]],
-  ['freeos_2',['freeOS',['../heap_8c.html#a9ccdf61754740e19fa5141a7c8cc220c',1,'freeOS(void *addr):&#160;heap.c'],['../heap_8h.html#a9ccdf61754740e19fa5141a7c8cc220c',1,'freeOS(void *addr):&#160;heap.c']]]
+  ['g_5fhz_0',['g_hz',['../time_8c.html#a8edbc20a16968ad5472c8e5ecadc5c9c',1,'time.c']]],
+  ['g_5fticks_1',['g_ticks',['../time_8c.html#a9d4c3dc4d688d7d3e76a53c46722fc4a',1,'time.c']]],
+  ['game_5fspeed_2',['GAME_SPEED',['../snake_8c.html#ae7342928fb9fb02e069cd83f1f1f1c03',1,'snake.c']]],
+  ['gameover_3',['gameOver',['../snake_8c.html#a1fb9f73c50443018c691b0eaf1066004',1,'snake.c']]],
+  ['gcd_5fu32_4',['gcd_u32',['../time_8c.html#a7c2467be76bb1babfdd60b95bd5c570a',1,'time.c']]],
+  ['gdt_5',['Gdt',['../structGdt.html',1,'']]],
+  ['gdt_6',['gdt',['../gdt_8c.html#a8dacec858cf7b008d64b98e44abc8ff3',1,'gdt.c']]],
+  ['gdt_2ec_7',['gdt.c',['../gdt_8c.html',1,'']]],
+  ['gdt_2eh_8',['gdt.h',['../gdt_8h.html',1,'']]],
+  ['gdt_5fsize_9',['GDT_SIZE',['../gdt_8c.html#a6815d23aa1b3d9288eb0301178bc3063',1,'gdt.c']]],
+  ['gdtdesc_10',['gdtDesc',['../gdt_8c.html#a50091800a10611f9cb82220351f3c01b',1,'gdt.c']]],
+  ['gdtdescriptor_11',['GdtDescriptor',['../structGdtDescriptor.html',1,'']]],
+  ['gdtentry_12',['gdtEntry',['../gdt_8c.html#a7e886daaf45878e5c7b2f4c6263c9700',1,'gdtEntry(uint8_t *target, Gdt source):&#160;gdt.c'],['../gdt_8h.html#a7e886daaf45878e5c7b2f4c6263c9700',1,'gdtEntry(uint8_t *target, Gdt source):&#160;gdt.c']]],
+  ['gdtinit_13',['gdtInit',['../gdt_8c.html#a831e63066cc12ef04b27743ad96bf948',1,'gdtInit():&#160;gdt.c'],['../gdt_8h.html#a831e63066cc12ef04b27743ad96bf948',1,'gdtInit():&#160;gdt.c']]],
+  ['generatefood_14',['generateFood',['../snake_8c.html#afe2cb52009cab444f2d5ac7a819b6253',1,'snake.c']]],
+  ['getcharfromkey_15',['getCharFromKey',['../keyboard_8c.html#a782154cdfb2c3bda0c32fb87fe64fcd8',1,'getCharFromKey(KeyCode key):&#160;keyboard.c'],['../keyboard_8h.html#a782154cdfb2c3bda0c32fb87fe64fcd8',1,'getCharFromKey(KeyCode key):&#160;keyboard.c']]],
+  ['getcurrentmode_16',['getCurrentMode',['../modeManager_8c.html#aef801f74d684104c7abf20ce22f2eacf',1,'getCurrentMode(void):&#160;modeManager.c'],['../modeManager_8h.html#aef801f74d684104c7abf20ce22f2eacf',1,'getCurrentMode(void):&#160;modeManager.c']]],
+  ['getstubaddr_17',['getStubAddr',['../idt_8c.html#a04e674aef75fc1247a7e224b03a83571',1,'idt.c']]]
 ];

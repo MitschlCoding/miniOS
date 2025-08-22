@@ -76,9 +76,9 @@ $(function() {
   <div class="headertitle"><div class="title">idt.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="idt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="idt_8h.html#a937dd753d93d58e21a471dbadf020e37">    1</a></span><span class="preprocessor">#ifndef IDT</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="idt_8h.html#a09777e6a5ad91ffd82a9975efe33de2e">    2</a></span><span class="preprocessor">#define IDT</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="idt_8h.html#a8666477774e393fbed6397495a2789f6">    3</a></span> </div>
+<a href="idt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IDT</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IDT</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -88,18 +88,20 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structIdtEntryStruct.html#a7098ac0aec0e9916ac82fc9cfb3f14d3">   21</a></span>  uint8_t <a class="code hl_variable" href="structIdtEntryStruct.html#a7098ac0aec0e9916ac82fc9cfb3f14d3">zero</a>;               </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structIdtEntryStruct.html#a3c8c06fafdca6d59d7af22610ebae05c">   22</a></span>  uint8_t <a class="code hl_variable" href="structIdtEntryStruct.html#a3c8c06fafdca6d59d7af22610ebae05c">typeAttribute</a>;      </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structIdtEntryStruct.html#a6e42300d3a2d815d843aa5350b021dfe">   23</a></span>  uint16_t <a class="code hl_variable" href="structIdtEntryStruct.html#a6e42300d3a2d815d843aa5350b021dfe">higherBase</a>;        </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <a class="code hl_struct" href="struct____attribute____.html">__attribute__</a>((packed)) IdtEntry;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="idt_8h.html#a893555b2d6eb40c1b1aacac9bc8dcec2">   24</a></span>} __attribute__((packed)) <a class="code hl_typedef" href="idt_8h.html#a893555b2d6eb40c1b1aacac9bc8dcec2">IdtEntry</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structIdtDescriptorStruct.html">   30</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structIdtDescriptorStruct.html">IdtDescriptorStruct</a> {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structIdtDescriptorStruct.html#ac12383ab42442216207e1f79b9de0809">   31</a></span>  uint16_t <a class="code hl_variable" href="structIdtDescriptorStruct.html#ac12383ab42442216207e1f79b9de0809">limit</a>; </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structIdtDescriptorStruct.html#a759fe80320e35c3fdb7e624781308d71">   32</a></span>  uint32_t <a class="code hl_variable" href="structIdtDescriptorStruct.html#a759fe80320e35c3fdb7e624781308d71">base</a>;  </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>} <a class="code hl_struct" href="struct____attribute____.html">__attribute__</a>((packed)) IdtDescriptor;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="idt_8h.html#a08d2ba9b4b485a4fba23e6dbc379db5c">   33</a></span>} __attribute__((packed)) <a class="code hl_typedef" href="idt_8h.html#a08d2ba9b4b485a4fba23e6dbc379db5c">IdtDescriptor</a>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="idt_8h.html#abea4b1a4cb3c59e925bfe8bedd626dcc">idtInit</a>();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="idt_8h.html#ab400bfe286f08b72b549741747a1af1f">printIdtInfo</a>();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aidt_8h_html_a08d2ba9b4b485a4fba23e6dbc379db5c"><div class="ttname"><a href="idt_8h.html#a08d2ba9b4b485a4fba23e6dbc379db5c">IdtDescriptor</a></div><div class="ttdeci">struct IdtDescriptorStruct IdtDescriptor</div><div class="ttdoc">Represents the Interrupt Descriptor Table (IDT) descriptor.</div></div>
+<div class="ttc" id="aidt_8h_html_a893555b2d6eb40c1b1aacac9bc8dcec2"><div class="ttname"><a href="idt_8h.html#a893555b2d6eb40c1b1aacac9bc8dcec2">IdtEntry</a></div><div class="ttdeci">struct IdtEntryStruct IdtEntry</div><div class="ttdoc">Represents an entry in the Interrupt Descriptor Table (IDT).</div></div>
 <div class="ttc" id="aidt_8h_html_ab400bfe286f08b72b549741747a1af1f"><div class="ttname"><a href="idt_8h.html#ab400bfe286f08b72b549741747a1af1f">printIdtInfo</a></div><div class="ttdeci">void printIdtInfo()</div><div class="ttdoc">Prints information about the IDT.</div><div class="ttdef"><b>Definition:</b> idt.c:130</div></div>
 <div class="ttc" id="aidt_8h_html_abea4b1a4cb3c59e925bfe8bedd626dcc"><div class="ttname"><a href="idt_8h.html#abea4b1a4cb3c59e925bfe8bedd626dcc">idtInit</a></div><div class="ttdeci">void idtInit()</div><div class="ttdoc">Initializes the Interrupt Descriptor Table (IDT).</div><div class="ttdef"><b>Definition:</b> idt.c:85</div></div>
 <div class="ttc" id="astructIdtDescriptorStruct_html"><div class="ttname"><a href="structIdtDescriptorStruct.html">IdtDescriptorStruct</a></div><div class="ttdoc">Represents the Interrupt Descriptor Table (IDT) descriptor.</div><div class="ttdef"><b>Definition:</b> idt.h:30</div></div>
@@ -111,7 +113,6 @@ $(function() {
 <div class="ttc" id="astructIdtEntryStruct_html_a6e42300d3a2d815d843aa5350b021dfe"><div class="ttname"><a href="structIdtEntryStruct.html#a6e42300d3a2d815d843aa5350b021dfe">IdtEntryStruct::higherBase</a></div><div class="ttdeci">uint16_t higherBase</div><div class="ttdef"><b>Definition:</b> idt.h:23</div></div>
 <div class="ttc" id="astructIdtEntryStruct_html_a7098ac0aec0e9916ac82fc9cfb3f14d3"><div class="ttname"><a href="structIdtEntryStruct.html#a7098ac0aec0e9916ac82fc9cfb3f14d3">IdtEntryStruct::zero</a></div><div class="ttdeci">uint8_t zero</div><div class="ttdef"><b>Definition:</b> idt.h:21</div></div>
 <div class="ttc" id="astructIdtEntryStruct_html_af7f387ec5f49489f639e699f086bc378"><div class="ttname"><a href="structIdtEntryStruct.html#af7f387ec5f49489f639e699f086bc378">IdtEntryStruct::lowerBase</a></div><div class="ttdeci">uint16_t lowerBase</div><div class="ttdef"><b>Definition:</b> idt.h:19</div></div>
-<div class="ttc" id="astruct____attribute_____html"><div class="ttname"><a href="struct____attribute____.html">__attribute__</a></div><div class="ttdoc">Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...</div><div class="ttdef"><b>Definition:</b> gdt.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

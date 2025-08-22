@@ -108,7 +108,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="idt_8c.html" title=" " alt="" coords="522,79,595,104"/>
 <area shape="rect" href="multiboot_8c.html" title=" " alt="" coords="619,79,738,104"/>
 <area shape="rect" href="printOS_8c.html" title=" " alt="" coords="763,79,867,104"/>
-<area shape="rect" href="snake_8c.html" title="Snake game implementation for miniOS." alt="" coords="891,79,986,104"/>
+<area shape="rect" href="snake_8c.html" title=" " alt="" coords="891,79,986,104"/>
 <area shape="rect" href="str_8c.html" title=" " alt="" coords="1011,79,1083,104"/>
 </map>
 </div>
@@ -133,15 +133,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a92488df83476d9d8729fd04197bc35f1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#a92488df83476d9d8729fd04197bc35f1">trim</a> (char *str)</td></tr>
 <tr class="memdesc:a92488df83476d9d8729fd04197bc35f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims trailing whitespace from a C string.  <br /></td></tr>
 <tr class="separator:a92488df83476d9d8729fd04197bc35f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2ac68acc278c9ed38eb7d4f93a80ff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#ae2ac68acc278c9ed38eb7d4f93a80ff1">intToHex</a> (uint32_t <a class="el" href="multiboot_8h.html#a7beea8f6745c478347f244cadef771c2">num</a>, char *buffer)</td></tr>
+<tr class="memitem:ae2ac68acc278c9ed38eb7d4f93a80ff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#ae2ac68acc278c9ed38eb7d4f93a80ff1">intToHex</a> (uint32_t num, char *buffer)</td></tr>
 <tr class="memdesc:ae2ac68acc278c9ed38eb7d4f93a80ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an integer to a hexadecimal string.  <br /></td></tr>
 <tr class="separator:ae2ac68acc278c9ed38eb7d4f93a80ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0eee4c1848531979a9bf84e1c593dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#ab0eee4c1848531979a9bf84e1c593dc6">uint64ToHex</a> (uint64_t value, char *buffer)</td></tr>
 <tr class="memdesc:ab0eee4c1848531979a9bf84e1c593dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 64-bit integer to a hexadecimal string.  <br /></td></tr>
 <tr class="separator:ab0eee4c1848531979a9bf84e1c593dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6950eaab8f32fcef89d9d923a3fab0ab"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#a6950eaab8f32fcef89d9d923a3fab0ab">split</a> (const char *str, char delimiter, char dest_buffer[<a class="el" href="str_8h.html#a6deeae0bb83406713eb2cb73b06df7f3">NUM_SUBSTRINGS</a>][<a class="el" href="str_8h.html#ab03625111f0efd2aa8df830d3fed24bf">LEN_SUBSTRINGS</a>])</td></tr>
-<tr class="memdesc:a6950eaab8f32fcef89d9d923a3fab0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a C string into substrings based on a delimiter.  <br /></td></tr>
-<tr class="separator:a6950eaab8f32fcef89d9d923a3fab0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f59efeb637e7a74c523ae9afc9a76b0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#a5f59efeb637e7a74c523ae9afc9a76b0">split</a> (const char *str, char delimiter, char dest_buffer[64][64])</td></tr>
+<tr class="memdesc:a5f59efeb637e7a74c523ae9afc9a76b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a C string into substrings based on a delimiter.  <br /></td></tr>
+<tr class="separator:a5f59efeb637e7a74c523ae9afc9a76b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55c26bdfaa65f1387a6b39c6c3e05599"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8h.html#a55c26bdfaa65f1387a6b39c6c3e05599">concat</a> (const char *str1, const char *str2, char *buffer)</td></tr>
 <tr class="memdesc:a55c26bdfaa65f1387a6b39c6c3e05599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two C strings into a buffer.  <br /></td></tr>
 <tr class="separator:a55c26bdfaa65f1387a6b39c6c3e05599"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -268,8 +268,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6950eaab8f32fcef89d9d923a3fab0ab" name="a6950eaab8f32fcef89d9d923a3fab0ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6950eaab8f32fcef89d9d923a3fab0ab">&#9670;&#160;</a></span>split()</h2>
+<a id="a5f59efeb637e7a74c523ae9afc9a76b0" name="a5f59efeb637e7a74c523ae9afc9a76b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f59efeb637e7a74c523ae9afc9a76b0">&#9670;&#160;</a></span>split()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +290,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>dest_buffer</em>[NUM_SUBSTRINGS][LEN_SUBSTRINGS]&#160;</td>
+          <td class="paramname"><em>dest_buffer</em>[64][64]&#160;</td>
         </tr>
         <tr>
           <td></td>

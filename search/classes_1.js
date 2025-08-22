@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['command_0',['command',['../structcommand.html',1,'']]]
+  ['gdt_0',['Gdt',['../structGdt.html',1,'']]],
+  ['gdtdescriptor_1',['GdtDescriptor',['../structGdtDescriptor.html',1,'']]]
 ];
