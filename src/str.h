@@ -75,4 +75,36 @@ size_t split(const char *str, char delimiter,
  */
 char* concat(const char *str1, const char *str2, char *buffer);
 
+/**
+ * @brief Converts a 64-bit unsigned integer to a decimal string.
+ *
+ * @param num The 64-bit unsigned integer to convert.
+ * @param buffer The buffer to store the resulting decimal string.
+ */
+void uint64ToDecimalString(uint64_t num, char *buffer);
+
+/**
+ * @brief Converts a 32-bit unsigned integer to a decimal string.
+ *
+ * @param num The 32-bit unsigned integer to convert.
+ * @param buffer The buffer to store the resulting decimal string.
+ */
+void uint32ToDecimalString(uint32_t num, char *buffer);
+
+/**
+ * @brief Converts a 16-bit unsigned integer to a decimal string.
+ *
+ * @param num The 16-bit unsigned integer to convert.
+ * @param buffer The buffer to store the resulting decimal string.
+ */
+void uint16ToDecimalString(uint16_t num, char *buffer);
+
+/**
+ * @brief Converts a signed integer to a decimal string.
+ *
+ * @param num The signed integer to convert.
+ * @param buffer The buffer to store the resulting decimal string.
+ */
+void intToDecimalString(int num, char *buffer);
+
 #endif

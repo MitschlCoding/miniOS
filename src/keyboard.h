@@ -6,7 +6,7 @@
  * @brief Keyboard key codes and a simple key buffer API.
  *
  * @details
- * This header defines a subset of PC/AT Set 1 scan-code values as ::KeyCode
+ * This header defines a subset of PC/AT Set 1 and 2 scan-code values as ::KeyCode
  * and declares a minimal FIFO buffer interface for key events, plus a helper
  * to map a key to a printable character.
  */
@@ -67,6 +67,11 @@ typedef enum {
   KEY_SPACE = 0x39,
   KEY_F1 = 0x3B,
   KEY_F2 = 0x3C,
+  // Extended keys (Set 2 scan codes with 0xE0 prefix)
+  KEY_ARROW_UP = 0xE048,
+  KEY_ARROW_DOWN = 0xE050,
+  KEY_ARROW_LEFT = 0xE04B,
+  KEY_ARROW_RIGHT = 0xE04D,
 } KeyCode;
 
 /**

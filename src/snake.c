@@ -30,6 +30,9 @@ static uint64_t lastUpdate = 0; // Last time the game was updated
 static const uint64_t GAME_SPEED = 200; // milliseconds between moves
 static bool gameOver = false; // Flag to indicate if the game is over
 
+// Forward declarations
+static void generateFood(void);
+
 /**
  * @brief Moves the snake in the current direction.
  * 
@@ -189,7 +192,7 @@ void drawGame(void) {
     // Draw food
     screenSetChar(food.x, food.y, '*');
     
-    // Draw score and controls on the side
+    // Draw score 
     screenWriteLine("Score: ", 21);
     char scoreBuffer[20];
     simpleIntToString(snake.length - 3, scoreBuffer);
@@ -237,6 +240,9 @@ bool snakeGameUpdate(KeyCode key) {
             return true; // Exit game
         case KEY_ENTER:
             if (gameOver) return true; // Exit on game over
+            break;
+        default:
+            // Ignore all other keys
             break;
     }
     return false;

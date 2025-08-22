@@ -55,4 +55,21 @@ void showTerminal(void);
  */
 void initShowTerminal(void);
 
+/**
+ * @brief Marks the start of a command output sequence.
+ *
+ * @details This function should be called before executing a command that will
+ * produce output. It ensures that the first line of output gets a '>' prefix
+ * while subsequent lines get space prefixes for better readability.
+ */
+void terminalStartCommand(void);
+
+/**
+ * @brief Marks the end of a command output sequence.
+ *
+ * @details This function should be called after a command has finished
+ * producing output. It resets the line prefix state for the next command.
+ */
+void terminalEndCommand(void);
+
 #endif

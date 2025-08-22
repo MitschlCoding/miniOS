@@ -1,6 +1,7 @@
 
 #include "time.h"
 #include "outb.h"
+#include "str.h"
 
 #define PIT_CH0_PORT  0x40
 #define PIT_CMD_PORT  0x43
@@ -91,5 +92,76 @@ void timer_sleep_ms(uint64_t ms) {
     sti(); // ensure we wake from HLT on timer IRQs
     while (g_ticks < end) {
         hlt();
+    }
+}
+
+// Format uptime as a human-readable string
+void formatUptime(char *buffer, size_t bufferSize) {
+    if (bufferSize == 0) return;
+    
+    uint64_t milliseconds = timer_ms();
+    uint64_t seconds = milliseconds / 1000;
+    uint64_t minutes = seconds / 60;
+    uint64_t hours = minutes / 60;
+    uint64_t days = hours / 24;
+    
+    // Calculate remaining values
+    seconds = seconds % 60;
+    minutes = minutes % 60;
+    hours = hours % 24;
+    
+    char numStr[32];
+    
+    // Build uptime string using available functions
+    char* ptr = buffer;
+    const char* msg = "System uptime: ";
+    while (*msg) {
+        *ptr++ = *msg++;
+    }
+    *ptr = '\0';
+    
+    if (days > 0) {
+        uint64ToDecimalString(days, numStr);
+        concat(buffer, numStr, buffer);
+        if (strlenOS(buffer) >= bufferSize - 1) return;
+        if (days == 1) {
+            concat(buffer, " day, ", buffer);
+        } else {
+            concat(buffer, " days, ", buffer);
+        }
+        if (strlenOS(buffer) >= bufferSize - 1) return;
+    }
+    
+    if (hours > 0 || days > 0) {
+        uint64ToDecimalString(hours, numStr);
+        concat(buffer, numStr, buffer);
+        if (strlenOS(buffer) >= bufferSize - 1) return;
+        if (hours == 1) {
+            concat(buffer, " hour, ", buffer);
+        } else {
+            concat(buffer, " hours, ", buffer);
+        }
+        if (strlenOS(buffer) >= bufferSize - 1) return;
+    }
+    
+    if (minutes > 0 || hours > 0 || days > 0) {
+        uint64ToDecimalString(minutes, numStr);
+        concat(buffer, numStr, buffer);
+        if (strlenOS(buffer) >= bufferSize - 1) return;
+        if (minutes == 1) {
+            concat(buffer, " minute, ", buffer);
+        } else {
+            concat(buffer, " minutes, ", buffer);
+        }
+        if (strlenOS(buffer) >= bufferSize - 1) return;
+    }
+    
+    uint64ToDecimalString(seconds, numStr);
+    concat(buffer, numStr, buffer);
+    if (strlenOS(buffer) >= bufferSize - 1) return;
+    if (seconds == 1) {
+        concat(buffer, " second", buffer);
+    } else {
+        concat(buffer, " seconds", buffer);
     }
 }

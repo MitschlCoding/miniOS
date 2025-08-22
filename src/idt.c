@@ -2,6 +2,7 @@
 #include "outb.h"
 #include "printOS.h"
 #include "str.h"
+#include "terminal.h"
 #include <stdint.h>
 
 // the idt with 256 entries
@@ -43,14 +44,14 @@ extern void isr28();
 extern void isr29();
 extern void isr30();
 extern void isr31();
-extern void isr32();
-extern void isr33();
+extern void isr32(); // PIT timer interrupt
+extern void isr33(); // Keyboard interrupt
 
 // a list of all the cpu interrupts. interrupt numbers: 0-31
 void *isrStubTable[32] = {
     isr0,  isr1,  isr2,  isr3,  isr4,  isr5,  isr6,  isr7,  isr8,  isr9,  isr10,
     isr11, isr12, isr13, isr14, isr15, isr16, isr17, isr18, isr19, isr20, isr21,
-    isr22, isr23, isr24, isr25, isr26, isr27, isr28, isr29, isr30, isr31, isr32};
+    isr22, isr23, isr24, isr25, isr26, isr27, isr28, isr29, isr30, isr31};
 
 // a function to return the interrupt with number i
 uint32_t getStubAddr(int i) { return (uint32_t)isrStubTable[i]; }
@@ -159,4 +160,79 @@ void printIdtInfo() {
 
   screenWriteLine("--- End IDT Info ---", line++);
   screenWriteLine("Press enter to continue...", line + 1);
+}
+
+// Prints the currently loaded IDT information to terminal (for command use)
+void printIdtInfoToTerminal() {
+  // Struct to load current IDT info into
+  IdtDescriptor currentIdt;
+
+  // Read the current IDT descriptor using sidt instruction
+  __asm__ volatile("sidt %0" : "=m"(currentIdt));
+
+  char expectedLimitStr[11];
+  char loadedLimitStr[11];
+  char expectedBaseStr[11];
+  char loadedBaseStr[11];
+  char buffer[256];
+
+  terminalWriteLine("--- IDT Information ---");
+
+  // Convert the expected and loaded limit values to hex strings
+  intToHex(idtDescriptor.limit, expectedLimitStr);
+  intToHex((uint32_t)currentIdt.limit, loadedLimitStr);
+
+  // Print expected and loaded limit values
+  terminalWriteLine("Expected Limit:");
+  terminalWriteLine(expectedLimitStr);
+  terminalWriteLine("Loaded Limit:");
+  terminalWriteLine(loadedLimitStr);
+
+  // Convert the expected and loaded base addresses to hex strings
+  intToHex(idtDescriptor.base, expectedBaseStr);
+  intToHex(currentIdt.base, loadedBaseStr);
+
+  // Print expected and loaded base addresses
+  terminalWriteLine("Expected Base:");
+  terminalWriteLine(expectedBaseStr);
+  terminalWriteLine("Loaded Base:");
+  terminalWriteLine(loadedBaseStr);
+
+  // Compare the expected and loaded values
+  if (idtDescriptor.limit == currentIdt.limit && currentIdt.base == idtDescriptor.base) {
+    terminalWriteLine("IDT loaded correctly!");
+  } else {
+    terminalWriteLine("IDT load verification failed!");
+  }
+  
+  // Show IDT entries count
+  uint32_t entryCount = (currentIdt.limit + 1) / sizeof(IdtEntry);
+  char entryCountStr[32];
+  uint32ToDecimalString(entryCount, entryCountStr);
+  concat("IDT Entries: ", entryCountStr, buffer);
+  terminalWriteLine(buffer);
+  
+  // Show some specific interrupt handlers that are set up
+  terminalWriteLine("");
+  terminalWriteLine("Interrupt Handlers:");
+  
+  // Timer (IRQ0 -> IDT entry 32)
+  if (idtEntries[32].lowerBase || idtEntries[32].higherBase) {
+    uint32_t timerAddr = (uint32_t)idtEntries[32].lowerBase | ((uint32_t)idtEntries[32].higherBase << 16);
+    char timerAddrStr[11];
+    intToHex(timerAddr, timerAddrStr);
+    concat("Timer (IRQ0/Vector 32): ", timerAddrStr, buffer);
+    terminalWriteLine(buffer);
+  }
+  
+  // Keyboard (IRQ1 -> IDT entry 33)
+  if (idtEntries[33].lowerBase || idtEntries[33].higherBase) {
+    uint32_t kbdAddr = (uint32_t)idtEntries[33].lowerBase | ((uint32_t)idtEntries[33].higherBase << 16);
+    char kbdAddrStr[11];
+    intToHex(kbdAddr, kbdAddrStr);
+    concat("Keyboard (IRQ1/Vector 33): ", kbdAddrStr, buffer);
+    terminalWriteLine(buffer);
+  }
+  
+  terminalWriteLine("--- End IDT Info ---");
 }

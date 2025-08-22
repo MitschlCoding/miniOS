@@ -48,6 +48,14 @@ typedef struct {
 void printGdtInfo();
 
 /**
+ * @brief Prints the GDT information to the terminal.
+ *
+ * This function retrieves the GDT information from the CPU and prints it to the terminal
+ * using the terminal output system.
+ */
+void printGdtInfoToTerminal();
+
+/**
  * @brief Initializes the Global Descriptor Table (GDT).
  *
  * This function sets up the GDT with the necessary entries and loads it into the CPU.

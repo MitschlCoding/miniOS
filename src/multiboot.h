@@ -81,6 +81,22 @@ void printMultibootInfo(multiboot_info_t *mbi);
  */
 size_t checkMemoryMapForStack(multiboot_info_t *mbi);
 
+/**
+ * @brief Calculates and stores the total available memory.
+ *
+ * @param mbi Pointer to the Multiboot information structure.
+ * @details This function iterates through the memory map and sums up
+ * all available memory regions (type 1) to calculate total system memory.
+ */
+void calculateTotalMemory(multiboot_info_t *mbi);
+
+/**
+ * @brief Gets the total available memory in bytes.
+ *
+ * @return uint64_t The total available memory in bytes.
+ */
+uint64_t getTotalMemoryBytes(void);
+
 // Define memory region types
 #define MEMORY_REGION_AVAILABLE 1
 // others not used atm

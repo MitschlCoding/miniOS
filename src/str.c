@@ -1,4 +1,5 @@
 #include "str.h"
+#include <stdbool.h>
 
 size_t strlenOS(const char *str) {
   // count characters until \0 is found
@@ -178,4 +179,131 @@ char* concat(const char *str1, const char *str2, char *buffer) {
   buffer[len1 + len2] = '\0';
 
   return buffer;
+}
+
+void uint64ToDecimalString(uint64_t num, char* buffer) {
+    if (num == 0) {
+        buffer[0] = '0';
+        buffer[1] = '\0';
+        return;
+    }
+    
+    int i = 0;
+    
+    // Convert digits (will be in reverse order)
+    while (num > 0) {
+        buffer[i++] = '0' + (num % 10);
+        num /= 10;
+    }
+    
+    buffer[i] = '\0';
+    
+    // Reverse the string
+    int start = 0;
+    int end = i - 1;
+    while (start < end) {
+        char temp = buffer[start];
+        buffer[start] = buffer[end];
+        buffer[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+void uint32ToDecimalString(uint32_t num, char* buffer) {
+    if (num == 0) {
+        buffer[0] = '0';
+        buffer[1] = '\0';
+        return;
+    }
+    
+    int i = 0;
+    
+    // Convert digits (will be in reverse order)
+    while (num > 0) {
+        buffer[i++] = '0' + (num % 10);
+        num /= 10;
+    }
+    
+    buffer[i] = '\0';
+    
+    // Reverse the string
+    int start = 0;
+    int end = i - 1;
+    while (start < end) {
+        char temp = buffer[start];
+        buffer[start] = buffer[end];
+        buffer[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+void uint16ToDecimalString(uint16_t num, char* buffer) {
+    if (num == 0) {
+        buffer[0] = '0';
+        buffer[1] = '\0';
+        return;
+    }
+    
+    int i = 0;
+    
+    // Convert digits (will be in reverse order)
+    while (num > 0) {
+        buffer[i++] = '0' + (num % 10);
+        num /= 10;
+    }
+    
+    buffer[i] = '\0';
+    
+    // Reverse the string
+    int start = 0;
+    int end = i - 1;
+    while (start < end) {
+        char temp = buffer[start];
+        buffer[start] = buffer[end];
+        buffer[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+void intToDecimalString(int num, char* buffer) {
+    if (num == 0) {
+        buffer[0] = '0';
+        buffer[1] = '\0';
+        return;
+    }
+    
+    int i = 0;
+    
+    // Handle negative numbers
+    bool negative = false;
+    if (num < 0) {
+        negative = true;
+        num = -num;
+    }
+    
+    // Convert digits (will be in reverse order)
+    while (num > 0) {
+        buffer[i++] = '0' + (num % 10);
+        num /= 10;
+    }
+    
+    if (negative) {
+        buffer[i++] = '-';
+    }
+    
+    buffer[i] = '\0';
+    
+    // Reverse the string
+    int start = 0;
+    int end = i - 1;
+    while (start < end) {
+        char temp = buffer[start];
+        buffer[start] = buffer[end];
+        buffer[end] = temp;
+        start++;
+        end--;
+    }
 }

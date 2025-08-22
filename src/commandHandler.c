@@ -4,6 +4,11 @@
 #include "terminal.h"
 #include "modeManager.h"
 #include "snake.h"
+#include "time.h"
+#include "gdt.h"
+#include "idt.h"
+#include "multiboot.h"
+#include "art.h"
 
 #define COMMAND_LIST_LENGTH 64
 
@@ -36,6 +41,8 @@ command commandList[64];
   * @details This function is called when the "shutdown" command is entered.
  */
 void shutdownHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   systemShutdown();
 }
 
@@ -50,6 +57,7 @@ void shutdownHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * information for that command.
  */
 void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)buf; // Suppress unused parameter warning
 
   if (strcmpOS(cmd[1], "") != 0) {
     // if a special command is requested
@@ -89,6 +97,51 @@ void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
 }
 
 /**
+ * @brief Handles the uptime command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function is called when the "uptime" command is entered.
+ * It displays how long the system has been running since initialization.
+ */
+void uptimeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  char buffer[256];
+  formatUptime(buffer, sizeof(buffer));
+  terminalWriteLine(buffer);
+}
+
+/**
+ * @brief Handles the gdt command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function is called when the "gdt" command is entered.
+ * It displays information about the Global Descriptor Table (GDT).
+ */
+void gdtHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  printGdtInfoToTerminal();
+}
+
+/**
+ * @brief Handles the idt command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function is called when the "idt" command is entered.
+ * It displays information about the Interrupt Descriptor Table (IDT).
+ */
+void idtHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  printIdtInfoToTerminal();
+}
+
+/**
  * @brief Handles the snake command.
  *
  * @param cmd The split command input.
@@ -98,6 +151,8 @@ void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * switching to visual mode.
  */
 void snakeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   // Set up the snake game handlers
   setVisualModeHandlers(snakeGameUpdate, snakeGameTick);
   
@@ -106,6 +161,129 @@ void snakeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   
   // Switch to visual mode
   setCurrentMode(VISUAL_MODE);
+}
+
+/**
+ * @brief Handles the sysinfo command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function displays comprehensive system information including
+ * OS version, uptime and memory information.
+ */
+void sysinfoHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  // Display cute axolotl ASCII art first
+  printAxolotlArt();
+  
+  terminalWriteLine("=== System Information ===");
+  terminalWriteLine("");
+  
+  // OS Information
+  terminalWriteLine("Operating System: miniOS v1.0");
+  terminalWriteLine("Kernel: 32-bit x86");
+  terminalWriteLine("Architecture: i386");
+  terminalWriteLine("");
+  
+  // Uptime information using the new formatUptime function
+  char uptimeBuffer[256];
+  formatUptime(uptimeBuffer, sizeof(uptimeBuffer));
+  terminalWriteLine(uptimeBuffer);
+  terminalWriteLine("");
+  
+  // Memory Information
+  terminalWriteLine("Memory Information:");
+  uint64_t totalMemory = getTotalMemoryBytes();
+  if (totalMemory > 0) {
+    char memBuffer[256];
+    char numStr[32];
+    
+    // Convert bytes to MB for better readability
+    uint64_t memoryMB = totalMemory / (1024 * 1024);
+    uint64_t memoryKB = totalMemory / 1024;
+    
+    // Display total memory in MB
+    concat("  Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(memoryMB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " MB (", memBuffer);
+    uint64ToDecimalString(memoryKB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " KB)", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+    // Display in bytes for technical details
+    concat("  Total RAM (bytes): ", "", memBuffer);
+    uint64ToDecimalString(totalMemory, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " bytes", memBuffer);
+    terminalWriteLine(memBuffer);
+  } else {
+    terminalWriteLine("  Memory: Information not available");
+  }
+}
+
+/**
+ * @brief Handles the memory command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function displays detailed memory information.
+ */
+void memoryHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  terminalWriteLine("=== Memory Information ===");
+  terminalWriteLine("");
+  
+  uint64_t totalMemory = getTotalMemoryBytes();
+  if (totalMemory > 0) {
+    char memBuffer[256];
+    char numStr[32];
+    
+    // Convert bytes to MB and GB for better readability
+    uint64_t memoryMB = totalMemory / (1024 * 1024);
+    uint64_t memoryKB = totalMemory / 1024;
+    uint64_t memoryGB = totalMemory / (1024 * 1024 * 1024);
+    
+    // Display total memory in different units
+    if (memoryGB > 0) {
+      concat("Total RAM: ", "", memBuffer);
+      uint64ToDecimalString(memoryGB, numStr);
+      concat(memBuffer, numStr, memBuffer);
+      concat(memBuffer, " GB", memBuffer);
+      terminalWriteLine(memBuffer);
+    }
+    
+    concat("Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(memoryMB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " MB", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+    concat("Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(memoryKB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " KB", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+    concat("Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(totalMemory, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " bytes", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+  } else {
+    terminalWriteLine("Memory information not available");
+    terminalWriteLine("This could mean:");
+    terminalWriteLine("  - Multiboot info is not available");
+    terminalWriteLine("  - Memory map flag is not set");
+    terminalWriteLine("  - calculateTotalMemory() was not called");
+  }
+  terminalWriteLine("");
 }
 
 // docs see header file
@@ -123,13 +301,34 @@ void initCommands() {
   commandList[2].help = "Start the Snake game.\nUse WASD to control the snake, ESC to quit.";
   commandList[2].handlerFuncPtr = &snakeHandler;
 
-  commandList[3].name = NULL;
-  commandList[3].handlerFuncPtr = NULL;
+  commandList[3].name = "uptime";
+  commandList[3].help = "Display how long the system has been running since boot.";
+  commandList[3].handlerFuncPtr = &uptimeHandler;
+
+  commandList[4].name = "gdt";
+  commandList[4].help = "Display Global Descriptor Table (GDT) information and verification status.";
+  commandList[4].handlerFuncPtr = &gdtHandler;
+
+  commandList[5].name = "idt";
+  commandList[5].help = "Display Interrupt Descriptor Table (IDT) information and key interrupt handlers.";
+  commandList[5].handlerFuncPtr = &idtHandler;
+
+  commandList[6].name = "sysinfo";
+  commandList[6].help = "Display comprehensive system information including OS details, uptime, and features.";
+  commandList[6].handlerFuncPtr = &sysinfoHandler;
+
+  commandList[7].name = "memory";
+  commandList[7].help = "Display detailed memory information including total RAM in different units.";
+  commandList[7].handlerFuncPtr = &memoryHandler;
+
+  commandList[8].name = NULL;
+  commandList[8].handlerFuncPtr = NULL;
 }
 
 // docs see header file
 void commandHandler(char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS],
                     size_t numSubstrings) {
+  (void)numSubstrings; // Suppress unused parameter warning
 
   for (int i = 0; i < COMMAND_LIST_LENGTH; i++) {
     if (commandList[i].name == NULL) {
@@ -140,11 +339,15 @@ void commandHandler(char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS],
       if (commandList[i].handlerFuncPtr == NULL) {
         continue;
       }
+      terminalStartCommand();
       commandList[i].handlerFuncPtr(splitCommandBuffer, buffer);
+      terminalEndCommand();
       return;
     }
   }
 
+  terminalStartCommand();
   terminalWriteLine("Command not recognized:");
   terminalWriteLine(splitCommandBuffer[0]);
+  terminalEndCommand();
 }
