@@ -5,7 +5,7 @@
 static OperatingMode currentMode = TERMINAL_MODE;
 static OperatingMode previousMode = TERMINAL_MODE;
 
-// Function pointers for visual mode handlers
+// Function pointers for visual mode handlers, that are currently running
 static VisualModeInputHandler currentInputHandler = NULL;
 static VisualModeUpdateHandler currentUpdateHandler = NULL;
 

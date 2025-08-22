@@ -1,7 +1,7 @@
-#include "multiboot.h" // Include the header with the struct definitions
-#include "printOS.h"   // For terminalWriteLine, intToHex etc.
+#include "multiboot.h" 
+#include "printOS.h"   
 #include "str.h"
-#include <stddef.h> // For NULL
+#include <stddef.h> 
 #include <stdint.h>
 #include <sys/types.h>
 
@@ -11,6 +11,9 @@
 extern char kernel_end[];
 
 uintptr_t endOfKernelAdress = (uintptr_t)kernel_end;
+
+// Global variable to store total available memory in bytes
+static uint64_t total_memory_bytes = 0;
 
 // Prints the Multiboot information
 void printMultibootInfo(multiboot_info_t *mbi) {
@@ -24,12 +27,12 @@ void printMultibootInfo(multiboot_info_t *mbi) {
     return;
   }
 
-  // 1. Print Flags
+  // Print Flags
   intToHex(mbi->flags, buffer);
   screenWriteLine("Flags:", line++);
   screenWriteLine(buffer, line++);
 
-  // 2. Print Memory Info (mem_lower, mem_upper) - Check Flag Bit 0
+  // Print Memory Info (mem_lower, mem_upper) - Check Flag Bit 0
   if (CHECK_FLAG(mbi->flags, 0)) {
     intToHex(mbi->mem_lower, buffer);
     screenWriteLine("Mem Lower (KB):", line++);
@@ -39,12 +42,12 @@ void printMultibootInfo(multiboot_info_t *mbi) {
     screenWriteLine(buffer, line++);
   } else {
     screenWriteLine("Mem Lower/Upper: N/A (flag bit 0 not set)", line++);
-    line++; // Skip lines for consistency
+    line++; 
     line++;
     line++;
   }
 
-  // 3. Print Boot Device - Check Flag Bit 1
+  // Print Boot Device - Check Flag Bit 1
   if (CHECK_FLAG(mbi->flags, 1)) {
     intToHex(mbi->boot_device, buffer);
     screenWriteLine("Boot Device:", line++);
@@ -54,7 +57,7 @@ void printMultibootInfo(multiboot_info_t *mbi) {
     line++;
   }
 
-  // 4. Print Command Line Address - Check Flag Bit 2
+  // Print Command Line Address - Check Flag Bit 2
   if (CHECK_FLAG(mbi->flags, 2)) {
     intToHex(mbi->cmdline, buffer);
     screenWriteLine("Cmdline Addr:", line++);
@@ -64,7 +67,7 @@ void printMultibootInfo(multiboot_info_t *mbi) {
     line++;
   }
 
-  // 5. Print Module Info - Check Flag Bit 3
+  // Print Module Info - Check Flag Bit 3
   if (CHECK_FLAG(mbi->flags, 3)) {
     intToHex(mbi->mods_count, buffer);
     screenWriteLine("Module Count:", line++);
@@ -74,12 +77,12 @@ void printMultibootInfo(multiboot_info_t *mbi) {
     screenWriteLine(buffer, line++);
   } else {
     screenWriteLine("Modules: N/A (flag bit 3 not set)", line++);
-    line++; // Skip lines
+    line++; 
     line++;
     line++;
   }
 
-  // 6. Print Memory Map Info - Check Flag Bit 6 (VERY IMPORTANT)
+  // Print Memory Map Info - Check Flag Bit 6 (VERY IMPORTANT)
   if (CHECK_FLAG(mbi->flags, 6)) {
     intToHex(mbi->mmap_addr, buffer);
     screenWriteLine("Mmap Addr:", line++);
@@ -88,26 +91,6 @@ void printMultibootInfo(multiboot_info_t *mbi) {
     screenWriteLine("Mmap Length:", line++);
     screenWriteLine(buffer, line++);
 
-    /*
-      terminalWriteLine("--- Memory Map Entries ---", line++);
-      memory_map_entry_t* entry = (memory_map_entry_t*)mbi->mmap_addr;
-      uintptr_t map_end = mbi->mmap_addr + mbi->mmap_length;
-      while ((uintptr_t)entry < map_end) {
-          char baseStr[17], lenStr[17], typeStr[11];
-          uint64ToHex(entry->base_addr, baseStr);
-          uint64ToHex(entry->length, lenStr);
-          intToHex(entry->type, typeStr);
-
-      positioning/line breaks terminalWriteLine(baseStr, line); // Need a way to
-      write parts of a line
-          // ... print length and type similarly ...
-          line++;
-
-          // Move to next entry
-          entry = (memory_map_entry_t*)((uintptr_t)entry + entry->size +
-      sizeof(uint32_t));
-      }
-      */
 
   } else {
     screenWriteLine("Memory Map: N/A (flag bit 6 not set!)", line++);
@@ -122,7 +105,7 @@ void printMultibootInfo(multiboot_info_t *mbi) {
   screenWriteLine(buffer, line++);
 
   screenWriteLine("--- End Multiboot Info ---", line++);
-  screenWriteLine("Press enter to continue...", line + 1); // Leave space
+  screenWriteLine("Press enter to continue...", line + 1); 
 }
 
 size_t checkMemoryMapForStack(multiboot_info_t *mbi) {
@@ -169,6 +152,7 @@ size_t checkMemoryMapForStack(multiboot_info_t *mbi) {
     screenWriteLine("No suitable memory region found for stack!", 0);
     return 0;
   } else {
+    // Print the largest memory region found after the kernel
     char buffer[20];
     uint64_t base_addr_found;
     if (largest->base_addr < endOfKernelAdress) {
@@ -201,3 +185,38 @@ size_t checkMemoryMapForStack(multiboot_info_t *mbi) {
     return size_found; // Return the size of the found region
   }
 };
+
+void calculateTotalMemory(multiboot_info_t *mbi) {
+  total_memory_bytes = 0;
+  
+  if (mbi == NULL) {
+    return;
+  }
+  
+  // Check if memory map is available (preferred method)
+  if (CHECK_FLAG(mbi->flags, 6) && mbi->mmap_addr != 0 && mbi->mmap_length > 0) {
+    memory_map_entry_t *entry = (memory_map_entry_t *)mbi->mmap_addr;
+    uintptr_t map_end = mbi->mmap_addr + mbi->mmap_length;
+    
+    while ((uintptr_t)entry < map_end) {
+      // Validate entry structure
+      if (entry->size == 0) break;
+      
+      // Only count available memory regions (type 1)
+      if (entry->type == 1) {
+        total_memory_bytes += entry->length;
+      }
+      
+      // Move to next entry
+      entry = (memory_map_entry_t *)((uintptr_t)entry + entry->size + sizeof(uint32_t));
+    }
+  }
+  // Fallback to mem_lower and mem_upper if memory map not available
+  else if (CHECK_FLAG(mbi->flags, 0)) {
+    total_memory_bytes = (uint64_t)(mbi->mem_lower + mbi->mem_upper) * 1024;
+  }
+}
+
+uint64_t getTotalMemoryBytes(void) {
+  return total_memory_bytes;
+}

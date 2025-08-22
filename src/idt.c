@@ -44,8 +44,8 @@ extern void isr28();
 extern void isr29();
 extern void isr30();
 extern void isr31();
-extern void isr32();
-extern void isr33();
+extern void isr32(); // PIT timer interrupt
+extern void isr33(); // Keyboard interrupt
 
 // a list of all the cpu interrupts. interrupt numbers: 0-31
 void *isrStubTable[32] = {

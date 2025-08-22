@@ -12,7 +12,7 @@
 #include "idt.h"
 #include "keyboard.h"
 #include "multiboot.h"
-#include "printOS.h" // Your header for terminal I/O and error reporting
+#include "printOS.h" 
 #include "terminal.h"
 #include "time.h"
 #include "str.h"
@@ -39,6 +39,9 @@ void kernel_main(multiboot_info_t *mbi) {
 
   // Initialize terminal or console interface
   screenInit();
+
+  // Calculate total system memory
+  calculateTotalMemory(mbi);
 
   // print out information about Multiboot
   printMultibootInfo(mbi); // Pass the pointer received from _start

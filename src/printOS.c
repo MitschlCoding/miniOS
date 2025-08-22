@@ -21,14 +21,13 @@ void vga_disable_cursor() {
   // Set Bit 5 to disable the cursor (Value | 00100000 binary)
   uint8_t new_value = current_value | 0x20;
 
-  // Select Cursor Start Register again (optional but safe)
+  // Select Cursor Start Register again 
   outb(CRTC_INDEX_PORT, 0x0A);
   // Write the new value (with bit 5 set) back to the Data Port
   outb(CRTC_DATA_PORT, new_value);
 }
 
-// converts two VGA Colors to the used uint8_t format. With foreground and text
-// color
+// converts two VGA Colors to the used uint8_t format.
 static inline uint8_t vgaEntryColor(vgaColor foreground,
                                     enum vgaColor background) {
   return foreground | background << 4;
@@ -60,7 +59,6 @@ void screenPutchar(char c, uint8_t color, size_t x, size_t y) {
 
 void screenWriteLine(const char *data, size_t line_num) {
   size_t len = strlenOS(data);
-  // hacker colors and so on
   uint8_t color = vgaEntryColor(VGA_COLOR_WHITE, VGA_COLOR_BLACK);
   for (size_t i = 0; i < len; i++) {
     // if width is to high this returns and doesnt try to print more characters

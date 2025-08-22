@@ -5,6 +5,7 @@ void heap_init(void *start_addr, size_t total_size) {
     // Invalid parameters, cannot initialize heap
     return;
   }
+  // generate heapTop with full size
   heapTop = (MemBlockHeader_t *)start_addr;
   heapTop->nextFree = NULL;
   heapTop->dataSize = total_size - sizeof(MemBlockHeader_t);

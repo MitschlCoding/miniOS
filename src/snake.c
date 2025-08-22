@@ -192,7 +192,7 @@ void drawGame(void) {
     // Draw food
     screenSetChar(food.x, food.y, '*');
     
-    // Draw score and controls on the side
+    // Draw score 
     screenWriteLine("Score: ", 21);
     char scoreBuffer[20];
     simpleIntToString(snake.length - 3, scoreBuffer);

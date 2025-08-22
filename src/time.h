@@ -10,6 +10,7 @@
  */
 
 #include <stdint.h>
+#include <stddef.h>
 
 /**
  * @brief Initialize the Programmable Interrupt Timer (PIT).
@@ -44,5 +45,13 @@ void timer_sleep_ms(uint64_t ms);
  * This function is called when the timer interrupt occurs.
  */
 void timer_irq(void);
+
+/**
+ * @brief Format uptime as a human-readable string.
+ *
+ * @param buffer The buffer to store the formatted uptime string.
+ * @param bufferSize The size of the buffer.
+ */
+void formatUptime(char *buffer, size_t bufferSize);
 
 #endif

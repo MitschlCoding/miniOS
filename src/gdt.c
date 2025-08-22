@@ -21,6 +21,7 @@ uint8_t gdt[GDT_SIZE];
  */
 GdtDescriptor gdtDesc;
 
+// documentation see gdt.h
 void gdtEntry(uint8_t *target, Gdt source) {
   // Encode the limit (split into low and high)
   target[0] = source.limit & 0xFF;

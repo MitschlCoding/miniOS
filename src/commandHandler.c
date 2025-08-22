@@ -7,6 +7,8 @@
 #include "time.h"
 #include "gdt.h"
 #include "idt.h"
+#include "multiboot.h"
+#include "art.h"
 
 #define COMMAND_LIST_LENGTH 64
 
@@ -105,66 +107,9 @@ void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
 void uptimeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   (void)cmd; // Suppress unused parameter warning
   (void)buf; // Suppress unused parameter warning
-  uint64_t milliseconds = timer_ms();
-  uint64_t seconds = milliseconds / 1000;
-  uint64_t minutes = seconds / 60;
-  uint64_t hours = minutes / 60;
-  uint64_t days = hours / 24;
-  
-  // Calculate remaining values
-  seconds = seconds % 60;
-  minutes = minutes % 60;
-  hours = hours % 24;
   
   char buffer[256];
-  char numStr[32];
-  
-  // Start with base message
-  char* ptr = buffer;
-  const char* msg = "System uptime: ";
-  while (*msg) {
-    *ptr++ = *msg++;
-  }
-  *ptr = '\0';
-  
-  if (days > 0) {
-    uint64ToDecimalString(days, numStr);
-    concat(buffer, numStr, buffer);
-    if (days == 1) {
-      concat(buffer, " day, ", buffer);
-    } else {
-      concat(buffer, " days, ", buffer);
-    }
-  }
-  
-  if (hours > 0 || days > 0) {
-    uint64ToDecimalString(hours, numStr);
-    concat(buffer, numStr, buffer);
-    if (hours == 1) {
-      concat(buffer, " hour, ", buffer);
-    } else {
-      concat(buffer, " hours, ", buffer);
-    }
-  }
-  
-  if (minutes > 0 || hours > 0 || days > 0) {
-    uint64ToDecimalString(minutes, numStr);
-    concat(buffer, numStr, buffer);
-    if (minutes == 1) {
-      concat(buffer, " minute, ", buffer);
-    } else {
-      concat(buffer, " minutes, ", buffer);
-    }
-  }
-  
-  uint64ToDecimalString(seconds, numStr);
-  concat(buffer, numStr, buffer);
-  if (seconds == 1) {
-    concat(buffer, " second", buffer);
-  } else {
-    concat(buffer, " seconds", buffer);
-  }
-  
+  formatUptime(buffer, sizeof(buffer));
   terminalWriteLine(buffer);
 }
 
@@ -218,6 +163,129 @@ void snakeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   setCurrentMode(VISUAL_MODE);
 }
 
+/**
+ * @brief Handles the sysinfo command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function displays comprehensive system information including
+ * OS version, uptime and memory information.
+ */
+void sysinfoHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  // Display cute axolotl ASCII art first
+  printAxolotlArt();
+  
+  terminalWriteLine("=== System Information ===");
+  terminalWriteLine("");
+  
+  // OS Information
+  terminalWriteLine("Operating System: miniOS v1.0");
+  terminalWriteLine("Kernel: 32-bit x86");
+  terminalWriteLine("Architecture: i386");
+  terminalWriteLine("");
+  
+  // Uptime information using the new formatUptime function
+  char uptimeBuffer[256];
+  formatUptime(uptimeBuffer, sizeof(uptimeBuffer));
+  terminalWriteLine(uptimeBuffer);
+  terminalWriteLine("");
+  
+  // Memory Information
+  terminalWriteLine("Memory Information:");
+  uint64_t totalMemory = getTotalMemoryBytes();
+  if (totalMemory > 0) {
+    char memBuffer[256];
+    char numStr[32];
+    
+    // Convert bytes to MB for better readability
+    uint64_t memoryMB = totalMemory / (1024 * 1024);
+    uint64_t memoryKB = totalMemory / 1024;
+    
+    // Display total memory in MB
+    concat("  Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(memoryMB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " MB (", memBuffer);
+    uint64ToDecimalString(memoryKB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " KB)", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+    // Display in bytes for technical details
+    concat("  Total RAM (bytes): ", "", memBuffer);
+    uint64ToDecimalString(totalMemory, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " bytes", memBuffer);
+    terminalWriteLine(memBuffer);
+  } else {
+    terminalWriteLine("  Memory: Information not available");
+  }
+}
+
+/**
+ * @brief Handles the memory command.
+ *
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ * @details This function displays detailed memory information.
+ */
+void memoryHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  terminalWriteLine("=== Memory Information ===");
+  terminalWriteLine("");
+  
+  uint64_t totalMemory = getTotalMemoryBytes();
+  if (totalMemory > 0) {
+    char memBuffer[256];
+    char numStr[32];
+    
+    // Convert bytes to MB and GB for better readability
+    uint64_t memoryMB = totalMemory / (1024 * 1024);
+    uint64_t memoryKB = totalMemory / 1024;
+    uint64_t memoryGB = totalMemory / (1024 * 1024 * 1024);
+    
+    // Display total memory in different units
+    if (memoryGB > 0) {
+      concat("Total RAM: ", "", memBuffer);
+      uint64ToDecimalString(memoryGB, numStr);
+      concat(memBuffer, numStr, memBuffer);
+      concat(memBuffer, " GB", memBuffer);
+      terminalWriteLine(memBuffer);
+    }
+    
+    concat("Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(memoryMB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " MB", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+    concat("Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(memoryKB, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " KB", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+    concat("Total RAM: ", "", memBuffer);
+    uint64ToDecimalString(totalMemory, numStr);
+    concat(memBuffer, numStr, memBuffer);
+    concat(memBuffer, " bytes", memBuffer);
+    terminalWriteLine(memBuffer);
+    
+  } else {
+    terminalWriteLine("Memory information not available");
+    terminalWriteLine("This could mean:");
+    terminalWriteLine("  - Multiboot info is not available");
+    terminalWriteLine("  - Memory map flag is not set");
+    terminalWriteLine("  - calculateTotalMemory() was not called");
+  }
+  terminalWriteLine("");
+}
+
 // docs see header file
 void initCommands() {
   commandList[0].name = "shutdown";
@@ -245,8 +313,16 @@ void initCommands() {
   commandList[5].help = "Display Interrupt Descriptor Table (IDT) information and key interrupt handlers.";
   commandList[5].handlerFuncPtr = &idtHandler;
 
-  commandList[6].name = NULL;
-  commandList[6].handlerFuncPtr = NULL;
+  commandList[6].name = "sysinfo";
+  commandList[6].help = "Display comprehensive system information including OS details, uptime, and features.";
+  commandList[6].handlerFuncPtr = &sysinfoHandler;
+
+  commandList[7].name = "memory";
+  commandList[7].help = "Display detailed memory information including total RAM in different units.";
+  commandList[7].handlerFuncPtr = &memoryHandler;
+
+  commandList[8].name = NULL;
+  commandList[8].handlerFuncPtr = NULL;
 }
 
 // docs see header file

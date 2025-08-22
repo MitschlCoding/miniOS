@@ -6,7 +6,7 @@
  * @brief Keyboard key codes and a simple key buffer API.
  *
  * @details
- * This header defines a subset of PC/AT Set 1 scan-code values as ::KeyCode
+ * This header defines a subset of PC/AT Set 1 and 2 scan-code values as ::KeyCode
  * and declares a minimal FIFO buffer interface for key events, plus a helper
  * to map a key to a printable character.
  */
