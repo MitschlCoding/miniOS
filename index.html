@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>miniOS: Main Page</title>
+<title>miniOS: miniOS Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,10 +68,103 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">miniOS Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">miniOS Documentation </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> </p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Overview</h1>
+<p>Welcome to the <b>miniOS</b> documentation! This is a custom operating system kernel written in C and assembly, designed as a learning project to understand low-level system programming and operating system concepts.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li><b>Custom Bootloader</b>: Assembly-based bootloader for kernel initialization</li>
+<li><b>Mode</b>: 32-bit protected mode operation</li>
+<li><b>Memory Address Space</b>: 4GB linear address space implementing a GDT</li>
+<li><b>Memory Management</b>: Custom heap implementation and memory allocation</li>
+<li><b>Interrupt Handling</b>: Complete IDT (Interrupt Descriptor Table) setup and interrupt management</li>
+<li><b>Keyboard Input</b>: PS/2 keyboard driver for user input</li>
+<li><b>Terminal Interface</b>: Basic terminal with command processing</li>
+<li><b>Graphics</b>: VGA text mode output with custom print functions</li>
+<li><b>Game Implementation</b>: <a class="el" href="structSnake.html" title="Represents the snake and its state.">Snake</a> game as an interactive application</li>
+<li><b>Time Management</b>: System timer and time-based functions</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Architecture</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Core Components</h2>
+<ul>
+<li>**Kernel (<code><a class="el" href="kernel_8c.html" title="Main entry point for the kernel.">kernel.c</a></code>)**: Main entry point and system initialization</li>
+<li>**GDT (<code><a class="el" href="gdt_8c.html">gdt.c</a>/.h</code>)**: Global Descriptor Table setup for memory segmentation</li>
+<li>**IDT (<code><a class="el" href="idt_8c.html">idt.c</a>/.h</code>)**: Interrupt Descriptor Table for interrupt handling</li>
+<li>**Memory (<code><a class="el" href="heap_8c.html">heap.c</a>/.h</code>)**: Dynamic memory allocation system</li>
+<li>**Terminal (<code><a class="el" href="terminal_8c.html">terminal.c</a>/.h</code>)**: Text-based user interface</li>
+<li>**Keyboard (<code><a class="el" href="keyboard_8c.html">keyboard.c</a>/.h</code>)**: Input device driver</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+System Services</h2>
+<ul>
+<li>**Command Handler (<code><a class="el" href="commandHandler_8c.html">commandHandler.c</a>/.h</code>)**: Command-line interface processing</li>
+<li>**Print System (<code><a class="el" href="printOS_8c.html">printOS.c</a>/.h</code>)**: Formatted output and display functions</li>
+<li>**String Utilities (<code><a class="el" href="str_8c.html">str.c</a>/.h</code>)**: String manipulation functions</li>
+<li>**Time Services (<code><a class="el" href="time_8c.html">time.c</a>/.h</code>)**: System timing and delays</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Applications</h2>
+<ul>
+<li>**Snake Game (<code><a class="el" href="snake_8c.html" title="Snake game implementation for miniOS.">snake.c</a>/.h</code>)**: Interactive snake game implementation</li>
+<li>**Mode Manager (<code><a class="el" href="modeManager_8c.html" title="Operating mode management implementation for miniOS.">modeManager.c</a>/.h</code>)**: Application mode switching. From Terminal to Visual Applications.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Getting Started</h1>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Prerequisites</h2>
+<ul>
+<li>GCC with 32-bit support</li>
+<li>NASM assembler</li>
+<li>QEMU for emulation</li>
+<li>Make build system</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Building</h2>
+<div class="fragment"><div class="line"># Install dependencies for Ubuntu</div>
+<div class="line">make installDeps</div>
+<div class="line"> </div>
+<div class="line"># Build the kernel</div>
+<div class="line">make</div>
+<div class="line"> </div>
+<div class="line"># Run in QEMU</div>
+<div class="line">make run</div>
+<div class="line"> </div>
+<div class="line"># Generate documentation (see our github pages for generated docs)</div>
+<div class="line">make docs</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Project Structure</h2>
+<div class="fragment"><div class="line">miniOS/</div>
+<div class="line">├── src/           # Source code files</div>
+<div class="line">├── obj/           # Compiled object files</div>
+<div class="line">├── bin/           # Final kernel binary</div>
+<div class="line">├── docs/          # Generated documentation</div>
+<div class="line">├── boot.asm       # Bootloader assembly code</div>
+<div class="line">├── linker.ld      # Linker script</div>
+<div class="line">└── Makefile       # Build configuration</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
+Development</h1>
+<p>This project follows standard C99 conventions.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Key Design Principles</h2>
+<ul>
+<li><b>Modular Architecture</b>: Each subsystem is implemented as separate modules</li>
+<li><b>Clear Interfaces</b>: Well-defined APIs between components</li>
+<li><b>Hardware Abstraction</b>: Direct hardware interaction through controlled interfaces</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md12"></a>
+License</h1>
+<p>This project is developed for educational purposes.</p>
+<hr  />
+<p><em>Generated with Doxygen - Last updated: 2025</em> </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
