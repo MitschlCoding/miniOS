@@ -39,6 +39,8 @@ command commandList[64];
   * @details This function is called when the "shutdown" command is entered.
  */
 void shutdownHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   systemShutdown();
 }
 
@@ -53,6 +55,7 @@ void shutdownHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * information for that command.
  */
 void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)buf; // Suppress unused parameter warning
 
   if (strcmpOS(cmd[1], "") != 0) {
     // if a special command is requested
@@ -100,6 +103,8 @@ void helpHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * It displays how long the system has been running since initialization.
  */
 void uptimeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   uint64_t milliseconds = timer_ms();
   uint64_t seconds = milliseconds / 1000;
   uint64_t minutes = seconds / 60;
@@ -172,6 +177,8 @@ void uptimeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * It displays information about the Global Descriptor Table (GDT).
  */
 void gdtHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   printGdtInfoToTerminal();
 }
 
@@ -184,6 +191,8 @@ void gdtHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * It displays information about the Interrupt Descriptor Table (IDT).
  */
 void idtHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   printIdtInfoToTerminal();
 }
 
@@ -197,6 +206,8 @@ void idtHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
  * switching to visual mode.
  */
 void snakeHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
   // Set up the snake game handlers
   setVisualModeHandlers(snakeGameUpdate, snakeGameTick);
   
@@ -241,6 +252,7 @@ void initCommands() {
 // docs see header file
 void commandHandler(char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS],
                     size_t numSubstrings) {
+  (void)numSubstrings; // Suppress unused parameter warning
 
   for (int i = 0; i < COMMAND_LIST_LENGTH; i++) {
     if (commandList[i].name == NULL) {
@@ -251,11 +263,15 @@ void commandHandler(char splitCommandBuffer[NUM_SUBSTRINGS][LEN_SUBSTRINGS],
       if (commandList[i].handlerFuncPtr == NULL) {
         continue;
       }
+      terminalStartCommand();
       commandList[i].handlerFuncPtr(splitCommandBuffer, buffer);
+      terminalEndCommand();
       return;
     }
   }
 
+  terminalStartCommand();
   terminalWriteLine("Command not recognized:");
   terminalWriteLine(splitCommandBuffer[0]);
+  terminalEndCommand();
 }

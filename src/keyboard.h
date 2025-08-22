@@ -67,6 +67,11 @@ typedef enum {
   KEY_SPACE = 0x39,
   KEY_F1 = 0x3B,
   KEY_F2 = 0x3C,
+  // Extended keys (Set 2 scan codes with 0xE0 prefix)
+  KEY_ARROW_UP = 0xE048,
+  KEY_ARROW_DOWN = 0xE050,
+  KEY_ARROW_LEFT = 0xE04B,
+  KEY_ARROW_RIGHT = 0xE04D,
 } KeyCode;
 
 /**

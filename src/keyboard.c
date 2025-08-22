@@ -129,11 +129,15 @@ char getCharFromKey(KeyCode key) {
   case KEY_SHIFT_L:   // 0x2A
   case KEY_SHIFT_R:   // 0x36
   case KEY_ALT_L:     // 0x38
+  case KEY_ARROW_UP:    // Extended keys
+  case KEY_ARROW_DOWN:
+  case KEY_ARROW_LEFT:
+  case KEY_ARROW_RIGHT:
 
   // --- Standardfall (Default) ---
   // Behandelt alle anderen (unbekannten) KeyCodes, die nicht explizit
   // aufgelistet sind.
   default:
-    return NULL;
+    return '\0';
   }
 }

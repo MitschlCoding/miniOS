@@ -4,6 +4,7 @@
 #include "register.h"
 #include "shutdown.h"
 #include "terminal.h"
+#include "time.h"
 #include <stddef.h>
 #include <stdint.h>
 
@@ -12,6 +13,10 @@
 #define PIC1_COMMAND_PORT 0x20
 #define PIC2_COMMAND_PORT 0xA0 // For Slave PIC EOI
 #define PIC_EOI 0x20
+
+// Static variable to track extended key sequences (0xE0 prefix)
+// Two-byte sequence expected for extended keys
+static bool extended_key = false;
 
 // send whenever a interrupt was handled for the controller to know that the
 // next is wanted
@@ -56,7 +61,32 @@ void isrHandler(registers_t *regs) {
   {
     uint8_t scancode = inb(0x60); // Read scan code of pressed key
 
-    keyBufferPut((KeyCode)scancode);
+    // Check for extended key prefix (0xE0)
+    if (scancode == 0xE0) {
+      extended_key = true;
+      break; // Wait for the next byte
+    }
+    
+    // Handle key release codes (high bit set)
+    if (scancode & 0x80) {
+      extended_key = false; // Reset extended key flag on key release
+      break; // Ignore key release events
+    }
+    
+    // Handle extended keys
+    if (extended_key) {
+      switch (scancode) {
+        case 0x48: keyBufferPut(KEY_ARROW_UP); break;
+        case 0x50: keyBufferPut(KEY_ARROW_DOWN); break;
+        case 0x4B: keyBufferPut(KEY_ARROW_LEFT); break;
+        case 0x4D: keyBufferPut(KEY_ARROW_RIGHT); break;
+        default: break; // Ignore unhandled extended keys
+      }
+      extended_key = false;
+    } else {
+      // Handle normal keys
+      keyBufferPut((KeyCode)scancode);
+    }
   } break;
 
   default:
