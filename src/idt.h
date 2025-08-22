@@ -49,4 +49,12 @@ void idtInit();
  */
 void printIdtInfo();
 
+/**
+ * @brief Prints information about the IDT to the terminal.
+ *
+ * This function retrieves the IDT information from the CPU and prints it to the terminal
+ * using the terminal output system.
+ */
+void printIdtInfoToTerminal();
+
 #endif

@@ -1,6 +1,7 @@
 #include "gdt.h"
 #include "printOS.h"
 #include "str.h"
+#include "terminal.h"
 #include <sys/types.h>
 
 // Define the size of the GDT in bytes
@@ -130,4 +131,57 @@ void printGdtInfo() {
   screenWriteLine("--- End GDT Info ---", line++);
   line++;
   screenWriteLine("Press enter to continue...", line++);
+}
+
+// prints the info about the gdt to terminal (for command use)
+void printGdtInfoToTerminal() {
+  // struct to load data into
+  GdtDescriptor currentGdt;
+
+  // read the gdt descriptor
+  __asm__ volatile("sgdt %0" : "=m"(currentGdt));
+
+  char expectedLimitStr[11];
+  char loadedLimitStr[11];
+  char expectedBaseStr[11];
+  char loadedBaseStr[11];
+  char buffer[256];
+
+  // Convert the expected and loaded limit values to hex strings
+  intToHex(gdtDesc.limit, expectedLimitStr);
+  intToHex(currentGdt.limit, loadedLimitStr);
+
+  terminalWriteLine("--- GDT Information ---");
+
+  // Print expected and loaded limit values
+  terminalWriteLine("Expected Limit:");
+  terminalWriteLine(expectedLimitStr);
+  terminalWriteLine("Loaded Limit:");
+  terminalWriteLine(loadedLimitStr);
+
+  // Convert the expected and loaded base addresses to hex strings
+  intToHex((uint32_t)gdt, expectedBaseStr);
+  intToHex(currentGdt.base, loadedBaseStr);
+
+  // Print expected and loaded base addresses
+  terminalWriteLine("Expected Base:");
+  terminalWriteLine(expectedBaseStr);
+  terminalWriteLine("Loaded Base:");
+  terminalWriteLine(loadedBaseStr);
+
+  // Compare the expected and loaded values
+  if (gdtDesc.limit == currentGdt.limit && currentGdt.base == (uint32_t)gdt) {
+    terminalWriteLine("GDT loaded correctly!");
+  } else {
+    terminalWriteLine("GDT load verification failed!");
+  }
+  
+  // Show GDT entries count
+  uint32_t entryCount = (currentGdt.limit + 1) / 8;
+  char entryCountStr[32];
+  uint32ToDecimalString(entryCount, entryCountStr);
+  concat("GDT Entries: ", entryCountStr, buffer);
+  terminalWriteLine(buffer);
+  
+  terminalWriteLine("--- End GDT Info ---");
 }
