@@ -101,9 +101,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="multiboot_8h__dep__incl.png" border="0" usemap="#asrc_2multiboot_8hdep" alt=""/></div>
 <map name="asrc_2multiboot_8hdep" id="asrc_2multiboot_8hdep">
-<area shape="rect" title="Header file for Multiboot information structure and related functions." alt="" coords="59,5,179,31"/>
-<area shape="rect" href="kernel_8c.html" title="Main entry point for the kernel." alt="" coords="5,79,101,104"/>
-<area shape="rect" href="multiboot_8c.html" title=" " alt="" coords="126,79,245,104"/>
+<area shape="rect" title="Header file for Multiboot information structure and related functions." alt="" coords="188,5,308,31"/>
+<area shape="rect" href="commandHandler_8c.html" title=" " alt="" coords="5,79,176,104"/>
+<area shape="rect" href="kernel_8c.html" title="Main entry point for the kernel." alt="" coords="200,79,296,104"/>
+<area shape="rect" href="multiboot_8c.html" title=" " alt="" coords="321,79,439,104"/>
 </map>
 </div>
 </div>
@@ -146,6 +147,12 @@ Functions</h2></td></tr>
 <tr class="memitem:afb26d4346eccb4ad3d3f2c188adf2455"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#afb26d4346eccb4ad3d3f2c188adf2455">checkMemoryMapForStack</a> (<a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *mbi)</td></tr>
 <tr class="memdesc:afb26d4346eccb4ad3d3f2c188adf2455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the memory map for a suitable stack region.  <br /></td></tr>
 <tr class="separator:afb26d4346eccb4ad3d3f2c188adf2455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec6e4e215c34dd4f467d029f625f037"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#afec6e4e215c34dd4f467d029f625f037">calculateTotalMemory</a> (<a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *mbi)</td></tr>
+<tr class="memdesc:afec6e4e215c34dd4f467d029f625f037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and stores the total available memory.  <br /></td></tr>
+<tr class="separator:afec6e4e215c34dd4f467d029f625f037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a275543096b5d029d6544f8f028a5b43f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="multiboot_8h.html#a275543096b5d029d6544f8f028a5b43f">getTotalMemoryBytes</a> (void)</td></tr>
+<tr class="memdesc:a275543096b5d029d6544f8f028a5b43f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total available memory in bytes.  <br /></td></tr>
+<tr class="separator:a275543096b5d029d6544f8f028a5b43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for Multiboot information structure and related functions. </p>
@@ -204,6 +211,33 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afec6e4e215c34dd4f467d029f625f037" name="afec6e4e215c34dd4f467d029f625f037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afec6e4e215c34dd4f467d029f625f037">&#9670;&#160;</a></span>calculateTotalMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateTotalMemory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot_info_t</a> *&#160;</td>
+          <td class="paramname"><em>mbi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates and stores the total available memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mbi</td><td>Pointer to the Multiboot information structure.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function iterates through the memory map and sums up all available memory regions (type 1) to calculate total system memory. </p>
+
+</div>
+</div>
 <a id="afb26d4346eccb4ad3d3f2c188adf2455" name="afb26d4346eccb4ad3d3f2c188adf2455"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb26d4346eccb4ad3d3f2c188adf2455">&#9670;&#160;</a></span>checkMemoryMapForStack()</h2>
 
@@ -228,6 +262,27 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>size_t The size of the stack region found, or 0 if none found. </dd></dl>
+
+</div>
+</div>
+<a id="a275543096b5d029d6544f8f028a5b43f" name="a275543096b5d029d6544f8f028a5b43f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a275543096b5d029d6544f8f028a5b43f">&#9670;&#160;</a></span>getTotalMemoryBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t getTotalMemoryBytes </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the total available memory in bytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint64_t The total available memory in bytes. </dd></dl>
 
 </div>
 </div>

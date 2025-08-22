@@ -13,10 +13,13 @@ var searchData=
   ['pit_5finput_5fhz_10',['PIT_INPUT_HZ',['../time_8c.html#a6c1a5eabb057d7f3dbe070d1d08aad49',1,'time.c']]],
   ['position_11',['Position',['../structPosition.html',1,'']]],
   ['previousmode_12',['previousMode',['../modeManager_8c.html#a483f408104f4451961f3c4aa6b64b0e1',1,'modeManager.c']]],
-  ['printgdtinfo_13',['printGdtInfo',['../gdt_8c.html#a9b60f035b96531ea84c5086d47f33bbd',1,'printGdtInfo():&#160;gdt.c'],['../gdt_8h.html#a9b60f035b96531ea84c5086d47f33bbd',1,'printGdtInfo():&#160;gdt.c']]],
-  ['printidtinfo_14',['printIdtInfo',['../idt_8c.html#ab400bfe286f08b72b549741747a1af1f',1,'printIdtInfo():&#160;idt.c'],['../idt_8h.html#ab400bfe286f08b72b549741747a1af1f',1,'printIdtInfo():&#160;idt.c']]],
-  ['printmultibootinfo_15',['printMultibootInfo',['../multiboot_8h.html#a7b741358accb5da07a24d477bc4a2bc5',1,'printMultibootInfo(multiboot_info_t *mbi):&#160;multiboot.c'],['../multiboot_8c.html#a7b741358accb5da07a24d477bc4a2bc5',1,'printMultibootInfo(multiboot_info_t *mbi):&#160;multiboot.c']]],
-  ['printos_2ec_16',['printOS.c',['../printOS_8c.html',1,'']]],
-  ['printos_2eh_17',['printOS.h',['../printOS_8h.html',1,'']]],
-  ['processmodeinput_18',['processModeInput',['../modeManager_8c.html#adc0be9bf86fa1669720aa8832b419212',1,'processModeInput(KeyCode key):&#160;modeManager.c'],['../modeManager_8h.html#adc0be9bf86fa1669720aa8832b419212',1,'processModeInput(KeyCode key):&#160;modeManager.c']]]
+  ['printaxolotlart_13',['printAxolotlArt',['../art_8c.html#ad140a63ef91ecbf917be66f57a7fde51',1,'printAxolotlArt(void):&#160;art.c'],['../art_8h.html#ad140a63ef91ecbf917be66f57a7fde51',1,'printAxolotlArt(void):&#160;art.c']]],
+  ['printgdtinfo_14',['printGdtInfo',['../gdt_8c.html#a9b60f035b96531ea84c5086d47f33bbd',1,'printGdtInfo():&#160;gdt.c'],['../gdt_8h.html#a9b60f035b96531ea84c5086d47f33bbd',1,'printGdtInfo():&#160;gdt.c']]],
+  ['printgdtinfototerminal_15',['printGdtInfoToTerminal',['../gdt_8c.html#acdd3c0f88b8135722494e94bbea48ee3',1,'printGdtInfoToTerminal():&#160;gdt.c'],['../gdt_8h.html#acdd3c0f88b8135722494e94bbea48ee3',1,'printGdtInfoToTerminal():&#160;gdt.c']]],
+  ['printidtinfo_16',['printIdtInfo',['../idt_8c.html#ab400bfe286f08b72b549741747a1af1f',1,'printIdtInfo():&#160;idt.c'],['../idt_8h.html#ab400bfe286f08b72b549741747a1af1f',1,'printIdtInfo():&#160;idt.c']]],
+  ['printidtinfototerminal_17',['printIdtInfoToTerminal',['../idt_8c.html#a57d7a22259255bad9e7022fe1d113310',1,'printIdtInfoToTerminal():&#160;idt.c'],['../idt_8h.html#a57d7a22259255bad9e7022fe1d113310',1,'printIdtInfoToTerminal():&#160;idt.c']]],
+  ['printmultibootinfo_18',['printMultibootInfo',['../multiboot_8h.html#a7b741358accb5da07a24d477bc4a2bc5',1,'printMultibootInfo(multiboot_info_t *mbi):&#160;multiboot.c'],['../multiboot_8c.html#a7b741358accb5da07a24d477bc4a2bc5',1,'printMultibootInfo(multiboot_info_t *mbi):&#160;multiboot.c']]],
+  ['printos_2ec_19',['printOS.c',['../printOS_8c.html',1,'']]],
+  ['printos_2eh_20',['printOS.h',['../printOS_8h.html',1,'']]],
+  ['processmodeinput_21',['processModeInput',['../modeManager_8c.html#adc0be9bf86fa1669720aa8832b419212',1,'processModeInput(KeyCode key):&#160;modeManager.c'],['../modeManager_8h.html#adc0be9bf86fa1669720aa8832b419212',1,'processModeInput(KeyCode key):&#160;modeManager.c']]]
 ];

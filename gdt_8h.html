@@ -101,9 +101,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="gdt_8h__dep__incl.png" border="0" usemap="#asrc_2gdt_8hdep" alt=""/></div>
 <map name="asrc_2gdt_8hdep" id="asrc_2gdt_8hdep">
-<area shape="rect" title="Header file for the Global Descriptor Table (GDT) implementation." alt="" coords="59,5,138,31"/>
-<area shape="rect" href="gdt_8c.html" title=" " alt="" coords="5,79,83,104"/>
-<area shape="rect" href="kernel_8c.html" title="Main entry point for the kernel." alt="" coords="107,79,203,104"/>
+<area shape="rect" title="Header file for the Global Descriptor Table (GDT) implementation." alt="" coords="199,5,278,31"/>
+<area shape="rect" href="commandHandler_8c.html" title=" " alt="" coords="5,79,176,104"/>
+<area shape="rect" href="gdt_8c.html" title=" " alt="" coords="200,79,277,104"/>
+<area shape="rect" href="kernel_8c.html" title="Main entry point for the kernel." alt="" coords="301,79,397,104"/>
 </map>
 </div>
 </div>
@@ -126,6 +127,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9b60f035b96531ea84c5086d47f33bbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a9b60f035b96531ea84c5086d47f33bbd">printGdtInfo</a> ()</td></tr>
 <tr class="memdesc:a9b60f035b96531ea84c5086d47f33bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the GDT information.  <br /></td></tr>
 <tr class="separator:a9b60f035b96531ea84c5086d47f33bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd3c0f88b8135722494e94bbea48ee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#acdd3c0f88b8135722494e94bbea48ee3">printGdtInfoToTerminal</a> ()</td></tr>
+<tr class="memdesc:acdd3c0f88b8135722494e94bbea48ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the GDT information to the terminal.  <br /></td></tr>
+<tr class="separator:acdd3c0f88b8135722494e94bbea48ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a831e63066cc12ef04b27743ad96bf948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a831e63066cc12ef04b27743ad96bf948">gdtInit</a> ()</td></tr>
 <tr class="memdesc:a831e63066cc12ef04b27743ad96bf948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Global Descriptor Table (GDT).  <br /></td></tr>
 <tr class="separator:a831e63066cc12ef04b27743ad96bf948"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,6 +211,26 @@ Functions</h2></td></tr>
 
 <p>Prints the GDT information. </p>
 <p>This function retrieves the GDT information from the CPU and prints it to the terminal. </p>
+
+</div>
+</div>
+<a id="acdd3c0f88b8135722494e94bbea48ee3" name="acdd3c0f88b8135722494e94bbea48ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd3c0f88b8135722494e94bbea48ee3">&#9670;&#160;</a></span>printGdtInfoToTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printGdtInfoToTerminal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints the GDT information to the terminal. </p>
+<p>This function retrieves the GDT information from the CPU and prints it to the terminal using the terminal output system. </p>
 
 </div>
 </div>

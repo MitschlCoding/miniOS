@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['kernel_2ec_0',['kernel.c',['../kernel_8c.html',1,'']]],
-  ['keyboard_2ec_1',['keyboard.c',['../keyboard_8c.html',1,'']]],
-  ['keyboard_2eh_2',['keyboard.h',['../keyboard_8h.html',1,'']]]
+  ['idt_2ec_0',['idt.c',['../idt_8c.html',1,'']]],
+  ['idt_2eh_1',['idt.h',['../idt_8h.html',1,'']]],
+  ['interrupts_2ec_2',['interrupts.c',['../interrupts_8c.html',1,'']]],
+  ['interrupts_2eh_3',['interrupts.h',['../interrupts_8h.html',1,'']]]
 ];

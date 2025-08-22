@@ -87,23 +87,33 @@ $(function() {
 <code>#include &quot;<a class="el" href="terminal_8h_source.html">terminal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="modeManager_8h_source.html">modeManager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="snake_8h_source.html">snake.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="time_8h_source.html">time.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gdt_8h_source.html">gdt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="idt_8h_source.html">idt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="multiboot_8h_source.html">multiboot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="art_8h_source.html">art.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for commandHandler.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="commandHandler_8c__incl.png" border="0" usemap="#asrc_2commandHandler_8c" alt=""/></div>
 <map name="asrc_2commandHandler_8c" id="asrc_2commandHandler_8c">
-<area shape="rect" title=" " alt="" coords="255,5,425,31"/>
+<area shape="rect" title=" " alt="" coords="357,5,528,31"/>
 <area shape="rect" href="commandHandler_8h.html" title="Command handler, that handles commands input by the user into the terminal." alt="" coords="5,79,155,104"/>
-<area shape="rect" href="str_8h.html" title="String manipulation functions for miniOS." alt="" coords="156,152,207,177"/>
-<area shape="rect" href="shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="591,79,689,104"/>
-<area shape="rect" href="terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="230,79,319,104"/>
-<area shape="rect" href="modeManager_8h.html" title="Operating mode management for miniOS." alt="" coords="343,79,470,104"/>
-<area shape="rect" href="snake_8h.html" title="Header file for the Snake game implementation." alt="" coords="495,79,567,104"/>
-<area shape="rect" title=" " alt="" coords="141,225,216,251"/>
-<area shape="rect" title=" " alt="" coords="241,225,311,251"/>
-<area shape="rect" href="keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="343,152,438,177"/>
-<area shape="rect" href="printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="233,152,316,177"/>
-<area shape="rect" title=" " alt="" coords="435,225,517,251"/>
+<area shape="rect" href="str_8h.html" title="String manipulation functions for miniOS." alt="" coords="55,152,105,177"/>
+<area shape="rect" href="shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="855,79,953,104"/>
+<area shape="rect" href="terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="494,79,583,104"/>
+<area shape="rect" href="modeManager_8h.html" title="Operating mode management for miniOS." alt="" coords="607,79,734,104"/>
+<area shape="rect" href="snake_8h.html" title="Header file for the Snake game implementation." alt="" coords="759,79,831,104"/>
+<area shape="rect" href="time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="377,152,441,177"/>
+<area shape="rect" href="gdt_8h.html" title="Header file for the Global Descriptor Table (GDT) implementation." alt="" coords="415,79,470,104"/>
+<area shape="rect" href="idt_8h.html" title="Header file for the Interrupt Descriptor Table (IDT) implementation." alt="" coords="303,152,353,177"/>
+<area shape="rect" href="multiboot_8h.html" title="Header file for Multiboot information structure and related functions." alt="" coords="181,152,278,177"/>
+<area shape="rect" href="art_8h.html" title=" " alt="" coords="977,79,1029,104"/>
+<area shape="rect" title=" " alt="" coords="192,225,267,251"/>
+<area shape="rect" title=" " alt="" coords="374,225,445,251"/>
+<area shape="rect" href="keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="623,152,718,177"/>
+<area shape="rect" href="printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="465,152,548,177"/>
+<area shape="rect" title=" " alt="" coords="715,225,797,251"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -126,9 +136,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a6c1f09f530f05a30881a194c38966b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#a6c1f09f530f05a30881a194c38966b83">helpHandler</a> (char cmd[64][64], char *buf)</td></tr>
 <tr class="memdesc:a6c1f09f530f05a30881a194c38966b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the help command.  <br /></td></tr>
 <tr class="separator:a6c1f09f530f05a30881a194c38966b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27e1ef46dca8419f78c5ba8448b32f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#af27e1ef46dca8419f78c5ba8448b32f0">uptimeHandler</a> (char cmd[64][64], char *buf)</td></tr>
+<tr class="memdesc:af27e1ef46dca8419f78c5ba8448b32f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the uptime command.  <br /></td></tr>
+<tr class="separator:af27e1ef46dca8419f78c5ba8448b32f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedeae89bfe05961aae8ad05c5f928cdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#aedeae89bfe05961aae8ad05c5f928cdb">gdtHandler</a> (char cmd[64][64], char *buf)</td></tr>
+<tr class="memdesc:aedeae89bfe05961aae8ad05c5f928cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the gdt command.  <br /></td></tr>
+<tr class="separator:aedeae89bfe05961aae8ad05c5f928cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8084fca4d85675ed0b88ca15227cc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#a3d8084fca4d85675ed0b88ca15227cc9">idtHandler</a> (char cmd[64][64], char *buf)</td></tr>
+<tr class="memdesc:a3d8084fca4d85675ed0b88ca15227cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the idt command.  <br /></td></tr>
+<tr class="separator:a3d8084fca4d85675ed0b88ca15227cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f25aa62b26d7dce068dc7f46b6703e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#a2f25aa62b26d7dce068dc7f46b6703e8">snakeHandler</a> (char cmd[64][64], char *buf)</td></tr>
 <tr class="memdesc:a2f25aa62b26d7dce068dc7f46b6703e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the snake command.  <br /></td></tr>
 <tr class="separator:a2f25aa62b26d7dce068dc7f46b6703e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635bd4f4ae86a92e30009d4b9fdc5f2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#a635bd4f4ae86a92e30009d4b9fdc5f2b">sysinfoHandler</a> (char cmd[64][64], char *buf)</td></tr>
+<tr class="memdesc:a635bd4f4ae86a92e30009d4b9fdc5f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the sysinfo command.  <br /></td></tr>
+<tr class="separator:a635bd4f4ae86a92e30009d4b9fdc5f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955c5159f4c84f286c55fb4a5ea99811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#a955c5159f4c84f286c55fb4a5ea99811">memoryHandler</a> (char cmd[64][64], char *buf)</td></tr>
+<tr class="memdesc:a955c5159f4c84f286c55fb4a5ea99811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the memory command.  <br /></td></tr>
+<tr class="separator:a955c5159f4c84f286c55fb4a5ea99811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a178eca85bab4f8cf08dea6f31ee307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="commandHandler_8c.html#a3a178eca85bab4f8cf08dea6f31ee307">initCommands</a> ()</td></tr>
 <tr class="memdesc:a3a178eca85bab4f8cf08dea6f31ee307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the command handler.  <br /></td></tr>
 <tr class="separator:a3a178eca85bab4f8cf08dea6f31ee307"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,6 +221,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aedeae89bfe05961aae8ad05c5f928cdb" name="aedeae89bfe05961aae8ad05c5f928cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedeae89bfe05961aae8ad05c5f928cdb">&#9670;&#160;</a></span>gdtHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gdtHandler </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>cmd</em>[64][64], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the gdt command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>The split command input. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to store the command output.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function is called when the "gdt" command is entered. It displays information about the Global Descriptor Table (GDT). </p>
+
+</div>
+</div>
 <a id="a6c1f09f530f05a30881a194c38966b83" name="a6c1f09f530f05a30881a194c38966b83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c1f09f530f05a30881a194c38966b83">&#9670;&#160;</a></span>helpHandler()</h2>
 
@@ -235,6 +298,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a3d8084fca4d85675ed0b88ca15227cc9" name="a3d8084fca4d85675ed0b88ca15227cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8084fca4d85675ed0b88ca15227cc9">&#9670;&#160;</a></span>idtHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void idtHandler </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>cmd</em>[64][64], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the idt command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>The split command input. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to store the command output.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function is called when the "idt" command is entered. It displays information about the Interrupt Descriptor Table (IDT). </p>
+
+</div>
+</div>
 <a id="a3a178eca85bab4f8cf08dea6f31ee307" name="a3a178eca85bab4f8cf08dea6f31ee307"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a178eca85bab4f8cf08dea6f31ee307">&#9670;&#160;</a></span>initCommands()</h2>
 
@@ -252,6 +353,44 @@ Variables</h2></td></tr>
 
 <p>Initialize the command handler. </p>
 <p>This function sets up the command list and registers the available commands. It should be called before using the command handler to ensure all commands are properly initialized. </p>
+
+</div>
+</div>
+<a id="a955c5159f4c84f286c55fb4a5ea99811" name="a955c5159f4c84f286c55fb4a5ea99811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955c5159f4c84f286c55fb4a5ea99811">&#9670;&#160;</a></span>memoryHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void memoryHandler </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>cmd</em>[64][64], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the memory command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>The split command input. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to store the command output.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function displays detailed memory information. </p>
 
 </div>
 </div>
@@ -328,6 +467,82 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <p>This function is called when the "snake" command is entered. It starts the snake game by setting up the visual mode handlers and switching to visual mode. </p>
+
+</div>
+</div>
+<a id="a635bd4f4ae86a92e30009d4b9fdc5f2b" name="a635bd4f4ae86a92e30009d4b9fdc5f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a635bd4f4ae86a92e30009d4b9fdc5f2b">&#9670;&#160;</a></span>sysinfoHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sysinfoHandler </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>cmd</em>[64][64], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the sysinfo command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>The split command input. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to store the command output.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function displays comprehensive system information including OS version, uptime and memory information. </p>
+
+</div>
+</div>
+<a id="af27e1ef46dca8419f78c5ba8448b32f0" name="af27e1ef46dca8419f78c5ba8448b32f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27e1ef46dca8419f78c5ba8448b32f0">&#9670;&#160;</a></span>uptimeHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uptimeHandler </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>cmd</em>[64][64], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the uptime command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>The split command input. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to store the command output.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function is called when the "uptime" command is entered. It displays how long the system has been running since initialization. </p>
 
 </div>
 </div>

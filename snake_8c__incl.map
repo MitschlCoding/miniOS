@@ -1,11 +1,11 @@
 <map id="src/snake.c" name="src/snake.c">
 <area shape="rect" id="node1" title=" " alt="" coords="146,5,241,31"/>
 <area shape="rect" id="node2" href="$snake_8h.html" title="Header file for the Snake game implementation." alt="" coords="5,79,77,104"/>
-<area shape="rect" id="node3" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="45,152,139,177"/>
+<area shape="rect" id="node3" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="61,152,155,177"/>
 <area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="152,79,235,104"/>
-<area shape="rect" id="node8" href="$time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="364,152,428,177"/>
-<area shape="rect" id="node9" href="$str_8h.html" title="String manipulation functions for miniOS." alt="" coords="259,79,309,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="25,225,108,251"/>
-<area shape="rect" id="node5" title=" " alt="" coords="167,225,238,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="215,152,289,177"/>
+<area shape="rect" id="node8" href="$time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="259,79,323,104"/>
+<area shape="rect" id="node9" href="$str_8h.html" title="String manipulation functions for miniOS." alt="" coords="347,79,397,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="41,225,124,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="183,225,254,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="281,152,356,177"/>
 </map>

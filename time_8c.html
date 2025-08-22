@@ -82,15 +82,18 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="time_8h_source.html">time.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="outb_8h_source.html">outb.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="str_8h_source.html">str.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for time.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="time_8c__incl.png" border="0" usemap="#asrc_2time_8c" alt=""/></div>
 <map name="asrc_2time_8c" id="asrc_2time_8c">
-<area shape="rect" title=" " alt="" coords="38,5,125,31"/>
-<area shape="rect" href="time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="5,79,69,104"/>
-<area shape="rect" href="outb_8h.html" title="Header file for input/output port operations." alt="" coords="94,79,157,104"/>
-<area shape="rect" title=" " alt="" coords="46,152,117,177"/>
+<area shape="rect" title=" " alt="" coords="75,5,161,31"/>
+<area shape="rect" href="time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="167,79,231,104"/>
+<area shape="rect" href="outb_8h.html" title="Header file for input/output port operations." alt="" coords="5,79,68,104"/>
+<area shape="rect" href="str_8h.html" title="String manipulation functions for miniOS." alt="" coords="93,79,143,104"/>
+<area shape="rect" title=" " alt="" coords="67,152,137,177"/>
+<area shape="rect" title=" " alt="" coords="162,152,237,177"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -132,6 +135,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa498f8381e3cd103da882efb1f532411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time_8c.html#aa498f8381e3cd103da882efb1f532411">timer_sleep_ms</a> (uint64_t ms)</td></tr>
 <tr class="memdesc:aa498f8381e3cd103da882efb1f532411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep for a specified number of milliseconds.  <br /></td></tr>
 <tr class="separator:aa498f8381e3cd103da882efb1f532411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a652b52a7be1d3b099c81f174b169b5c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time_8c.html#a652b52a7be1d3b099c81f174b169b5c4">formatUptime</a> (char *buffer, size_t bufferSize)</td></tr>
+<tr class="memdesc:a652b52a7be1d3b099c81f174b169b5c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format uptime as a human-readable string.  <br /></td></tr>
+<tr class="separator:a652b52a7be1d3b099c81f174b169b5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -237,6 +243,43 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a652b52a7be1d3b099c81f174b169b5c4" name="a652b52a7be1d3b099c81f174b169b5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a652b52a7be1d3b099c81f174b169b5c4">&#9670;&#160;</a></span>formatUptime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void formatUptime </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>bufferSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Format uptime as a human-readable string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>The buffer to store the formatted uptime string. </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>The size of the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

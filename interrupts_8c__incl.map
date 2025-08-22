@@ -1,12 +1,13 @@
 <map id="src/interrupts.c" name="src/interrupts.c">
-<area shape="rect" id="node1" title=" " alt="" coords="217,5,336,31"/>
-<area shape="rect" id="node2" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="227,152,321,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="141,225,212,251"/>
-<area shape="rect" id="node5" href="$outb_8h.html" title="Header file for input/output port operations." alt="" coords="5,152,68,177"/>
-<area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="350,152,433,177"/>
-<area shape="rect" id="node7" title=" " alt="" coords="445,225,519,251"/>
-<area shape="rect" id="node8" href="$register_8h.html" title=" " alt="" coords="65,79,147,104"/>
-<area shape="rect" id="node9" href="$shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="439,79,536,104"/>
-<area shape="rect" id="node10" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="273,79,363,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="237,225,319,251"/>
+<area shape="rect" id="node1" title=" " alt="" coords="313,5,432,31"/>
+<area shape="rect" id="node2" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="5,152,100,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="237,225,308,251"/>
+<area shape="rect" id="node5" href="$outb_8h.html" title="Header file for input/output port operations." alt="" coords="207,152,269,177"/>
+<area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="345,152,427,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="446,225,521,251"/>
+<area shape="rect" id="node8" href="$register_8h.html" title=" " alt="" coords="331,79,414,104"/>
+<area shape="rect" id="node9" href="$shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="591,79,688,104"/>
+<area shape="rect" id="node10" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="167,79,256,104"/>
+<area shape="rect" id="node11" href="$time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="451,152,515,177"/>
+<area shape="rect" id="node3" title=" " alt="" coords="11,225,94,251"/>
 </map>

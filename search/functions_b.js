@@ -18,5 +18,6 @@ var searchData=
   ['sti_15',['sti',['../time_8c.html#af87d69b8449fc86a02b250af121cd29d',1,'time.c']]],
   ['strcmpos_16',['strcmpOS',['../str_8c.html#ab6e824ae3e9e72c08c7e135fa4c3eb3b',1,'strcmpOS(char *a, char *b):&#160;str.c'],['../str_8h.html#ab6e824ae3e9e72c08c7e135fa4c3eb3b',1,'strcmpOS(char *a, char *b):&#160;str.c']]],
   ['strlenos_17',['strlenOS',['../str_8c.html#a0a1f2d05f5d4fdbcd89a351730b4e8e3',1,'strlenOS(const char *str):&#160;str.c'],['../str_8h.html#a0a1f2d05f5d4fdbcd89a351730b4e8e3',1,'strlenOS(const char *str):&#160;str.c']]],
-  ['systemshutdown_18',['systemShutdown',['../shutdown_8c.html#ad3bf7c35dc5dafc31d98f83652064476',1,'systemShutdown():&#160;shutdown.c'],['../shutdown_8h.html#ad3bf7c35dc5dafc31d98f83652064476',1,'systemShutdown():&#160;shutdown.c']]]
+  ['sysinfohandler_18',['sysinfoHandler',['../commandHandler_8c.html#a635bd4f4ae86a92e30009d4b9fdc5f2b',1,'commandHandler.c']]],
+  ['systemshutdown_19',['systemShutdown',['../shutdown_8c.html#ad3bf7c35dc5dafc31d98f83652064476',1,'systemShutdown():&#160;shutdown.c'],['../shutdown_8h.html#ad3bf7c35dc5dafc31d98f83652064476',1,'systemShutdown():&#160;shutdown.c']]]
 ];

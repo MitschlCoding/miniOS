@@ -1,9 +1,12 @@
 <map id="src/idt.c" name="src/idt.c">
-<area shape="rect" id="node1" title=" " alt="" coords="175,5,249,31"/>
-<area shape="rect" id="node2" href="$idt_8h.html" title="Header file for the Interrupt Descriptor Table (IDT) implementation." alt="" coords="5,79,56,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="179,152,250,177"/>
-<area shape="rect" id="node5" href="$outb_8h.html" title="Header file for input/output port operations." alt="" coords="262,79,325,104"/>
-<area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="80,79,163,104"/>
-<area shape="rect" id="node7" href="$str_8h.html" title="String manipulation functions for miniOS." alt="" coords="187,79,237,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="80,152,155,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="127,5,201,31"/>
+<area shape="rect" id="node2" href="$idt_8h.html" title="Header file for the Interrupt Descriptor Table (IDT) implementation." alt="" coords="80,152,131,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="195,225,266,251"/>
+<area shape="rect" id="node5" href="$outb_8h.html" title="Header file for input/output port operations." alt="" coords="365,79,427,104"/>
+<area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="155,152,237,177"/>
+<area shape="rect" id="node7" href="$str_8h.html" title="String manipulation functions for miniOS." alt="" coords="5,152,56,177"/>
+<area shape="rect" id="node8" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="161,79,250,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="68,225,143,251"/>
+<area shape="rect" id="node9" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="313,152,407,177"/>
+<area shape="rect" id="node10" title=" " alt="" coords="319,225,401,251"/>
 </map>

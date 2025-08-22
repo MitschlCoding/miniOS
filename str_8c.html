@@ -79,13 +79,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="str_8h_source.html">str.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for str.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="str_8c__incl.png" border="0" usemap="#asrc_2str_8c" alt=""/></div>
 <map name="asrc_2str_8c" id="asrc_2str_8c">
-<area shape="rect" title=" " alt="" coords="55,5,127,31"/>
+<area shape="rect" title=" " alt="" coords="100,5,172,31"/>
 <area shape="rect" href="str_8h.html" title="String manipulation functions for miniOS." alt="" coords="65,79,116,104"/>
+<area shape="rect" title=" " alt="" coords="140,79,223,104"/>
 <area shape="rect" title=" " alt="" coords="5,152,80,177"/>
 <area shape="rect" title=" " alt="" coords="105,152,175,177"/>
 </map>
@@ -114,6 +116,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a55c26bdfaa65f1387a6b39c6c3e05599"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8c.html#a55c26bdfaa65f1387a6b39c6c3e05599">concat</a> (const char *str1, const char *str2, char *buffer)</td></tr>
 <tr class="memdesc:a55c26bdfaa65f1387a6b39c6c3e05599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two C strings into a buffer.  <br /></td></tr>
 <tr class="separator:a55c26bdfaa65f1387a6b39c6c3e05599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68138c191821c45fd1fe30c99a3ac955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8c.html#a68138c191821c45fd1fe30c99a3ac955">uint64ToDecimalString</a> (uint64_t num, char *buffer)</td></tr>
+<tr class="memdesc:a68138c191821c45fd1fe30c99a3ac955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 64-bit unsigned integer to a decimal string.  <br /></td></tr>
+<tr class="separator:a68138c191821c45fd1fe30c99a3ac955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9b4bd95e7cbef86030a67a878ae8d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8c.html#a9d9b4bd95e7cbef86030a67a878ae8d8">uint32ToDecimalString</a> (uint32_t num, char *buffer)</td></tr>
+<tr class="memdesc:a9d9b4bd95e7cbef86030a67a878ae8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 32-bit unsigned integer to a decimal string.  <br /></td></tr>
+<tr class="separator:a9d9b4bd95e7cbef86030a67a878ae8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5f2ff084abc95e609a5ee22d765f9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8c.html#a5f5f2ff084abc95e609a5ee22d765f9b">uint16ToDecimalString</a> (uint16_t num, char *buffer)</td></tr>
+<tr class="memdesc:a5f5f2ff084abc95e609a5ee22d765f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 16-bit unsigned integer to a decimal string.  <br /></td></tr>
+<tr class="separator:a5f5f2ff084abc95e609a5ee22d765f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a946a46a96d7d71376204e19885ca1922"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str_8c.html#a946a46a96d7d71376204e19885ca1922">intToDecimalString</a> (int num, char *buffer)</td></tr>
+<tr class="memdesc:a946a46a96d7d71376204e19885ca1922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a signed integer to a decimal string.  <br /></td></tr>
+<tr class="separator:a946a46a96d7d71376204e19885ca1922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a55c26bdfaa65f1387a6b39c6c3e05599" name="a55c26bdfaa65f1387a6b39c6c3e05599"></a>
@@ -158,6 +172,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* Pointer to the resulting concatenated string in the buffer. </dd></dl>
+
+</div>
+</div>
+<a id="a946a46a96d7d71376204e19885ca1922" name="a946a46a96d7d71376204e19885ca1922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a946a46a96d7d71376204e19885ca1922">&#9670;&#160;</a></span>intToDecimalString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intToDecimalString </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a signed integer to a decimal string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>The signed integer to convert. </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer to store the resulting decimal string. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -333,6 +384,117 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* Pointer to the trimmed string. </dd></dl>
+
+</div>
+</div>
+<a id="a5f5f2ff084abc95e609a5ee22d765f9b" name="a5f5f2ff084abc95e609a5ee22d765f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5f2ff084abc95e609a5ee22d765f9b">&#9670;&#160;</a></span>uint16ToDecimalString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uint16ToDecimalString </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a 16-bit unsigned integer to a decimal string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>The 16-bit unsigned integer to convert. </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer to store the resulting decimal string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d9b4bd95e7cbef86030a67a878ae8d8" name="a9d9b4bd95e7cbef86030a67a878ae8d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9b4bd95e7cbef86030a67a878ae8d8">&#9670;&#160;</a></span>uint32ToDecimalString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uint32ToDecimalString </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a 32-bit unsigned integer to a decimal string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>The 32-bit unsigned integer to convert. </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer to store the resulting decimal string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68138c191821c45fd1fe30c99a3ac955" name="a68138c191821c45fd1fe30c99a3ac955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68138c191821c45fd1fe30c99a3ac955">&#9670;&#160;</a></span>uint64ToDecimalString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uint64ToDecimalString </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a 64-bit unsigned integer to a decimal string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>The 64-bit unsigned integer to convert. </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer to store the resulting decimal string. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

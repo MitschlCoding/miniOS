@@ -83,19 +83,23 @@ $(function() {
 <code>#include &quot;<a class="el" href="outb_8h_source.html">outb.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="printOS_8h_source.html">printOS.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="str_8h_source.html">str.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="terminal_8h_source.html">terminal.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for idt.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="idt_8c__incl.png" border="0" usemap="#asrc_2idt_8c" alt=""/></div>
 <map name="asrc_2idt_8c" id="asrc_2idt_8c">
-<area shape="rect" title=" " alt="" coords="175,5,249,31"/>
-<area shape="rect" href="idt_8h.html" title="Header file for the Interrupt Descriptor Table (IDT) implementation." alt="" coords="5,79,56,104"/>
-<area shape="rect" title=" " alt="" coords="179,152,250,177"/>
-<area shape="rect" href="outb_8h.html" title="Header file for input/output port operations." alt="" coords="262,79,325,104"/>
-<area shape="rect" href="printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="80,79,163,104"/>
-<area shape="rect" href="str_8h.html" title="String manipulation functions for miniOS." alt="" coords="187,79,237,104"/>
-<area shape="rect" title=" " alt="" coords="80,152,155,177"/>
+<area shape="rect" title=" " alt="" coords="127,5,201,31"/>
+<area shape="rect" href="idt_8h.html" title="Header file for the Interrupt Descriptor Table (IDT) implementation." alt="" coords="80,152,131,177"/>
+<area shape="rect" title=" " alt="" coords="195,225,266,251"/>
+<area shape="rect" href="outb_8h.html" title="Header file for input/output port operations." alt="" coords="365,79,427,104"/>
+<area shape="rect" href="printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="155,152,237,177"/>
+<area shape="rect" href="str_8h.html" title="String manipulation functions for miniOS." alt="" coords="5,152,56,177"/>
+<area shape="rect" href="terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="161,79,250,104"/>
+<area shape="rect" title=" " alt="" coords="68,225,143,251"/>
+<area shape="rect" href="keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="313,152,407,177"/>
+<area shape="rect" title=" " alt="" coords="319,225,401,251"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -179,6 +183,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab400bfe286f08b72b549741747a1af1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#ab400bfe286f08b72b549741747a1af1f">printIdtInfo</a> ()</td></tr>
 <tr class="memdesc:ab400bfe286f08b72b549741747a1af1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints information about the IDT.  <br /></td></tr>
 <tr class="separator:ab400bfe286f08b72b549741747a1af1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d7a22259255bad9e7022fe1d113310"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="idt_8c.html#a57d7a22259255bad9e7022fe1d113310">printIdtInfoToTerminal</a> ()</td></tr>
+<tr class="memdesc:a57d7a22259255bad9e7022fe1d113310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints information about the IDT to the terminal.  <br /></td></tr>
+<tr class="separator:a57d7a22259255bad9e7022fe1d113310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -843,6 +850,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a57d7a22259255bad9e7022fe1d113310" name="a57d7a22259255bad9e7022fe1d113310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d7a22259255bad9e7022fe1d113310">&#9670;&#160;</a></span>printIdtInfoToTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printIdtInfoToTerminal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints information about the IDT to the terminal. </p>
+<p>This function retrieves the IDT information from the CPU and prints it to the terminal using the terminal output system. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a97a060ca62f91f18a12814ee9212b66c" name="a97a060ca62f91f18a12814ee9212b66c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97a060ca62f91f18a12814ee9212b66c">&#9670;&#160;</a></span>idtDescriptor</h2>
@@ -886,7 +913,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <a class="code hl_function" href="idt_8c.html#af88eb8e98d943aa0461c01de3cb53493">isr0</a>,  <a class="code hl_function" href="idt_8c.html#aeab0ed9ae661801c25f7dc9089c19f72">isr1</a>,  <a class="code hl_function" href="idt_8c.html#a99e457875cca040c3f7c77b61e960b53">isr2</a>,  <a class="code hl_function" href="idt_8c.html#a0ef268d2c16a7b318356451a05fd507b">isr3</a>,  <a class="code hl_function" href="idt_8c.html#a09af768d636144aaeaddd76c92a0a2f5">isr4</a>,  <a class="code hl_function" href="idt_8c.html#aa91d821a4bcafb44933d92945727b0df">isr5</a>,  <a class="code hl_function" href="idt_8c.html#a9fadb95f34937b1ded02c4171b4920ba">isr6</a>,  <a class="code hl_function" href="idt_8c.html#a7eb6ec30db7077fb1c9c9d926a0fc407">isr7</a>,  <a class="code hl_function" href="idt_8c.html#a86bc69345a3bb409665dbadb77a9d393">isr8</a>,  <a class="code hl_function" href="idt_8c.html#aacb7c8490cbd623a3a2bf933ffedd131">isr9</a>,  <a class="code hl_function" href="idt_8c.html#a3c8cb1341cf756883a2e7dc317d5272d">isr10</a>,</div>
 <div class="line">    <a class="code hl_function" href="idt_8c.html#a0d8145cf6ee1ef7834f459ba777d323c">isr11</a>, <a class="code hl_function" href="idt_8c.html#a00f00421039cb85f9dd9375995c784bd">isr12</a>, <a class="code hl_function" href="idt_8c.html#af985dcf66872ee696e5f30d819ac16a1">isr13</a>, <a class="code hl_function" href="idt_8c.html#a8b63eaa37c03743718870964a3429ba8">isr14</a>, <a class="code hl_function" href="idt_8c.html#a9160f355325318a990c106ad5c3b8954">isr15</a>, <a class="code hl_function" href="idt_8c.html#add0980c10028b377643da169e52e5be7">isr16</a>, <a class="code hl_function" href="idt_8c.html#ac7d1e81e585bc7c56b46280006402f9e">isr17</a>, <a class="code hl_function" href="idt_8c.html#ae685c5ca5ed9c9c5e7d297ad8d14de49">isr18</a>, <a class="code hl_function" href="idt_8c.html#ad16b5f77287df551e63d3f0c67f8f75d">isr19</a>, <a class="code hl_function" href="idt_8c.html#a552d2aedae97d97083d3f9caf6ad59a5">isr20</a>, <a class="code hl_function" href="idt_8c.html#af106b9a26e06abf17eebb6f7ae54f905">isr21</a>,</div>
-<div class="line">    <a class="code hl_function" href="idt_8c.html#aa4b6f47f27ac3b31fc426f5c2a1a669c">isr22</a>, <a class="code hl_function" href="idt_8c.html#a277e9cc418a637ae584c1ff6525eb2e1">isr23</a>, <a class="code hl_function" href="idt_8c.html#a2ea113ad8536ca8311ab00d077ece7f1">isr24</a>, <a class="code hl_function" href="idt_8c.html#a73e919f327e846f72b99de088ae9b822">isr25</a>, <a class="code hl_function" href="idt_8c.html#a24c118fd7e75c96d19da1bbaf87731e4">isr26</a>, <a class="code hl_function" href="idt_8c.html#ad97e98084cbcdc21bf03ba314dc243e0">isr27</a>, <a class="code hl_function" href="idt_8c.html#ab2a5fe4d3cf67be0c67db612aa757c5f">isr28</a>, <a class="code hl_function" href="idt_8c.html#a8cce4d55d6a199607cd3a9e2a33241b2">isr29</a>, <a class="code hl_function" href="idt_8c.html#af868664393aedd51c04e3ddd48b8f84f">isr30</a>, <a class="code hl_function" href="idt_8c.html#af4ae10cea59f9bb2f79c13b8036d81f1">isr31</a>, <a class="code hl_function" href="idt_8c.html#a8eb785d6bbda394a250c49dfa8fab00b">isr32</a>}</div>
+<div class="line">    <a class="code hl_function" href="idt_8c.html#aa4b6f47f27ac3b31fc426f5c2a1a669c">isr22</a>, <a class="code hl_function" href="idt_8c.html#a277e9cc418a637ae584c1ff6525eb2e1">isr23</a>, <a class="code hl_function" href="idt_8c.html#a2ea113ad8536ca8311ab00d077ece7f1">isr24</a>, <a class="code hl_function" href="idt_8c.html#a73e919f327e846f72b99de088ae9b822">isr25</a>, <a class="code hl_function" href="idt_8c.html#a24c118fd7e75c96d19da1bbaf87731e4">isr26</a>, <a class="code hl_function" href="idt_8c.html#ad97e98084cbcdc21bf03ba314dc243e0">isr27</a>, <a class="code hl_function" href="idt_8c.html#ab2a5fe4d3cf67be0c67db612aa757c5f">isr28</a>, <a class="code hl_function" href="idt_8c.html#a8cce4d55d6a199607cd3a9e2a33241b2">isr29</a>, <a class="code hl_function" href="idt_8c.html#af868664393aedd51c04e3ddd48b8f84f">isr30</a>, <a class="code hl_function" href="idt_8c.html#af4ae10cea59f9bb2f79c13b8036d81f1">isr31</a>}</div>
 <div class="ttc" id="aidt_8c_html_a00f00421039cb85f9dd9375995c784bd"><div class="ttname"><a href="idt_8c.html#a00f00421039cb85f9dd9375995c784bd">isr12</a></div><div class="ttdeci">void isr12()</div></div>
 <div class="ttc" id="aidt_8c_html_a09af768d636144aaeaddd76c92a0a2f5"><div class="ttname"><a href="idt_8c.html#a09af768d636144aaeaddd76c92a0a2f5">isr4</a></div><div class="ttdeci">void isr4()</div></div>
 <div class="ttc" id="aidt_8c_html_a0d8145cf6ee1ef7834f459ba777d323c"><div class="ttname"><a href="idt_8c.html#a0d8145cf6ee1ef7834f459ba777d323c">isr11</a></div><div class="ttdeci">void isr11()</div></div>
@@ -901,7 +928,6 @@ Variables</h2></td></tr>
 <div class="ttc" id="aidt_8c_html_a86bc69345a3bb409665dbadb77a9d393"><div class="ttname"><a href="idt_8c.html#a86bc69345a3bb409665dbadb77a9d393">isr8</a></div><div class="ttdeci">void isr8()</div></div>
 <div class="ttc" id="aidt_8c_html_a8b63eaa37c03743718870964a3429ba8"><div class="ttname"><a href="idt_8c.html#a8b63eaa37c03743718870964a3429ba8">isr14</a></div><div class="ttdeci">void isr14()</div></div>
 <div class="ttc" id="aidt_8c_html_a8cce4d55d6a199607cd3a9e2a33241b2"><div class="ttname"><a href="idt_8c.html#a8cce4d55d6a199607cd3a9e2a33241b2">isr29</a></div><div class="ttdeci">void isr29()</div></div>
-<div class="ttc" id="aidt_8c_html_a8eb785d6bbda394a250c49dfa8fab00b"><div class="ttname"><a href="idt_8c.html#a8eb785d6bbda394a250c49dfa8fab00b">isr32</a></div><div class="ttdeci">void isr32()</div></div>
 <div class="ttc" id="aidt_8c_html_a9160f355325318a990c106ad5c3b8954"><div class="ttname"><a href="idt_8c.html#a9160f355325318a990c106ad5c3b8954">isr15</a></div><div class="ttdeci">void isr15()</div></div>
 <div class="ttc" id="aidt_8c_html_a99e457875cca040c3f7c77b61e960b53"><div class="ttname"><a href="idt_8c.html#a99e457875cca040c3f7c77b61e960b53">isr2</a></div><div class="ttdeci">void isr2()</div></div>
 <div class="ttc" id="aidt_8c_html_a9fadb95f34937b1ded02c4171b4920ba"><div class="ttname"><a href="idt_8c.html#a9fadb95f34937b1ded02c4171b4920ba">isr6</a></div><div class="ttdeci">void isr6()</div></div>

@@ -75,7 +75,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">interrupts.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -85,6 +86,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="register_8h_source.html">register.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="shutdown_8h_source.html">shutdown.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="terminal_8h_source.html">terminal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="time_8h_source.html">time.h</a>&quot;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -92,16 +94,17 @@ Include dependency graph for interrupts.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="interrupts_8c__incl.png" border="0" usemap="#asrc_2interrupts_8c" alt=""/></div>
 <map name="asrc_2interrupts_8c" id="asrc_2interrupts_8c">
-<area shape="rect" title=" " alt="" coords="217,5,336,31"/>
-<area shape="rect" href="keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="227,152,321,177"/>
-<area shape="rect" title=" " alt="" coords="141,225,212,251"/>
-<area shape="rect" href="outb_8h.html" title="Header file for input/output port operations." alt="" coords="5,152,68,177"/>
-<area shape="rect" href="printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="350,152,433,177"/>
-<area shape="rect" title=" " alt="" coords="445,225,519,251"/>
-<area shape="rect" href="register_8h.html" title=" " alt="" coords="65,79,147,104"/>
-<area shape="rect" href="shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="439,79,536,104"/>
-<area shape="rect" href="terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="273,79,363,104"/>
-<area shape="rect" title=" " alt="" coords="237,225,319,251"/>
+<area shape="rect" title=" " alt="" coords="313,5,432,31"/>
+<area shape="rect" href="keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="5,152,100,177"/>
+<area shape="rect" title=" " alt="" coords="237,225,308,251"/>
+<area shape="rect" href="outb_8h.html" title="Header file for input/output port operations." alt="" coords="207,152,269,177"/>
+<area shape="rect" href="printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="345,152,427,177"/>
+<area shape="rect" title=" " alt="" coords="446,225,521,251"/>
+<area shape="rect" href="register_8h.html" title=" " alt="" coords="331,79,414,104"/>
+<area shape="rect" href="shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="591,79,688,104"/>
+<area shape="rect" href="terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="167,79,256,104"/>
+<area shape="rect" href="time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="451,152,515,177"/>
+<area shape="rect" title=" " alt="" coords="11,225,94,251"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -121,6 +124,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a23edc9f22bdf2ee51a26204444b8702a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interrupts_8c.html#a23edc9f22bdf2ee51a26204444b8702a">isrHandler</a> (<a class="el" href="structregisters__t.html">registers_t</a> *regs)</td></tr>
 <tr class="memdesc:a23edc9f22bdf2ee51a26204444b8702a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles an interrupt service routine (ISR).  <br /></td></tr>
 <tr class="separator:a23edc9f22bdf2ee51a26204444b8702a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a879034a72decbd6114db803843b27a63"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interrupts_8c.html#a879034a72decbd6114db803843b27a63">extended_key</a> = false</td></tr>
+<tr class="separator:a879034a72decbd6114db803843b27a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a90eece26e3bdf1c5725659d776a654cf" name="a90eece26e3bdf1c5725659d776a654cf"></a>
@@ -206,6 +214,29 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a879034a72decbd6114db803843b27a63" name="a879034a72decbd6114db803843b27a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879034a72decbd6114db803843b27a63">&#9670;&#160;</a></span>extended_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool extended_key = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

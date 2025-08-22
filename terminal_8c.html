@@ -110,7 +110,7 @@ Macros</h2></td></tr>
 <tr class="separator:a09f908aa6474fe2b1f82b1aaade947f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c7a0d159d3f0e3dabb619e5ef67cd65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a4c7a0d159d3f0e3dabb619e5ef67cd65">COMMAND_LINE_WIDTH</a>&#160;&#160;&#160;(<a class="el" href="terminal_8c.html#a09f908aa6474fe2b1f82b1aaade947f6">MAX_LINE_WIDTH</a> + 64)</td></tr>
 <tr class="separator:a4c7a0d159d3f0e3dabb619e5ef67cd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fb6b6a60daab40a493ab613b55b0199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a1fb6b6a60daab40a493ab613b55b0199">TERMINAL_LINES_COUNT</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memitem:a1fb6b6a60daab40a493ab613b55b0199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a1fb6b6a60daab40a493ab613b55b0199">TERMINAL_LINES_COUNT</a>&#160;&#160;&#160;128</td></tr>
 <tr class="separator:a1fb6b6a60daab40a493ab613b55b0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -130,6 +130,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ab7d63f933473a988f2bc9bc23ad6e353"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#ab7d63f933473a988f2bc9bc23ad6e353">terminalWriteLine</a> (char *str)</td></tr>
 <tr class="memdesc:ab7d63f933473a988f2bc9bc23ad6e353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a line of text to the terminal.  <br /></td></tr>
 <tr class="separator:ab7d63f933473a988f2bc9bc23ad6e353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9f220ca383837e98febca62ac53d88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#afa9f220ca383837e98febca62ac53d88">terminalStartCommand</a> ()</td></tr>
+<tr class="memdesc:afa9f220ca383837e98febca62ac53d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the start of a command output sequence.  <br /></td></tr>
+<tr class="separator:afa9f220ca383837e98febca62ac53d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb790d78723deafd53c9d637f422217d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#aeb790d78723deafd53c9d637f422217d">terminalEndCommand</a> ()</td></tr>
+<tr class="memdesc:aeb790d78723deafd53c9d637f422217d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the end of a command output sequence.  <br /></td></tr>
+<tr class="separator:aeb790d78723deafd53c9d637f422217d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ab69ca062cf1f1f12ca45d27efc8911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a1ab69ca062cf1f1f12ca45d27efc8911">terminalInit</a> ()</td></tr>
 <tr class="memdesc:a1ab69ca062cf1f1f12ca45d27efc8911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the terminal interface.  <br /></td></tr>
 <tr class="separator:a1ab69ca062cf1f1f12ca45d27efc8911"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,12 +149,16 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a98a0fe2424e89c640f1907eaa724d5c9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a98a0fe2424e89c640f1907eaa724d5c9">cmdLine</a> [(80+64)]</td></tr>
 <tr class="separator:a98a0fe2424e89c640f1907eaa724d5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab59800cb08e5e2b4e85683ea09397fa6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#ab59800cb08e5e2b4e85683ea09397fa6">currCmdIndex</a> = 1</td></tr>
+<tr class="memitem:ab59800cb08e5e2b4e85683ea09397fa6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#ab59800cb08e5e2b4e85683ea09397fa6">currCmdIndex</a> = 2</td></tr>
 <tr class="separator:ab59800cb08e5e2b4e85683ea09397fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbaf33c315aa359045aa87aaf303c499"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#adbaf33c315aa359045aa87aaf303c499">terminalLineIndex</a> = 0</td></tr>
 <tr class="separator:adbaf33c315aa359045aa87aaf303c499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68285c609a4ffe6f7e879a55b4919e6b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a68285c609a4ffe6f7e879a55b4919e6b">terminalLineRing</a> [32][80]</td></tr>
-<tr class="separator:a68285c609a4ffe6f7e879a55b4919e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06dfbbd4f27ae03f8b99dc603fd49d3f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a06dfbbd4f27ae03f8b99dc603fd49d3f">terminalLineRing</a> [128][80]</td></tr>
+<tr class="separator:a06dfbbd4f27ae03f8b99dc603fd49d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515d4199d6a3d8425a549cfe656c8e01"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a515d4199d6a3d8425a549cfe656c8e01">scrollOffset</a> = 0</td></tr>
+<tr class="separator:a515d4199d6a3d8425a549cfe656c8e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a66b4d441851fdbf16f31a5a0621d6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8c.html#a84a66b4d441851fdbf16f31a5a0621d6">firstLineOfCommand</a> = true</td></tr>
+<tr class="separator:a84a66b4d441851fdbf16f31a5a0621d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4c7a0d159d3f0e3dabb619e5ef67cd65" name="a4c7a0d159d3f0e3dabb619e5ef67cd65"></a>
@@ -186,7 +196,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TERMINAL_LINES_COUNT&#160;&#160;&#160;32</td>
+          <td class="memname">#define TERMINAL_LINES_COUNT&#160;&#160;&#160;128</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -315,6 +325,27 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aeb790d78723deafd53c9d637f422217d" name="aeb790d78723deafd53c9d637f422217d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb790d78723deafd53c9d637f422217d">&#9670;&#160;</a></span>terminalEndCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void terminalEndCommand </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marks the end of a command output sequence. </p>
+<p>This function should be called after a command has finished producing output. It resets the line prefix state for the next command. </p>
+
+</div>
+</div>
 <a id="a1ab69ca062cf1f1f12ca45d27efc8911" name="a1ab69ca062cf1f1f12ca45d27efc8911"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ab69ca062cf1f1f12ca45d27efc8911">&#9670;&#160;</a></span>terminalInit()</h2>
 
@@ -349,6 +380,27 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa9f220ca383837e98febca62ac53d88" name="afa9f220ca383837e98febca62ac53d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9f220ca383837e98febca62ac53d88">&#9670;&#160;</a></span>terminalStartCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void terminalStartCommand </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marks the start of a command output sequence. </p>
+<p>This function should be called before executing a command that will produce output. It ensures that the first line of output gets a '&gt;' prefix while subsequent lines get space prefixes for better readability. </p>
 
 </div>
 </div>
@@ -401,7 +453,43 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int16_t currCmdIndex = 1</td>
+          <td class="memname">int16_t currCmdIndex = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84a66b4d441851fdbf16f31a5a0621d6" name="a84a66b4d441851fdbf16f31a5a0621d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a66b4d441851fdbf16f31a5a0621d6">&#9670;&#160;</a></span>firstLineOfCommand</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool firstLineOfCommand = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a515d4199d6a3d8425a549cfe656c8e01" name="a515d4199d6a3d8425a549cfe656c8e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a515d4199d6a3d8425a549cfe656c8e01">&#9670;&#160;</a></span>scrollOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t scrollOffset = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -422,14 +510,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a68285c609a4ffe6f7e879a55b4919e6b" name="a68285c609a4ffe6f7e879a55b4919e6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68285c609a4ffe6f7e879a55b4919e6b">&#9670;&#160;</a></span>terminalLineRing</h2>
+<a id="a06dfbbd4f27ae03f8b99dc603fd49d3f" name="a06dfbbd4f27ae03f8b99dc603fd49d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06dfbbd4f27ae03f8b99dc603fd49d3f">&#9670;&#160;</a></span>terminalLineRing</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char terminalLineRing[32][ 80]</td>
+          <td class="memname">char terminalLineRing[128][ 80]</td>
         </tr>
       </table>
 </div><div class="memdoc">
