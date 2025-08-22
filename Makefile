@@ -53,6 +53,7 @@ docs:
 		sed -i 's/EXTRACT_ALL            = NO/EXTRACT_ALL            = YES/' Doxyfile; \
 		sed -i 's/EXTRACT_PRIVATE        = NO/EXTRACT_PRIVATE        = YES/' Doxyfile; \
 		sed -i 's/EXTRACT_STATIC         = NO/EXTRACT_STATIC         = YES/' Doxyfile; \
+		sed -i 's/PREDEFINED             =/PREDEFINED             = "__attribute__(x)=" "__packed=" "__attribute__((packed))="/' Doxyfile; \
 	fi
 	@mkdir -p docs
 	doxygen Doxyfile

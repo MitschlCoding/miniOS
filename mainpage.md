@@ -21,24 +21,24 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 
 ### Core Components
 
--   **Kernel (`kernel.c`)**: Main entry point and system initialization
--   **GDT (`gdt.c/.h`)**: Global Descriptor Table setup for memory segmentation
--   **IDT (`idt.c/.h`)**: Interrupt Descriptor Table for interrupt handling
--   **Memory (`heap.c/.h`)**: Dynamic memory allocation system
--   **Terminal (`terminal.c/.h`)**: Text-based user interface
--   **Keyboard (`keyboard.c/.h`)**: Input device driver
+-   **Kernel** (`kernel.c`): Main entry point and system initialization
+-   **GDT** (`gdt.h`/`gdt.c`): Global Descriptor Table setup for memory segmentation
+-   **IDT** (`idt.h`/`idt.c`): Interrupt Descriptor Table for interrupt handling
+-   **Memory** (`heap.h`/`heap.c`): Dynamic memory allocation system
+-   **Terminal** (`terminal.h`/`terminal.c`): Text-based user interface
+-   **Keyboard** (`keyboard.h`/`keyboard.c`): Input device driver
 
 ### System Services
 
--   **Command Handler (`commandHandler.c/.h`)**: Command-line interface processing
--   **Print System (`printOS.c/.h`)**: Formatted output and display functions
--   **String Utilities (`str.c/.h`)**: String manipulation functions
--   **Time Services (`time.c/.h`)**: System timing and delays
+-   **Command Handler** (`commandHandler.h`/`commandHandler.c`): Command-line interface processing
+-   **Print System** (`printOS.h`/`printOS.c`): Formatted output and display functions
+-   **String Utilities** (`str.h`/`str.c`): String manipulation functions
+-   **Time Services** (`time.h`/`time.c`): System timing and delays
 
 ### Applications
 
--   **Snake Game (`snake.c/.h`)**: Interactive snake game implementation
--   **Mode Manager (`modeManager.c/.h`)**: Application mode switching. From Terminal to Visual Applications.
+-   **Snake Game** (`snake.h`/`snake.c`): Interactive snake game implementation
+-   **Mode Manager** (`modeManager.h`/`modeManager.c`): Application mode switching. From Terminal to Visual Applications.
 
 ## Getting Started
 

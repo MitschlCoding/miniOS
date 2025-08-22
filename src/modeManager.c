@@ -1,8 +1,3 @@
-/**
- * @file modeManager.c
- * @brief Operating mode management implementation for miniOS.
- */
-
 #include "modeManager.h"
 #include "terminal.h"
 #include "keyboard.h"

@@ -1,8 +1,3 @@
-/**
- * @file snake.c
- * @brief Snake game implementation for miniOS
- */
-
 #include "snake.h"
 #include "printOS.h"
 #include "keyboard.h"
