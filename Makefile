@@ -38,6 +38,27 @@ installBuildDeps:
 	@echo "Installation finished."
 	@echo "--------------------------------"
 
+# Generate documentation with Doxygen
+docs:
+	@echo "--------------------------------"
+	@echo "Generating Doxygen documentation..."
+	@if [ ! -f Doxyfile ]; then \
+		echo "Creating Doxyfile..."; \
+		doxygen -g; \
+		sed -i 's/PROJECT_NAME           = "My Project"/PROJECT_NAME           = "miniOS"/' Doxyfile; \
+		sed -i 's/INPUT                  =/INPUT                  = src/' Doxyfile; \
+		sed -i 's/OUTPUT_DIRECTORY       =/OUTPUT_DIRECTORY       = docs/' Doxyfile; \
+		sed -i 's/GENERATE_LATEX         = YES/GENERATE_LATEX         = NO/' Doxyfile; \
+		sed -i 's/RECURSIVE              = NO/RECURSIVE              = YES/' Doxyfile; \
+		sed -i 's/EXTRACT_ALL            = NO/EXTRACT_ALL            = YES/' Doxyfile; \
+		sed -i 's/EXTRACT_PRIVATE        = NO/EXTRACT_PRIVATE        = YES/' Doxyfile; \
+		sed -i 's/EXTRACT_STATIC         = NO/EXTRACT_STATIC         = YES/' Doxyfile; \
+	fi
+	@mkdir -p docs
+	doxygen Doxyfile
+	@echo "Documentation generated in docs/html/"
+	@echo "Open docs/html/index.html in your browser to view the documentation."
+
 # Run the program
 run: clean all
 	@echo "--------------------------------"
@@ -50,6 +71,12 @@ clean:
 	@echo "Cleaning..."
 	-rm -f $(OBJ)/*.o
 	-rm -f $(BIN)/$(EXECUTABLE)
+
+# Clean everything including documentation
+cleanall: clean
+	@echo "Cleaning documentation..."
+	-rm -rf docs/
+	-rm -f Doxyfile
 
 # Compile boot.asm to .o file
 $(BOOT_OBJ): $(BOOT_SRC)
@@ -77,3 +104,5 @@ $(BIN)/$(EXECUTABLE): $(OFILES) linker.ld
 	@echo "--------------------------------"
 	@echo "Linking with GCC and linker.ld into $@"
 	$(CXX) -m32 -T linker.ld -ffreestanding -O2 -nostdlib -o $@ $(OFILES) -lgcc
+
+
