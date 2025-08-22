@@ -1,0 +1,6 @@
+<map id="src/time.h" name="src/time.h">
+<area shape="rect" id="node1" title="Header file for time&#45;related functions and definitions." alt="" coords="130,5,217,31"/>
+<area shape="rect" id="node2" href="$kernel_8c.html" title="Main entry point for the kernel." alt="" coords="5,79,101,104"/>
+<area shape="rect" id="node3" href="$snake_8c.html" title="Snake game implementation for miniOS." alt="" coords="126,79,221,104"/>
+<area shape="rect" id="node4" href="$time_8c.html" title=" " alt="" coords="245,79,331,104"/>
+</map>

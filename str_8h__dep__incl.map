@@ -1,0 +1,13 @@
+<map id="src/str.h" name="src/str.h">
+<area shape="rect" id="node1" title="String manipulation functions for miniOS." alt="" coords="471,5,545,31"/>
+<area shape="rect" id="node2" href="$commandHandler_8c.html" title=" " alt="" coords="5,152,176,177"/>
+<area shape="rect" id="node3" href="$commandHandler_8h.html" title="Command handler, that handles commands input by the user into the terminal." alt="" coords="122,79,294,104"/>
+<area shape="rect" id="node4" href="$kernel_8c.html" title="Main entry point for the kernel." alt="" coords="203,152,299,177"/>
+<area shape="rect" id="node5" href="$terminal_8c.html" title=" " alt="" coords="325,152,435,177"/>
+<area shape="rect" id="node6" href="$gdt_8c.html" title=" " alt="" coords="420,79,497,104"/>
+<area shape="rect" id="node7" href="$idt_8c.html" title=" " alt="" coords="522,79,595,104"/>
+<area shape="rect" id="node8" href="$multiboot_8c.html" title=" " alt="" coords="619,79,738,104"/>
+<area shape="rect" id="node9" href="$printOS_8c.html" title=" " alt="" coords="763,79,867,104"/>
+<area shape="rect" id="node10" href="$snake_8c.html" title="Snake game implementation for miniOS." alt="" coords="891,79,986,104"/>
+<area shape="rect" id="node11" href="$str_8c.html" title=" " alt="" coords="1011,79,1083,104"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="src/terminal.c" name="src/terminal.c">
+<area shape="rect" id="node1" title=" " alt="" coords="208,5,319,31"/>
+<area shape="rect" id="node2" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="29,79,119,104"/>
+<area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="125,152,207,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="254,225,329,251"/>
+<area shape="rect" id="node8" href="$commandHandler_8h.html" title="Command handler, that handles commands input by the user into the terminal." alt="" coords="245,79,394,104"/>
+<area shape="rect" id="node9" href="$str_8h.html" title="String manipulation functions for miniOS." alt="" coords="231,152,282,177"/>
+<area shape="rect" id="node10" href="$shutdown_8h.html" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="469,79,567,104"/>
+<area shape="rect" id="node3" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="5,152,100,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="11,225,94,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="131,225,201,251"/>
+</map>

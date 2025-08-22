@@ -1,0 +1,17 @@
+<map id="src/kernel.c" name="src/kernel.c">
+<area shape="rect" id="node1" title="Main entry point for the kernel." alt="" coords="400,5,496,31"/>
+<area shape="rect" id="node2" href="$commandHandler_8h.html" title="Command handler, that handles commands input by the user into the terminal." alt="" coords="30,79,179,104"/>
+<area shape="rect" id="node3" href="$str_8h.html" title="String manipulation functions for miniOS." alt="" coords="83,152,134,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="134,225,208,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="433,225,504,251"/>
+<area shape="rect" id="node6" href="$gdt_8h.html" title="Header file for the Global Descriptor Table (GDT) implementation." alt="" coords="305,79,360,104"/>
+<area shape="rect" id="node7" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="382,152,464,177"/>
+<area shape="rect" id="node8" href="$idt_8h.html" title="Header file for the Interrupt Descriptor Table (IDT) implementation." alt="" coords="488,152,539,177"/>
+<area shape="rect" id="node9" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="702,152,797,177"/>
+<area shape="rect" id="node11" href="$multiboot_8h.html" title="Header file for Multiboot information structure and related functions." alt="" coords="209,152,306,177"/>
+<area shape="rect" id="node12" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="486,79,576,104"/>
+<area shape="rect" id="node13" href="$time_8h.html" title="Header file for time&#45;related functions and definitions." alt="" coords="563,152,627,177"/>
+<area shape="rect" id="node14" href="$modeManager_8h.html" title="Operating mode management for miniOS." alt="" coords="849,79,976,104"/>
+<area shape="rect" id="node15" href="$snake_8h.html" title="Header file for the Snake game implementation." alt="" coords="752,79,824,104"/>
+<area shape="rect" id="node10" title=" " alt="" coords="794,225,876,251"/>
+</map>

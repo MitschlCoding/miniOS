@@ -1,0 +1,13 @@
+<map id="src/keyboard.h" name="src/keyboard.h">
+<area shape="rect" id="node1" title="Keyboard key codes and a simple key buffer API." alt="" coords="533,5,650,31"/>
+<area shape="rect" id="node2" href="$interrupts_8c.html" title=" " alt="" coords="5,152,124,177"/>
+<area shape="rect" id="node3" href="$kernel_8c.html" title="Main entry point for the kernel." alt="" coords="651,152,747,177"/>
+<area shape="rect" id="node4" href="$keyboard_8c.html" title=" " alt="" coords="857,79,973,104"/>
+<area shape="rect" id="node5" href="$modeManager_8c.html" title="Operating mode management implementation for miniOS." alt="" coords="283,152,433,177"/>
+<area shape="rect" id="node6" href="$modeManager_8h.html" title="Operating mode management for miniOS." alt="" coords="460,79,611,104"/>
+<area shape="rect" id="node8" href="$snake_8c.html" title="Snake game implementation for miniOS." alt="" coords="772,152,867,177"/>
+<area shape="rect" id="node9" href="$snake_8h.html" title="Header file for the Snake game implementation." alt="" coords="687,79,781,104"/>
+<area shape="rect" id="node10" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="273,79,385,104"/>
+<area shape="rect" id="node7" href="$commandHandler_8c.html" title=" " alt="" coords="457,152,627,177"/>
+<area shape="rect" id="node11" href="$terminal_8c.html" title=" " alt="" coords="148,152,259,177"/>
+</map>

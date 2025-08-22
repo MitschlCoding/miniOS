@@ -1,0 +1,10 @@
+<map id="src/modeManager.c" name="src/modeManager.c">
+<area shape="rect" id="node1" title="Operating mode management implementation for miniOS." alt="" coords="95,5,245,31"/>
+<area shape="rect" id="node2" href="$modeManager_8h.html" title="Operating mode management for miniOS." alt="" coords="5,79,132,104"/>
+<area shape="rect" id="node3" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="107,152,201,177"/>
+<area shape="rect" id="node6" href="$terminal_8h.html" title="Terminal interface for miniOS." alt="" coords="208,79,297,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="27,225,110,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="135,225,205,251"/>
+<area shape="rect" id="node7" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="226,152,309,177"/>
+<area shape="rect" id="node8" title=" " alt="" coords="230,225,305,251"/>
+</map>

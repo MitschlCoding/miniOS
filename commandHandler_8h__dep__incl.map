@@ -1,0 +1,6 @@
+<map id="src/commandHandler.h" name="src/commandHandler.h">
+<area shape="rect" id="node1" title="Command handler, that handles commands input by the user into the terminal." alt="" coords="162,5,334,31"/>
+<area shape="rect" id="node2" href="$commandHandler_8c.html" title=" " alt="" coords="5,79,176,104"/>
+<area shape="rect" id="node3" href="$kernel_8c.html" title="Main entry point for the kernel." alt="" coords="200,79,296,104"/>
+<area shape="rect" id="node4" href="$terminal_8c.html" title=" " alt="" coords="321,79,431,104"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="src/shutdown.h" name="src/shutdown.h">
+<area shape="rect" id="node1" title="Header file for the shutdown functionality of the miniOS kernel." alt="" coords="271,5,391,31"/>
+<area shape="rect" id="node2" href="$commandHandler_8c.html" title=" " alt="" coords="5,79,176,104"/>
+<area shape="rect" id="node3" href="$interrupts_8c.html" title=" " alt="" coords="201,79,319,104"/>
+<area shape="rect" id="node4" href="$shutdown_8c.html" title=" " alt="" coords="343,79,462,104"/>
+<area shape="rect" id="node5" href="$terminal_8c.html" title=" " alt="" coords="486,79,597,104"/>
+</map>
