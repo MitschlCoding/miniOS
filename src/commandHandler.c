@@ -300,6 +300,20 @@ void beepHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   beep();
 }
 
+/**
+ * @brief Handle the tetris command to play the Tetris theme song
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ */
+void tetrisHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  terminalWriteLine("Playing Tetris theme song...");
+  tetrisSong();
+  terminalWriteLine("Song finished!");
+}
+
 // docs see header file
 void initCommands() {
   commandList[0].name = "shutdown";
@@ -339,8 +353,12 @@ void initCommands() {
   commandList[8].help = "Play a system beep sound using the PC speaker.";
   commandList[8].handlerFuncPtr = &beepHandler;
 
-  commandList[9].name = NULL;
-  commandList[9].handlerFuncPtr = NULL;
+  commandList[9].name = "tetris";
+  commandList[9].help = "Play the classic Tetris theme song using the PC speaker.";
+  commandList[9].handlerFuncPtr = &tetrisHandler;
+
+  commandList[10].name = NULL;
+  commandList[10].handlerFuncPtr = NULL;
 }
 
 // docs see header file

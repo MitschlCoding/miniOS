@@ -66,6 +66,14 @@ run: clean all
 	@echo "Executing..."
 	qemu-system-i386 -kernel $(BIN)/$(EXECUTABLE)	-device isa-debug-exit,iobase=0x501,iosize=1
 
+# Run the program with audio support (PC Speaker)
+runAudio: clean all
+	@echo "--------------------------------"
+	@echo "Executing with PC Speaker audio support..."
+	@echo "Note: This requires a PC Speaker or system that can emulate it."
+	@echo "On Ubuntu, ensure audio is properly configured for PC Speaker sounds."
+	qemu-system-i386 -kernel $(BIN)/$(EXECUTABLE) -device isa-debug-exit,iobase=0x501,iosize=1 -audiodev pa,id=snd0 -machine pcspk-audiodev=snd0
+
 # Clean object and binary files
 clean:
 	@echo "--------------------------------"

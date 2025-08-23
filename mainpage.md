@@ -16,6 +16,7 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 -   **Graphics**: VGA text mode output with custom print functions
 -   **Game Implementation**: Snake game as an interactive application
 -   **Time Management**: System timer and time-based functions
+-   **PC Speaker Audio**: Hardware-based sound generation using PIT Channel 2
 
 ## Architecture
 
@@ -34,6 +35,8 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 -   **Print System** (`printOS.h`/`printOS.c`): Formatted output and display functions
 -   **String Utilities** (`str.h`/`str.c`): String manipulation functions
 -   **Time Services** (`time.h`/`time.c`): System timing and delays
+-   **I/O Operations** (`io.h`/`io.c`): Hardware port input/output functions
+-   **Audio System** (`audio.h`/`audio.c`): PC Speaker sound generation
 
 ### Applications
 
@@ -58,12 +61,27 @@ make installDeps
 # Build the kernel
 make
 
-# Run in QEMU
+# Run in QEMU (silent)
 make run
+
+# Run in QEMU with PC Speaker audio support
+make runAudio
 
 # Generate documentation (see our github pages for generated docs)
 make docs
 ```
+
+### Audio Support
+
+The `runAudio` command enables PC Speaker emulation in QEMU for audio feedback. Requirements:
+
+-   **PulseAudio**: Must be installed and running on Ubuntu
+-   **Audio Configuration**: System audio properly configured
+-   **QEMU Audio**: Uses PulseAudio backend for PC Speaker emulation
+
+Available audio commands:
+
+-   `beep` - Test PC Speaker with system beep
 
 ### Project Structure
 
