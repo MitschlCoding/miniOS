@@ -20,15 +20,15 @@ typedef struct {
   uint32_t limit; /**< The limit of the segment. */
   uint8_t access_byte; /**< The access byte for the segment, which defines its properties (e.g., present, ring level, executable). */
   uint8_t flags; /**< Flags for the segment, such as granularity and size. */
-} __attribute__((packed)) Gdt;
+} __attribute__((packed)) GdtEntry;
 
 /**
- * @brief Generates a GDT entry from the Gdt structure.
+ * @brief Generates a GDT entry from the GdtEntry structure.
  *
  * @param target The target buffer to store the GDT entry.
- * @param source The source Gdt structure.
+ * @param source The source GdtEntry structure.
  */
-void gdtEntry(uint8_t *target, Gdt source);
+void gdtEntry(uint8_t *target, GdtEntry source);
 
 /**
  * @brief Represents a GDT descriptor.
