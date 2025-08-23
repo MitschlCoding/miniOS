@@ -1,5 +1,5 @@
 #include "shutdown.h"
-#include "outb.h"
+#include "io.h"
 #include "printOS.h"
 #include <stdint.h>
 

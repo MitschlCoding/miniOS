@@ -1,5 +1,5 @@
 #include "printOS.h"
-#include "outb.h"
+#include "io.h"
 #include "str.h"
 #include <stdbool.h>
 #include <stddef.h>
