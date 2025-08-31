@@ -52,7 +52,7 @@ The audio system provides simple beep commands and can be extended for more comp
 
 miniOS is a educational operating system project that demonstrates fundamental OS concepts including:
 
--   **Custom Bootloader**: GRUB-compatible multiboot kernel
+-   **GRUB-Compatible**: GRUB-compatible multiboot kernel
 -   **Hardware Abstraction**: VGA text mode display, keyboard input, timer interrupts
 -   **Memory Management**: Custom heap implementation with dynamic allocation
 -   **Interrupt Handling**: Complete IDT setup with exception and hardware interrupt support
