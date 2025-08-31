@@ -1,5 +1,5 @@
 #include "idt.h"
-#include "outb.h"
+#include "io.h"
 #include "printOS.h"
 #include "str.h"
 #include "terminal.h"

@@ -22,7 +22,7 @@ uint8_t gdt[GDT_SIZE];
 GdtDescriptor gdtDesc;
 
 // documentation see gdt.h
-void gdtEntry(uint8_t *target, Gdt source) {
+void gdtEntry(uint8_t *target, GdtEntry source) {
   // Encode the limit (split into low and high)
   target[0] = source.limit & 0xFF;
   target[1] = (source.limit >> 8) & 0xFF;
@@ -41,20 +41,20 @@ void gdtEntry(uint8_t *target, Gdt source) {
 // Set up the GDT with a null entry, a code segment and a data segment.
 void gdtInit() {
   // Define a null Entry that is required
-  Gdt nullEntry = {.base = 0, .limit = 0, .access_byte = 0, .flags = 0};
+  GdtEntry nullEntry = {.base = 0, .limit = 0, .access_byte = 0, .flags = 0};
 
   // generate a code segment with maximum size at the base 0 and with these
   // settings
   // - Access: present, ring0, executable, readable
   // - Flags: 4k granularity and 32 bit mode
-  Gdt codeEntry = {
+  GdtEntry codeEntry = {
       .base = 0, .limit = 0xFFFFF, .access_byte = 0x9A, .flags = 0x0C};
 
   // generate a data segment with maximum size at the base 0 and with these
   // settings
   // - Access: present, ring0, writable
   // - Flags: 4k granularity and 32 bit mode
-  Gdt dataEntry = {
+  GdtEntry dataEntry = {
       .base = 0, .limit = 0xFFFFF, .access_byte = 0x92, .flags = 0x0C};
 
   // Create the 3 entries in our GDT array.

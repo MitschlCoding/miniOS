@@ -18,8 +18,16 @@ INTERRUPT_OBJ := $(OBJ)/interrupts_stubs.o
 CFILES      := $(wildcard src/*.c)
 OFILES      := $(patsubst src/%.c, obj/%.o, $(CFILES)) $(BOOT_OBJ) $(INTERRUPT_OBJ)
 
-# Default target
+# Default target - build and run with audio
 all: $(BIN)/$(EXECUTABLE)
+	@echo "--------------------------------"
+	@echo "Executing with PC Speaker audio support..."
+	@echo "Note: This requires a PC Speaker or system that can emulate it."
+	@echo "On Ubuntu, ensure audio is properly configured for PC Speaker sounds."
+	qemu-system-i386 -kernel $(BIN)/$(EXECUTABLE) -device isa-debug-exit,iobase=0x501,iosize=1 -audiodev pa,id=snd0 -machine pcspk-audiodev=snd0
+
+# Build only target
+build: $(BIN)/$(EXECUTABLE)
 
 # Target to install dependencies
 installDeps:
@@ -60,10 +68,18 @@ docs:
 	@echo "Documentation generated in docs/html/"
 	@echo "Open docs/html/index.html in your browser to view the documentation."
 
-# Run the program
-run: clean all
+# Run the program with audio support (PC Speaker) - default behavior
+run:
 	@echo "--------------------------------"
-	@echo "Executing..."
+	@echo "Executing with PC Speaker audio support..."
+	@echo "Note: This requires a PC Speaker or system that can emulate it."
+	@echo "On Ubuntu, ensure audio is properly configured for PC Speaker sounds."
+	qemu-system-i386 -kernel $(BIN)/$(EXECUTABLE) -device isa-debug-exit,iobase=0x501,iosize=1 -audiodev pa,id=snd0 -machine pcspk-audiodev=snd0
+
+# Run the program without audio support
+runNoAudio:
+	@echo "--------------------------------"
+	@echo "Executing without audio..."
 	qemu-system-i386 -kernel $(BIN)/$(EXECUTABLE)	-device isa-debug-exit,iobase=0x501,iosize=1
 
 # Clean object and binary files

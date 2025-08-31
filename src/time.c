@@ -1,6 +1,5 @@
-
 #include "time.h"
-#include "outb.h"
+#include "io.h"
 #include "str.h"
 
 #define PIT_CH0_PORT  0x40

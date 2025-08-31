@@ -43,6 +43,19 @@ void kernel_main(multiboot_info_t *mbi) {
   // Calculate total system memory
   calculateTotalMemory(mbi);
 
+  // Print Welcome to miniOS
+  screenWriteLine("Welcome to miniOS!", 0);
+  screenWriteLine("Press enter to continue...", 2);
+
+  while (1) {
+    if (!keyBufferIsEmpty()) {
+      KeyCode key = keyBufferGet();
+      if (key == KEY_ENTER) {
+        break;
+      }
+    }
+  }
+
   // print out information about Multiboot
   printMultibootInfo(mbi); // Pass the pointer received from _start
 

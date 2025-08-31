@@ -16,6 +16,7 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 -   **Graphics**: VGA text mode output with custom print functions
 -   **Game Implementation**: Snake game as an interactive application
 -   **Time Management**: System timer and time-based functions
+-   **PC Speaker Audio**: Hardware-based sound generation using PIT Channel 2
 
 ## Architecture
 
@@ -34,6 +35,8 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 -   **Print System** (`printOS.h`/`printOS.c`): Formatted output and display functions
 -   **String Utilities** (`str.h`/`str.c`): String manipulation functions
 -   **Time Services** (`time.h`/`time.c`): System timing and delays
+-   **I/O Operations** (`io.h`/`io.c`): Hardware port input/output functions
+-   **Audio System** (`audio.h`/`audio.c`): PC Speaker sound generation
 
 ### Applications
 
@@ -55,15 +58,51 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 # Install dependencies for Ubuntu
 make installDeps
 
-# Build the kernel
+# Build and run with audio support (default behavior)
 make
 
-# Run in QEMU
+# Build only (no execution)
+make build
+
+# Run with audio support (requires prior build)
 make run
+
+# Run without audio support (requires prior build)
+make runNoAudio
 
 # Generate documentation (see our github pages for generated docs)
 make docs
 ```
+
+### Audio Support
+
+Audio is enabled by default when building and running miniOS. The system uses PC Speaker emulation in QEMU for audio feedback. Requirements:
+
+-   **PulseAudio**: Must be installed and running on Ubuntu
+-   **Audio Configuration**: System audio properly configured
+-   **QEMU Audio**: Uses PulseAudio backend for PC Speaker emulation
+
+To run without audio, use `make runNoAudio`.
+
+Available audio commands:
+
+-   `beep` - Test PC Speaker with system beep
+-   `music` - Play musical melodies using the PC speaker
+
+### Terminal Commands
+
+The miniOS terminal provides various system commands:
+
+-   `help` - Display available commands and usage information
+-   `shutdown` - Gracefully shutdown the system (QEMU)
+-   `snake` - Launch the built-in Snake game
+-   `uptime` - Show system uptime since boot
+-   `gdt` - Show Global Descriptor Table information
+-   `idt` - Display Interrupt Descriptor Table details
+-   `sysinfo` - Display comprehensive system information
+-   `memory` - Display memory information and statistics
+-   `beep` - Test the PC Speaker audio system
+-   `music` - Play musical melodies using the PC speaker
 
 ### Project Structure
 
@@ -90,7 +129,7 @@ This project follows standard C99 conventions.
 
 ## License
 
-This project is developed for educational purposes.
+This project is under the GNU GENERAL PUBLIC LICENSE Version 3
 
 ---
 

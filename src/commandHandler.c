@@ -9,6 +9,7 @@
 #include "idt.h"
 #include "multiboot.h"
 #include "art.h"
+#include "audio.h"
 
 #define COMMAND_LIST_LENGTH 64
 
@@ -286,6 +287,33 @@ void memoryHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
   terminalWriteLine("");
 }
 
+/**
+ * @brief Handles the beep command.
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ */
+void beepHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  terminalWriteLine("*BEEP*");
+  beep();
+}
+
+/**
+ * @brief Handle the music command to play musical melodies
+ * @param cmd The split command input.
+ * @param buf The buffer to store the command output.
+ */
+void musicHandler(char cmd[NUM_SUBSTRINGS][LEN_SUBSTRINGS], char *buf) {
+  (void)cmd; // Suppress unused parameter warning
+  (void)buf; // Suppress unused parameter warning
+  
+  terminalWriteLine("Playing Tetris theme song...");
+  tetrisSong();
+  terminalWriteLine("Song finished!");
+}
+
 // docs see header file
 void initCommands() {
   commandList[0].name = "shutdown";
@@ -321,8 +349,16 @@ void initCommands() {
   commandList[7].help = "Display detailed memory information including total RAM in different units.";
   commandList[7].handlerFuncPtr = &memoryHandler;
 
-  commandList[8].name = NULL;
-  commandList[8].handlerFuncPtr = NULL;
+  commandList[8].name = "beep";
+  commandList[8].help = "Play a system beep sound using the PC speaker.";
+  commandList[8].handlerFuncPtr = &beepHandler;
+
+  commandList[9].name = "music";
+  commandList[9].help = "Play a melody using the PC speaker.";
+  commandList[9].handlerFuncPtr = &musicHandler;
+
+  commandList[10].name = NULL;
+  commandList[10].handlerFuncPtr = NULL;
 }
 
 // docs see header file
