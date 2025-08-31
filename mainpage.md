@@ -64,10 +64,10 @@ make
 # Build only (no execution)
 make build
 
-# Run with audio support (requires prior build)
+# Run with audio support (build first if not using the provided binary)
 make run
 
-# Run without audio support (requires prior build)
+# Run without audio support (build first if not using the provided binary)
 make runNoAudio
 
 # Generate documentation (see our github pages for generated docs)
