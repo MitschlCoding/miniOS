@@ -8,11 +8,17 @@ A minimal 32-bit operating system written from scratch in C and Assembly, featur
 # Install dependencies (Ubuntu)
 make installDeps
 
-# Build and run
+# Build and run with audio support (default)
+make
+
+# Build only (no execution)
+make build
+
+# Run with audio support (requires prior build)
 make run
 
-# Build and run with audio support
-make runAudio
+# Run without audio support (requires prior build)
+make runNoAudio
 ```
 
 **What to try:**
@@ -21,14 +27,15 @@ make runAudio
 2. Type `help` to see available commands
 3. Type `snake` to play the built-in Snake game (WASD to move, ESC to quit)
 4. Type `beep` to test the PC Speaker audio system
-5. Type `shutdown` to exit
+5. Type `music` to play musical melodies
+6. Type `shutdown` to exit
 
 ## Audio Support
 
-miniOS includes PC Speaker audio support for basic sound effects and beeps. To experience audio:
+miniOS includes PC Speaker audio support for basic sound effects and beeps. Audio is enabled by default:
 
--   **Standard run**: `make run` (no audio)
--   **With audio**: `make runAudio` (enables PC Speaker in QEMU)
+-   **Default behavior**: `make` or `make run` (includes audio)
+-   **Without audio**: `make runNoAudio` (disables PC Speaker)
 
 **Audio Requirements:**
 
@@ -77,12 +84,13 @@ miniOS is a educational operating system project that demonstrates fundamental O
 -   `help` - Display available commands and usage information
 -   `shutdown` - Gracefully shutdown the system (QEMU)
 -   `snake` - Launch the built-in Snake game
--   `beep` - Test the PC Speaker audio system
--   `sysinfo` - Display comprehensive system information
 -   `uptime` - Show system uptime since boot
--   `memory` - Display memory information and statistics
 -   `gdt` - Show Global Descriptor Table information
 -   `idt` - Display Interrupt Descriptor Table details
+-   `sysinfo` - Display comprehensive system information
+-   `memory` - Display memory information and statistics
+-   `beep` - Test the PC Speaker audio system
+-   `music` - Play musical melodies using the PC speaker
 
 ### Technical Highlights
 
@@ -118,26 +126,42 @@ If you have make installed and use Ubuntu, you can use the following command to 
 make installDeps
 ```
 
-To build and run the OS using qemu use:
+To build and run the OS with audio support (default behavior):
+
+```bash
+make
+```
+
+To build the OS without running it:
+
+```bash
+make build
+```
+
+To run the OS with audio support (requires prior build):
 
 ```bash
 make run
 ```
 
-To build and run with PC Speaker audio support:
+To run the OS without audio support (requires prior build):
 
 ```bash
-make runAudio
+make runNoAudio
 ```
 
-**Note for Audio**: The `runAudio` command enables PC Speaker emulation in QEMU. This requires:
+**Note for Audio**: Audio is enabled by default and uses PC Speaker emulation in QEMU. This requires:
 
 -   PulseAudio running on your Ubuntu system
 -   Proper audio configuration
--   The `beep` command will produce actual sounds when using `runAudio`
+-   The `beep` and `music` commands will produce actual sounds when audio is enabled
 
 To clean all object-files and bins use:
 
 ```bash
 make clean
 ```
+
+## License
+
+This project is under the GNU GENERAL PUBLIC LICENSE Version 3
