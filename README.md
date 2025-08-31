@@ -5,20 +5,23 @@ A minimal 32-bit operating system written from scratch in C and Assembly, featur
 ## Quick Start
 
 ```bash
-# Install dependencies (Ubuntu)
+# Install dependencies for Ubuntu
 make installDeps
 
-# Build and run with audio support (default)
+# Build and run with audio support (default behavior)
 make
 
 # Build only (no execution)
 make build
 
-# Run with audio support (requires prior build)
+# Run with audio support (build first if not using the provided binary)
 make run
 
-# Run without audio support (requires prior build)
+# Run without audio support (build first if not using the provided binary)
 make runNoAudio
+
+# Generate documentation (see our github pages for generated docs)
+make docs
 ```
 
 **What to try:**
