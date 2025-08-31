@@ -6,7 +6,7 @@ Welcome to the **miniOS** documentation! This is a custom operating system kerne
 
 ## Features
 
--   **GRUB-Compatible**: Assembly-based bootloader for kernel initialization
+-   **GRUB-Compatible**: Assembly-based Multiboot-compatible
 -   **Mode**: 32-bit protected mode operation
 -   **Memory Address Space**: 4GB linear address space implementing a GDT
 -   **Memory Management**: Custom heap implementation and memory allocation
