@@ -89,6 +89,7 @@ Features</h1>
 <li><b>Graphics</b>: VGA text mode output with custom print functions</li>
 <li><b>Game Implementation</b>: <a class="el" href="structSnake.html" title="Represents the snake and its state.">Snake</a> game as an interactive application</li>
 <li><b>Time Management</b>: System timer and time-based functions</li>
+<li><b>PC Speaker Audio</b>: Hardware-based sound generation using PIT Channel 2</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Architecture</h1>
@@ -109,6 +110,8 @@ System Services</h2>
 <li><b>Print System</b> (<code><a class="el" href="printOS_8h.html" title="Header file for printing text to the screen.">printOS.h</a></code>/<code><a class="el" href="printOS_8c.html">printOS.c</a></code>): Formatted output and display functions</li>
 <li><b>String Utilities</b> (<code><a class="el" href="str_8h.html" title="String manipulation functions for miniOS.">str.h</a></code>/<code><a class="el" href="str_8c.html">str.c</a></code>): String manipulation functions</li>
 <li><b>Time Services</b> (<code><a class="el" href="time_8h.html" title="Header file for time-related functions and definitions.">time.h</a></code>/<code><a class="el" href="time_8c.html">time.c</a></code>): System timing and delays</li>
+<li><b>I/O Operations</b> (<code><a class="el" href="io_8h.html" title="Header file for input/output port operations.">io.h</a></code>/<code><a class="el" href="io_8c.html">io.c</a></code>): Hardware port input/output functions</li>
+<li><b>Audio System</b> (<code><a class="el" href="audio_8h.html" title="Simple PC Speaker audio functionality.">audio.h</a></code>/<code><a class="el" href="audio_8c.html">audio.c</a></code>): PC Speaker sound generation</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Applications</h2>
@@ -131,15 +134,50 @@ Building</h2>
 <div class="fragment"><div class="line"># Install dependencies for Ubuntu</div>
 <div class="line">make installDeps</div>
 <div class="line"> </div>
-<div class="line"># Build the kernel</div>
+<div class="line"># Build and run with audio support (default behavior)</div>
 <div class="line">make</div>
 <div class="line"> </div>
-<div class="line"># Run in QEMU</div>
+<div class="line"># Build only (no execution)</div>
+<div class="line">make build</div>
+<div class="line"> </div>
+<div class="line"># Run with audio support (requires prior build)</div>
 <div class="line">make run</div>
+<div class="line"> </div>
+<div class="line"># Run without audio support (requires prior build)</div>
+<div class="line">make runNoAudio</div>
 <div class="line"> </div>
 <div class="line"># Generate documentation (see our github pages for generated docs)</div>
 <div class="line">make docs</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Audio Support</h2>
+<p>Audio is enabled by default when building and running miniOS. The system uses PC Speaker emulation in QEMU for audio feedback. Requirements:</p>
+<ul>
+<li><b>PulseAudio</b>: Must be installed and running on Ubuntu</li>
+<li><b>Audio Configuration</b>: System audio properly configured</li>
+<li><b>QEMU Audio</b>: Uses PulseAudio backend for PC Speaker emulation</li>
+</ul>
+<p>To run without audio, use <code>make runNoAudio</code>.</p>
+<p>Available audio commands:</p>
+<ul>
+<li><code>beep</code> - Test PC Speaker with system beep</li>
+<li><code>music</code> - Play musical melodies using the PC speaker</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Terminal Commands</h2>
+<p>The miniOS terminal provides various system commands:</p>
+<ul>
+<li><code>help</code> - Display available commands and usage information</li>
+<li><code>shutdown</code> - Gracefully shutdown the system (QEMU)</li>
+<li><code>snake</code> - Launch the built-in <a class="el" href="structSnake.html" title="Represents the snake and its state.">Snake</a> game</li>
+<li><code>uptime</code> - Show system uptime since boot</li>
+<li><code>gdt</code> - Show Global Descriptor Table information</li>
+<li><code>idt</code> - Display Interrupt Descriptor Table details</li>
+<li><code>sysinfo</code> - Display comprehensive system information</li>
+<li><code>memory</code> - Display memory information and statistics</li>
+<li><code>beep</code> - Test the PC Speaker audio system</li>
+<li><code>music</code> - Play musical melodies using the PC speaker</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Project Structure</h2>
 <div class="fragment"><div class="line">miniOS/</div>
 <div class="line">├── src/           # Source code files</div>
@@ -149,19 +187,19 @@ Project Structure</h2>
 <div class="line">├── boot.asm       # Bootloader assembly code</div>
 <div class="line">├── linker.ld      # Linker script</div>
 <div class="line">└── Makefile       # Build configuration</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Development</h1>
 <p>This project follows standard C99 conventions.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Key Design Principles</h2>
 <ul>
 <li><b>Modular Architecture</b>: Each subsystem is implemented as separate modules</li>
 <li><b>Clear Interfaces</b>: Well-defined APIs between components</li>
 <li><b>Hardware Abstraction</b>: Direct hardware interaction through controlled interfaces</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 License</h1>
-<p>This project is developed for educational purposes.</p>
+<p>This project is under the GNU GENERAL PUBLIC LICENSE Version 3</p>
 <hr  />
 <p><em>Generated with Doxygen - Last updated: 2025</em> </p>
 </div></div><!-- PageDoc -->

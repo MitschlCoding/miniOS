@@ -2,6 +2,19 @@ var searchData=
 [
   ['name_0',['name',['../structcommand.html#abba3287ede24847a4de869fd64cd071a',1,'command']]],
   ['nextfree_1',['nextFree',['../structMemBlockHeader.html#acd8149a875d331f1a1a123996533d58c',1,'MemBlockHeader']]],
-  ['num_2',['num',['../structmultiboot__info.html#a139657928e701730c0457758d9ce34e7',1,'multiboot_info']]],
-  ['num_5fsubstrings_3',['NUM_SUBSTRINGS',['../str_8h.html#a6deeae0bb83406713eb2cb73b06df7f3',1,'str.h']]]
+  ['note_2',['Note',['../structNote.html',1,'']]],
+  ['note_5fa4_3',['NOTE_A4',['../audio_8h.html#a4ede898d3fa744ffb02d5e9b66994ef3',1,'audio.h']]],
+  ['note_5fas4_4',['NOTE_AS4',['../audio_8h.html#aaf4ee3ef21f5803c75089341e7e3f50d',1,'audio.h']]],
+  ['note_5fb4_5',['NOTE_B4',['../audio_8h.html#a9ed6d5c8563ae60e6d2716e13d261386',1,'audio.h']]],
+  ['note_5fc4_6',['NOTE_C4',['../audio_8h.html#adbed706152a3d7114327fc5af3c7e07c',1,'audio.h']]],
+  ['note_5fcs4_7',['NOTE_CS4',['../audio_8h.html#ae9a1fa0e819ea29161a72b6840dd0ffc',1,'audio.h']]],
+  ['note_5fd4_8',['NOTE_D4',['../audio_8h.html#a6162f78ec6fc3457a077602a77e36992',1,'audio.h']]],
+  ['note_5fds4_9',['NOTE_DS4',['../audio_8h.html#a638f884f0226cff11eff97ba96fbce88',1,'audio.h']]],
+  ['note_5fe4_10',['NOTE_E4',['../audio_8h.html#a147e4663d8161df841c418859a70f66f',1,'audio.h']]],
+  ['note_5ff4_11',['NOTE_F4',['../audio_8h.html#aff20d9abb2ef6f25afeb44245129eba6',1,'audio.h']]],
+  ['note_5ffs4_12',['NOTE_FS4',['../audio_8h.html#a3ca197d6b74ace12c6cc9e53f47b7a6a',1,'audio.h']]],
+  ['note_5fg4_13',['NOTE_G4',['../audio_8h.html#a588324691d836c7cdf1dd8cc071eeecc',1,'audio.h']]],
+  ['note_5fgs4_14',['NOTE_GS4',['../audio_8h.html#ac446a7c56b75b56451b6712833bfd31f',1,'audio.h']]],
+  ['num_15',['num',['../structmultiboot__info.html#a139657928e701730c0457758d9ce34e7',1,'multiboot_info']]],
+  ['num_5fsubstrings_16',['NUM_SUBSTRINGS',['../str_8h.html#a6deeae0bb83406713eb2cb73b06df7f3',1,'str.h']]]
 ];

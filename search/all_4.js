@@ -10,8 +10,9 @@ var searchData=
   ['eip_7',['eip',['../structregisters__t.html#ac8298121612095b5f2649462bb01d6a6',1,'registers_t']]],
   ['elf_5fsec_8',['elf_sec',['../structmultiboot__info.html#af1eefcfd92204a05c3a52f3f174c1c7e',1,'multiboot_info']]],
   ['endofkerneladress_9',['endOfKernelAdress',['../multiboot_8c.html#a1c8de6ef4d935280caadd967fffb2348',1,'multiboot.c']]],
-  ['err_5fcode_10',['err_code',['../structregisters__t.html#aad855f6a4d0a6914759c59b66cd763f6',1,'registers_t']]],
-  ['esi_11',['esi',['../structregisters__t.html#ab2d08df2d79ee5da0adbba49f4b4fc93',1,'registers_t']]],
-  ['esp_5fuseless_12',['esp_useless',['../structregisters__t.html#a247a224c23efb148f9b78454a3c18a52',1,'registers_t']]],
-  ['extended_5fkey_13',['extended_key',['../interrupts_8c.html#a879034a72decbd6114db803843b27a63',1,'interrupts.c']]]
+  ['endsound_10',['endSound',['../audio_8c.html#acf1c62346c3f54486023c82fe485ec74',1,'endSound(void):&#160;audio.c'],['../audio_8h.html#acf1c62346c3f54486023c82fe485ec74',1,'endSound(void):&#160;audio.c']]],
+  ['err_5fcode_11',['err_code',['../structregisters__t.html#aad855f6a4d0a6914759c59b66cd763f6',1,'registers_t']]],
+  ['esi_12',['esi',['../structregisters__t.html#ab2d08df2d79ee5da0adbba49f4b4fc93',1,'registers_t']]],
+  ['esp_5fuseless_13',['esp_useless',['../structregisters__t.html#a247a224c23efb148f9b78454a3c18a52',1,'registers_t']]],
+  ['extended_5fkey_14',['extended_key',['../interrupts_8c.html#a879034a72decbd6114db803843b27a63',1,'interrupts.c']]]
 ];

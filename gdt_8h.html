@@ -112,8 +112,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdt.html">Gdt</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses for a segment. It is packed to ensure that the structure is tightly packed without padding, which is important for the GDT format.  <a href="structGdt.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtEntry.html">GdtEntry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses for a segment. It is packed to ensure that the structure is tightly packed without padding, which is important for the GDT format.  <a href="structGdtEntry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtDescriptor.html">GdtDescriptor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a GDT descriptor. This structure holds the description for our gdt needed to load the gdt. It is packed to ensure that the structure is tightly packed without padding.  <a href="structGdtDescriptor.html#details">More...</a><br /></td></tr>
@@ -121,9 +121,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7e886daaf45878e5c7b2f4c6263c9700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a7e886daaf45878e5c7b2f4c6263c9700">gdtEntry</a> (uint8_t *target, <a class="el" href="structGdt.html">Gdt</a> source)</td></tr>
-<tr class="memdesc:a7e886daaf45878e5c7b2f4c6263c9700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a GDT entry from the <a class="el" href="structGdt.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">Gdt</a> structure.  <br /></td></tr>
-<tr class="separator:a7e886daaf45878e5c7b2f4c6263c9700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad602eb29f90e5fd916320ae53c0bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a5ad602eb29f90e5fd916320ae53c0bca">gdtEntry</a> (uint8_t *target, <a class="el" href="structGdtEntry.html">GdtEntry</a> source)</td></tr>
+<tr class="memdesc:a5ad602eb29f90e5fd916320ae53c0bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a GDT entry from the <a class="el" href="structGdtEntry.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">GdtEntry</a> structure.  <br /></td></tr>
+<tr class="separator:a5ad602eb29f90e5fd916320ae53c0bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b60f035b96531ea84c5086d47f33bbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gdt_8h.html#a9b60f035b96531ea84c5086d47f33bbd">printGdtInfo</a> ()</td></tr>
 <tr class="memdesc:a9b60f035b96531ea84c5086d47f33bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the GDT information.  <br /></td></tr>
 <tr class="separator:a9b60f035b96531ea84c5086d47f33bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +137,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for the Global Descriptor Table (GDT) implementation. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a7e886daaf45878e5c7b2f4c6263c9700" name="a7e886daaf45878e5c7b2f4c6263c9700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e886daaf45878e5c7b2f4c6263c9700">&#9670;&#160;</a></span>gdtEntry()</h2>
+<a id="a5ad602eb29f90e5fd916320ae53c0bca" name="a5ad602eb29f90e5fd916320ae53c0bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad602eb29f90e5fd916320ae53c0bca">&#9670;&#160;</a></span>gdtEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +152,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structGdt.html">Gdt</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structGdtEntry.html">GdtEntry</a>&#160;</td>
           <td class="paramname"><em>source</em>&#160;</td>
         </tr>
         <tr>
@@ -163,11 +163,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates a GDT entry from the <a class="el" href="structGdt.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">Gdt</a> structure. </p>
+<p>Generates a GDT entry from the <a class="el" href="structGdtEntry.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">GdtEntry</a> structure. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target</td><td>The target buffer to store the GDT entry. </td></tr>
-    <tr><td class="paramname">source</td><td>The source <a class="el" href="structGdt.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">Gdt</a> structure. </td></tr>
+    <tr><td class="paramname">source</td><td>The source <a class="el" href="structGdtEntry.html" title="Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses f...">GdtEntry</a> structure. </td></tr>
   </table>
   </dd>
 </dl>

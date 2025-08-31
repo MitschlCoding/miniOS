@@ -28,5 +28,6 @@ var searchData=
   ['multiboot_2ec_25',['multiboot.c',['../multiboot_8c.html',1,'']]],
   ['multiboot_2eh_26',['multiboot.h',['../multiboot_8h.html',1,'']]],
   ['multiboot_5finfo_27',['multiboot_info',['../structmultiboot__info.html',1,'']]],
-  ['multiboot_5finfo_5ft_28',['multiboot_info_t',['../multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1',1,'multiboot.h']]]
+  ['multiboot_5finfo_5ft_28',['multiboot_info_t',['../multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1',1,'multiboot.h']]],
+  ['musichandler_29',['musicHandler',['../commandHandler_8c.html#ab8e7b69676a9592abc2fb8d945146ec4',1,'commandHandler.c']]]
 ];

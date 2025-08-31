@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gdt_0',['Gdt',['../structGdt.html',1,'']]],
-  ['gdtdescriptor_1',['GdtDescriptor',['../structGdtDescriptor.html',1,'']]]
+  ['gdtdescriptor_0',['GdtDescriptor',['../structGdtDescriptor.html',1,'']]],
+  ['gdtentry_1',['GdtEntry',['../structGdtEntry.html',1,'']]]
 ];

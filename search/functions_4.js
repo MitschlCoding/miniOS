@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['handlemodetransitions_0',['handleModeTransitions',['../modeManager_8c.html#ad2eb0b87d6c0dd4ccab1cda966321ce4',1,'handleModeTransitions(void):&#160;modeManager.c'],['../modeManager_8h.html#ad2eb0b87d6c0dd4ccab1cda966321ce4',1,'handleModeTransitions(void):&#160;modeManager.c']]],
-  ['heap_5finit_1',['heap_init',['../heap_8c.html#a1af70f80ea90c70a6df36e39cae924a5',1,'heap_init(void *start_addr, size_t total_size):&#160;heap.c'],['../heap_8h.html#a1af70f80ea90c70a6df36e39cae924a5',1,'heap_init(void *start_addr, size_t total_size):&#160;heap.c']]],
-  ['helphandler_2',['helpHandler',['../commandHandler_8c.html#a6c1f09f530f05a30881a194c38966b83',1,'commandHandler.c']]],
-  ['hlt_3',['hlt',['../time_8c.html#ad7d91df4690f54a611e8ca4cc2d4f698',1,'time.c']]]
+  ['formatuptime_0',['formatUptime',['../time_8c.html#a652b52a7be1d3b099c81f174b169b5c4',1,'formatUptime(char *buffer, size_t bufferSize):&#160;time.c'],['../time_8h.html#a652b52a7be1d3b099c81f174b169b5c4',1,'formatUptime(char *buffer, size_t bufferSize):&#160;time.c']]],
+  ['freeos_1',['freeOS',['../heap_8c.html#a9ccdf61754740e19fa5141a7c8cc220c',1,'freeOS(void *addr):&#160;heap.c'],['../heap_8h.html#a9ccdf61754740e19fa5141a7c8cc220c',1,'freeOS(void *addr):&#160;heap.c']]]
 ];

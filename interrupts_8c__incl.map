@@ -1,8 +1,8 @@
 <map id="src/interrupts.c" name="src/interrupts.c">
 <area shape="rect" id="node1" title=" " alt="" coords="313,5,432,31"/>
 <area shape="rect" id="node2" href="$keyboard_8h.html" title="Keyboard key codes and a simple key buffer API." alt="" coords="5,152,100,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="237,225,308,251"/>
-<area shape="rect" id="node5" href="$outb_8h.html" title="Header file for input/output port operations." alt="" coords="207,152,269,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="241,225,312,251"/>
+<area shape="rect" id="node5" href="$io_8h.html" title="Header file for input/output port operations." alt="" coords="223,152,269,177"/>
 <area shape="rect" id="node6" href="$printOS_8h.html" title="Header file for printing text to the screen." alt="" coords="345,152,427,177"/>
 <area shape="rect" id="node7" title=" " alt="" coords="446,225,521,251"/>
 <area shape="rect" id="node8" href="$register_8h.html" title=" " alt="" coords="331,79,414,104"/>

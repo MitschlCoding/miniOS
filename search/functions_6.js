@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['kernel_5fmain_0',['kernel_main',['../kernel_8c.html#a2c088784b383511fd84a728e5aa1fae5',1,'kernel.c']]],
-  ['keybufferget_1',['keyBufferGet',['../keyboard_8c.html#a09cdcefb196636c9ea7826651973b4a8',1,'keyBufferGet():&#160;keyboard.c'],['../keyboard_8h.html#a09cdcefb196636c9ea7826651973b4a8',1,'keyBufferGet():&#160;keyboard.c']]],
-  ['keybufferinit_2',['keyBufferInit',['../keyboard_8c.html#a68ebd4bf9c130f65f9bdd57c4b12ab6b',1,'keyBufferInit():&#160;keyboard.c'],['../keyboard_8h.html#a68ebd4bf9c130f65f9bdd57c4b12ab6b',1,'keyBufferInit():&#160;keyboard.c']]],
-  ['keybufferisempty_3',['keyBufferIsEmpty',['../keyboard_8c.html#a02291c998a635c714e880363abdec912',1,'keyBufferIsEmpty():&#160;keyboard.c'],['../keyboard_8h.html#a02291c998a635c714e880363abdec912',1,'keyBufferIsEmpty():&#160;keyboard.c']]],
-  ['keybufferput_4',['keyBufferPut',['../keyboard_8c.html#abcd79f525e65d97db2e03ed15452fc37',1,'keyBufferPut(KeyCode keycode):&#160;keyboard.c'],['../keyboard_8h.html#abcd79f525e65d97db2e03ed15452fc37',1,'keyBufferPut(KeyCode keycode):&#160;keyboard.c']]],
-  ['keypressedforterminal_5',['keyPressedForTerminal',['../terminal_8c.html#a2775048590a5e0e2f57ec29b8e467b55',1,'keyPressedForTerminal(KeyCode keycode):&#160;terminal.c'],['../terminal_8h.html#a2775048590a5e0e2f57ec29b8e467b55',1,'keyPressedForTerminal(KeyCode keycode):&#160;terminal.c']]]
+  ['handlemodetransitions_0',['handleModeTransitions',['../modeManager_8c.html#ad2eb0b87d6c0dd4ccab1cda966321ce4',1,'handleModeTransitions(void):&#160;modeManager.c'],['../modeManager_8h.html#ad2eb0b87d6c0dd4ccab1cda966321ce4',1,'handleModeTransitions(void):&#160;modeManager.c']]],
+  ['heap_5finit_1',['heap_init',['../heap_8c.html#a1af70f80ea90c70a6df36e39cae924a5',1,'heap_init(void *start_addr, size_t total_size):&#160;heap.c'],['../heap_8h.html#a1af70f80ea90c70a6df36e39cae924a5',1,'heap_init(void *start_addr, size_t total_size):&#160;heap.c']]],
+  ['helphandler_2',['helpHandler',['../commandHandler_8c.html#a6c1f09f530f05a30881a194c38966b83',1,'commandHandler.c']]],
+  ['hlt_3',['hlt',['../time_8c.html#ad7d91df4690f54a611e8ca4cc2d4f698',1,'time.c']]]
 ];

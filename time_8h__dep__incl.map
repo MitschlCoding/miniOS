@@ -1,8 +1,9 @@
 <map id="src/time.h" name="src/time.h">
-<area shape="rect" id="node1" title="Header file for time&#45;related functions and definitions." alt="" coords="349,5,435,31"/>
-<area shape="rect" id="node2" href="$commandHandler_8c.html" title=" " alt="" coords="5,79,176,104"/>
-<area shape="rect" id="node3" href="$interrupts_8c.html" title=" " alt="" coords="201,79,319,104"/>
-<area shape="rect" id="node4" href="$kernel_8c.html" title="Main entry point for the kernel." alt="" coords="344,79,440,104"/>
-<area shape="rect" id="node5" href="$snake_8c.html" title=" " alt="" coords="465,79,559,104"/>
-<area shape="rect" id="node6" href="$time_8c.html" title=" " alt="" coords="583,79,670,104"/>
+<area shape="rect" id="node1" title="Header file for time&#45;related functions and definitions." alt="" coords="399,5,485,31"/>
+<area shape="rect" id="node2" href="$audio_8c.html" title=" " alt="" coords="5,79,97,104"/>
+<area shape="rect" id="node3" href="$commandHandler_8c.html" title=" " alt="" coords="122,79,293,104"/>
+<area shape="rect" id="node4" href="$interrupts_8c.html" title=" " alt="" coords="317,79,436,104"/>
+<area shape="rect" id="node5" href="$kernel_8c.html" title="Main entry point for the kernel." alt="" coords="461,79,557,104"/>
+<area shape="rect" id="node6" href="$snake_8c.html" title=" " alt="" coords="581,79,676,104"/>
+<area shape="rect" id="node7" href="$time_8c.html" title=" " alt="" coords="700,79,787,104"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>miniOS: Gdt Struct Reference</title>
+<title>miniOS: GdtEntry Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,38 +71,38 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structGdt-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Gdt Struct Reference</div></div>
+<a href="structGdtEntry-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">GdtEntry Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses for a segment. It is packed to ensure that the structure is tightly packed without padding, which is important for the GDT format.  
- <a href="structGdt.html#details">More...</a></p>
+ <a href="structGdtEntry.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="gdt_8h_source.html">gdt.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a1a69927539473683bbef5daa1494f9b2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdt.html#a1a69927539473683bbef5daa1494f9b2">base</a></td></tr>
-<tr class="separator:a1a69927539473683bbef5daa1494f9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad31af7044edd1208050583ed89fc8e39"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdt.html#ad31af7044edd1208050583ed89fc8e39">limit</a></td></tr>
-<tr class="separator:ad31af7044edd1208050583ed89fc8e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed2a21c3ad193240c220aea774ded19"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdt.html#aeed2a21c3ad193240c220aea774ded19">access_byte</a></td></tr>
-<tr class="separator:aeed2a21c3ad193240c220aea774ded19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8202f0246a82ea2310e01db1de350ba1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdt.html#a8202f0246a82ea2310e01db1de350ba1">flags</a></td></tr>
-<tr class="separator:a8202f0246a82ea2310e01db1de350ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d7ca8dad60b8fabd69ed9427444d05"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtEntry.html#a44d7ca8dad60b8fabd69ed9427444d05">base</a></td></tr>
+<tr class="separator:a44d7ca8dad60b8fabd69ed9427444d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab541198e63c7fe4847b3b562a7c010e1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtEntry.html#ab541198e63c7fe4847b3b562a7c010e1">limit</a></td></tr>
+<tr class="separator:ab541198e63c7fe4847b3b562a7c010e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1136472304a83e2e3e9c991156cdfabf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtEntry.html#a1136472304a83e2e3e9c991156cdfabf">access_byte</a></td></tr>
+<tr class="separator:a1136472304a83e2e3e9c991156cdfabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff8af74bddc4708e94a4354f500a043"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGdtEntry.html#a7ff8af74bddc4708e94a4354f500a043">flags</a></td></tr>
+<tr class="separator:a7ff8af74bddc4708e94a4354f500a043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a Global Descriptor Table (GDT) entry. This structure holds the base and limit addresses for a segment. It is packed to ensure that the structure is tightly packed without padding, which is important for the GDT format. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="aeed2a21c3ad193240c220aea774ded19" name="aeed2a21c3ad193240c220aea774ded19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeed2a21c3ad193240c220aea774ded19">&#9670;&#160;</a></span>access_byte</h2>
+<a id="a1136472304a83e2e3e9c991156cdfabf" name="a1136472304a83e2e3e9c991156cdfabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1136472304a83e2e3e9c991156cdfabf">&#9670;&#160;</a></span>access_byte</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t Gdt::access_byte</td>
+          <td class="memname">uint8_t GdtEntry::access_byte</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -110,14 +110,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a69927539473683bbef5daa1494f9b2" name="a1a69927539473683bbef5daa1494f9b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a69927539473683bbef5daa1494f9b2">&#9670;&#160;</a></span>base</h2>
+<a id="a44d7ca8dad60b8fabd69ed9427444d05" name="a44d7ca8dad60b8fabd69ed9427444d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d7ca8dad60b8fabd69ed9427444d05">&#9670;&#160;</a></span>base</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t Gdt::base</td>
+          <td class="memname">uint32_t GdtEntry::base</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -125,14 +125,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8202f0246a82ea2310e01db1de350ba1" name="a8202f0246a82ea2310e01db1de350ba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8202f0246a82ea2310e01db1de350ba1">&#9670;&#160;</a></span>flags</h2>
+<a id="a7ff8af74bddc4708e94a4354f500a043" name="a7ff8af74bddc4708e94a4354f500a043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff8af74bddc4708e94a4354f500a043">&#9670;&#160;</a></span>flags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t Gdt::flags</td>
+          <td class="memname">uint8_t GdtEntry::flags</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -140,14 +140,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad31af7044edd1208050583ed89fc8e39" name="ad31af7044edd1208050583ed89fc8e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad31af7044edd1208050583ed89fc8e39">&#9670;&#160;</a></span>limit</h2>
+<a id="ab541198e63c7fe4847b3b562a7c010e1" name="ab541198e63c7fe4847b3b562a7c010e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab541198e63c7fe4847b3b562a7c010e1">&#9670;&#160;</a></span>limit</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t Gdt::limit</td>
+          <td class="memname">uint32_t GdtEntry::limit</td>
         </tr>
       </table>
 </div><div class="memdoc">

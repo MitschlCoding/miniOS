@@ -1,9 +1,0 @@
-<map id="src/outb.h" name="src/outb.h">
-<area shape="rect" id="node1" title="Header file for input/output port operations." alt="" coords="304,5,391,31"/>
-<area shape="rect" id="node2" href="$idt_8c.html" title=" " alt="" coords="5,79,79,104"/>
-<area shape="rect" id="node3" href="$interrupts_8c.html" title=" " alt="" coords="103,79,221,104"/>
-<area shape="rect" id="node4" href="$outb_8c.html" title=" " alt="" coords="246,79,331,104"/>
-<area shape="rect" id="node5" href="$printOS_8c.html" title=" " alt="" coords="355,79,459,104"/>
-<area shape="rect" id="node6" href="$shutdown_8c.html" title=" " alt="" coords="484,79,603,104"/>
-<area shape="rect" id="node7" href="$time_8c.html" title=" " alt="" coords="627,79,713,104"/>
-</map>
